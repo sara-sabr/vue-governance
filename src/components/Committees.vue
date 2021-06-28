@@ -4,17 +4,32 @@
     <div v-for="rate in rates" :key="rate.id">
       {{ rate }}
     </div>
+    <div v-for="committee in committees" :key="committee.id">
+      <h2>
+        {{ committee.name[lang] }}
+      </h2>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Rate } from "@/store/types";
+import { Committee, Rate } from "@/store/types";
+import { PropType } from "vue";
 import { Component, Prop, Vue } from "vue-property-decorator";
 
-@Component
+@Component({
+  props: {
+    rates: {
+      type: Object as PropType<Rate[]>,
+      required: true,
+    },
+  },
+  computed: {},
+})
 export default class Committees extends Vue {
-  @Prop() private msg!: string;
-  @Prop() private rates!: Rate[];
+  // @Prop() private rates!: Rate[];
+  @Prop() private committees!: Committee[];
+  lang = this.$i18n.locale;
 }
 </script>
 

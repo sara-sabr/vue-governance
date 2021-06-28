@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Committees :rates="rates" />
+    <Committees :rates="rates" :committees="committees" />
   </div>
 </template>
 
