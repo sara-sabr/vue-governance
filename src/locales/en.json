@@ -1,5 +1,6 @@
 {
   "message": "hello i18n !!",
   "appTitle": "Governance Study",
-  "homeTitle": "Home"
+  "homeTitle": "Home",
+  "committeesAnalysis": "Committees Analysis"
 }
