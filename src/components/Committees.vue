@@ -1,15 +1,23 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <div>
+      <p>{{ rates }}</p>
+    </div>
+    <!-- <div v-for="rate in rates" :key="rate.id">
+      {{ rate }}
+    </div> -->
   </div>
 </template>
 
 <script lang="ts">
+import { Rate } from "@/store/types";
 import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class Committees extends Vue {
   @Prop() private msg!: string;
+  @Prop() private rates!: Rate[];
 }
 </script>
 
