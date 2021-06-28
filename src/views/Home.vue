@@ -1,11 +1,13 @@
 <template>
-  <div class="home"><Committees msg="Test" committees:="committees"/></div>
+  <div class="home">
+    <Committees msg="Test" :rates="rates" />
+  </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import Committees from "@/components/Committees.vue"; // @ is an alias to /src
-import { Committee } from "@/store/types";
+import { Rate } from "@/store/types";
 
 @Component({
   components: {
@@ -13,6 +15,7 @@ import { Committee } from "@/store/types";
   },
 })
 export default class Home extends Vue {
-  committees: Committee = require("@/assets/data/committees.yaml");
+  // committees: Committee = require("@/assets/data/committees.yaml");
+  rates: Rate[] = require("@/assets/data/rates.json");
 }
 </script>
