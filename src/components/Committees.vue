@@ -1,12 +1,9 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <div>
-      <p>{{ rates }}</p>
-    </div>
-    <!-- <div v-for="rate in rates" :key="rate.id">
+    <h1>{{ $t("committeesAnalysis") }}</h1>
+    <div v-for="rate in rates" :key="rate.id">
       {{ rate }}
-    </div> -->
+    </div>
   </div>
 </template>
 
