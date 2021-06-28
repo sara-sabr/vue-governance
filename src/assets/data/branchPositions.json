@@ -1,0 +1,1058 @@
+[
+  {
+    "id": "cio",
+    "name": {
+      "fr": "Dirigeant principal de l'information",
+      "en": "Chief Information Officer"
+    },
+    "classification": "ex",
+    "level": 4,
+    "incumbent": null,
+    "reportsTo": null
+  },
+  {
+    "id": "ed-bop",
+    "name": {
+      "fr": "TBC",
+      "en": "Executive Director Branch Operations and Planning"
+    },
+    "classification": "ex",
+    "level": 2,
+    "incumbent": null,
+    "reportsTo": "cio"
+  },
+  {
+    "id": "d-rm",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Resource Management"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-bop"
+  },
+  {
+    "id": "d-pm",
+    "name": {
+      "fr": "TBC",
+      "en": "Director People Management"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-bop"
+  },
+  {
+    "id": "d-cmc",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Change Management and Communications"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-bop"
+  },
+  {
+    "id": "dg-sabr",
+    "name": {
+      "fr": "TBC",
+      "en": "Director General Strategy, Architecture and Business Relations"
+    },
+    "classification": "ex",
+    "level": 3,
+    "incumbent": null,
+    "reportsTo": "dg-sabr"
+  },
+  {
+    "id": "ed-ss",
+    "name": {
+      "fr": "TBC",
+      "en": "Executive Director Service Strategy"
+    },
+    "classification": "ex",
+    "level": 2,
+    "incumbent": null,
+    "reportsTo": "dg-sabr"
+  },
+  {
+    "id": "d-itps",
+    "name": {
+      "fr": "TBC",
+      "en": "Director IT Policy and Strategy"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-ss"
+  },
+  {
+    "id": "d-itr",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Information Technology Research"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-ss"
+  },
+  {
+    "id": "d-vsm",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Vendor and Service Management"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-ss"
+  },
+  {
+    "id": "d-bpmo",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Branch Project Management Office"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-ss"
+  },
+  {
+    "id": "d-css",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Cloud Services Strategy"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-ss"
+  },
+  {
+    "id": "ed-a",
+    "name": {
+      "fr": "TBC",
+      "en": "Executive Director Architecture"
+    },
+    "classification": "ex",
+    "level": 2,
+    "incumbent": null,
+    "reportsTo": "dg-sabr"
+  },
+  {
+    "id": "d-ea",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Enterprise Architecture"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-a"
+  },
+  {
+    "id": "d-ta",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Technology Architecture"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-a"
+  },
+  {
+    "id": "d-sola",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Solutions Architecture"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-a"
+  },
+  {
+    "id": "d-seca",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Security Architecture"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-a"
+  },
+  {
+    "id": "d-bdma",
+    "name": {
+      "fr": "TBC",
+      "en": "Director BDM Architecture"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-a"
+  },
+  {
+    "id": "d-bppr",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Branch Policy, Planning and Reporting"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "dg-sabr"
+  },
+  {
+    "id": "d-brm-es",
+    "name": {
+      "fr": "TBC",
+      "en": "Director BRM – Enabling Services"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "dg-sabr"
+  },
+  {
+    "id": "d-brm-pp",
+    "name": {
+      "fr": "TBC",
+      "en": "Director BRM – Programs and Policy"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "dg-sabr"
+  },
+  {
+    "id": "d-brm-r",
+    "name": {
+      "fr": "TBC",
+      "en": "Director BRM – Regions"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "dg-sabr"
+  },
+  {
+    "id": "d-brm-t",
+    "name": {
+      "fr": "TBC",
+      "en": "Director BRM – Transformation"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "dg-sabr"
+  },
+  {
+    "id": "dg-eops",
+    "name": {
+      "fr": "TBC",
+      "en": "Director General Enterprise Operations"
+    },
+    "classification": "ex",
+    "level": 3,
+    "incumbent": null,
+    "reportsTo": "cio"
+  },
+  {
+    "id": "ed-dc",
+    "name": {
+      "fr": "TBC",
+      "en": "Executive Director Distributed Computing"
+    },
+    "classification": "ex",
+    "level": 2,
+    "incumbent": null,
+    "reportsTo": "dg-eops"
+  },
+  {
+    "id": "d-dct",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Distributed Computing Technology"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-dc"
+  },
+  {
+    "id": "d-dcs",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Distributed Computing Support"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-dc"
+  },
+  {
+    "id": "ed-pae",
+    "name": {
+      "fr": "TBC",
+      "en": "Executive Director Partnership, Accessibility & Environments"
+    },
+    "classification": "ex",
+    "level": 2,
+    "incumbent": null,
+    "reportsTo": "dg-eops"
+  },
+  {
+    "id": "d-env",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Environments"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-pae"
+  },
+  {
+    "id": "d-spm",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Strategic Partnership Management"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-pae"
+  },
+  {
+    "id": "d-csmpc",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Contract/Supplier Management and Policy Compliance"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-pae"
+  },
+  {
+    "id": "d-ita",
+    "name": {
+      "fr": "TBC",
+      "en": "Director IT Accessibility"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-pae"
+  },
+  {
+    "id": "ed-citsec",
+    "name": {
+      "fr": "TBC",
+      "en": "Executive Director Cyber & IT Security"
+    },
+    "classification": "ex",
+    "level": 2,
+    "incumbent": null,
+    "reportsTo": "dg-eops"
+  },
+  {
+    "id": "d-csoc",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Cyber Security Operations Center"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-citsec"
+  },
+  {
+    "id": "d-itsc",
+    "name": {
+      "fr": "TBC",
+      "en": "Director IT Security Compliance"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-citsec"
+  },
+  {
+    "id": "dg-bsim",
+    "name": {
+      "fr": "TBC",
+      "en": "Director General Business Solutions and Information Management"
+    },
+    "classification": "ex",
+    "level": 3,
+    "incumbent": null,
+    "reportsTo": "cio"
+  },
+  {
+    "id": "ed-im",
+    "name": {
+      "fr": "TBC",
+      "en": "Executive Director Information Management"
+    },
+    "classification": "ex",
+    "level": 2,
+    "incumbent": null,
+    "reportsTo": "dg-bsim"
+  },
+  {
+    "id": "d-imetss",
+    "name": {
+      "fr": "TBC",
+      "en": "Director IM Enabling Technologies, Solutions and Services"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-im"
+  },
+  {
+    "id": "d-imsbd",
+    "name": {
+      "fr": "TBC",
+      "en": "Director IM Strategy and Business Development"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-im"
+  },
+  {
+    "id": "ed-bsi",
+    "name": {
+      "fr": "TBC",
+      "en": "Executive Director Business Solutions and Innovation"
+    },
+    "classification": "ex",
+    "level": 2,
+    "incumbent": null,
+    "reportsTo": "dg-bsim"
+  },
+  {
+    "id": "d-ps",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Portal Solutions"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-bsi"
+  },
+  {
+    "id": "d-mts",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Mobile Technology Solutions"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-bsi"
+  },
+  {
+    "id": "d-wswa",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Web Solutions and Web Access"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-bsi"
+  },
+  {
+    "id": "d-erps",
+    "name": {
+      "fr": "TBC",
+      "en": "Director ERP Solutions"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-bsi"
+  },
+  {
+    "id": "d-iaamlm",
+    "name": {
+      "fr": "TBC",
+      "en": "Director IAAM / Log Monitoring"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-bsi"
+  },
+  {
+    "id": "d-csspi",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Service Solutions and Partner Initiatives"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-bsi"
+  },
+  {
+    "id": "d-icm",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Identity and Credential Management"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-bsi"
+  },
+  {
+    "id": "d-tps",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Transformed Portal Solutions"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-bsi"
+  },
+  {
+    "id": "dg-bsi",
+    "name": {
+      "fr": "TBC",
+      "en": "Director General Business Solutions Innovation"
+    },
+    "classification": "ex",
+    "level": 3,
+    "incumbent": null,
+    "reportsTo": "cio"
+  },
+  {
+    "id": "ed-ecc",
+    "name": {
+      "fr": "TBC",
+      "en": "Executive Director Employment, Correspondence, Contributions"
+    },
+    "classification": "ex",
+    "level": 2,
+    "incumbent": null,
+    "reportsTo": "dg-bsi"
+  },
+  {
+    "id": "d-seps",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Skills, Employment and Partner Solutions"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "dg-bsi"
+  },
+  {
+    "id": "d-cs",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Contribution Systems"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "dg-bsi"
+  },
+  {
+    "id": "d-ic",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Intake and Correspondence"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "dg-bsi"
+  },
+  {
+    "id": "d-tpes",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Transformed Pension Solutions"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "dg-bsi"
+  },
+  {
+    "id": "ed-bs",
+    "name": {
+      "fr": "TBC",
+      "en": "Executive Director Benefits Solutions"
+    },
+    "classification": "ex",
+    "level": 2,
+    "incumbent": null,
+    "reportsTo": "dg-bsi"
+  },
+  {
+    "id": "d-eiis",
+    "name": {
+      "fr": "TBC",
+      "en": "Director EI and Integrity Solutions"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "dg-bsi"
+  },
+  {
+    "id": "d-pom",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Pensions Operations and Maintenance"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "dg-bsi"
+  },
+  {
+    "id": "d-eipa",
+    "name": {
+      "fr": "TBC",
+      "en": "Director EI Processing Automation"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "dg-bsi"
+  },
+  {
+    "id": "d-teis",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Transformed EI Solutions"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "dg-bsi"
+  },
+  {
+    "id": "dg-ps",
+    "name": {
+      "fr": "TBC",
+      "en": "Director General Pensions Solutions"
+    },
+    "classification": "ex",
+    "level": 3,
+    "incumbent": null,
+    "reportsTo": "cio"
+  },
+  {
+    "id": "ed-ps",
+    "name": {
+      "fr": "TBC",
+      "en": "Executive Director Pensions Solutions"
+    },
+    "classification": "ex",
+    "level": 2,
+    "incumbent": null,
+    "reportsTo": "dg-ps"
+  },
+  {
+    "id": "d-oasp",
+    "name": {
+      "fr": "TBC",
+      "en": "Director OAS Projects"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-ps"
+  },
+  {
+    "id": "d-cppep",
+    "name": {
+      "fr": "TBC",
+      "en": "Director CPPE Projects"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-ps"
+  },
+  {
+    "id": "d-ts",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Testing Services"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-ps"
+  },
+  {
+    "id": "dg-bos",
+    "name": {
+      "fr": "TBC",
+      "en": "Director General Business Operations Sustainability"
+    },
+    "classification": "ex",
+    "level": 3,
+    "incumbent": null,
+    "reportsTo": "cio"
+  },
+  {
+    "id": "ed-tdm",
+    "name": {
+      "fr": "TBC",
+      "en": "Executive Director Technical Debt Management"
+    },
+    "classification": "ex",
+    "level": 2,
+    "incumbent": null,
+    "reportsTo": "dg-bos"
+  },
+  {
+    "id": "d-tdro",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Technical Debt Remediation Management"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-tdm"
+  },
+  {
+    "id": "d-apmite",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Application Portfolio Management and IT Evergreening"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-tdm"
+  },
+  {
+    "id": "d-itc",
+    "name": {
+      "fr": "TBC",
+      "en": "Director IT Continuity"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-tdm"
+  },
+  {
+    "id": "d-wm",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Workload Management"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-tdm"
+  },
+  {
+    "id": "ed-wds",
+    "name": {
+      "fr": "TBC",
+      "en": "Executive Director Workplace Digital Solutions"
+    },
+    "classification": "ex",
+    "level": 2,
+    "incumbent": null,
+    "reportsTo": "dg-bsi"
+  },
+  {
+    "id": "d-wtm",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Workplace Technology Modernization"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-wds"
+  },
+  {
+    "id": "d-dm",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Desktop Modernization"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-wds"
+  },
+  {
+    "id": "d-mpp",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Major Partner Projects"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-wds"
+  },
+  {
+    "id": "d-nm",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Network Modernization"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-wds"
+  },
+  {
+    "id": "dg-eds",
+    "name": {
+      "fr": "TBC",
+      "en": "Director General Enterprise Digital Solutions"
+    },
+    "classification": "ex",
+    "level": 3,
+    "incumbent": null,
+    "reportsTo": "cio"
+  },
+  {
+    "id": "ed-cds",
+    "name": {
+      "fr": "TBC",
+      "en": "Executive Director Cloud and Digital Solutions"
+    },
+    "classification": "ex",
+    "level": 2,
+    "incumbent": null,
+    "reportsTo": "dg-eds"
+  },
+  {
+    "id": "d-csdd",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Cloud Services Design and Development"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-cds"
+  },
+  {
+    "id": "d-csom",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Cloud Services Operations and Maintenance"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-cds"
+  },
+  {
+    "id": "d-scm",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Small Case Management"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-cds"
+  },
+  {
+    "id": "ed-ec",
+    "name": {
+      "fr": "TBC",
+      "en": "Executive Director Enterprise Capabilities"
+    },
+    "classification": "ex",
+    "level": 2,
+    "incumbent": null,
+    "reportsTo": "dg-eds"
+  },
+  {
+    "id": "d-tsa",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Testing Services A"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-ec"
+  },
+  {
+    "id": "d-rcsds",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Resource Centre and Solutions Design Services"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-ec"
+  },
+  {
+    "id": "d-ccdd",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Contact Centre Design and Development"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-ec"
+  },
+  {
+    "id": "d-ccom",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Contact Centre Operations and Maintenance"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-ec"
+  },
+  {
+    "id": "ed-tsor",
+    "name": {
+      "fr": "TBC",
+      "en": "Executive Director Transformation Support and Operation Readiness"
+    },
+    "classification": "ex",
+    "level": 2,
+    "incumbent": null,
+    "reportsTo": "dg-eds"
+  },
+  {
+    "id": "d-tss",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Transformed Solutions Support"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-tsor"
+  },
+  {
+    "id": "d-tsi",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Transformed Solutions Integration"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-tsor"
+  },
+  {
+    "id": "d-is",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Interoperability Solutions"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-tsor"
+  },
+  {
+    "id": "d-airbpas",
+    "name": {
+      "fr": "TBC",
+      "en": "Director AI, Robotics, and Business Process Automation Solutions"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-tsor"
+  },
+  {
+    "id": "d-das",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Data and Analytics Services"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "ed-tsor"
+  },
+  {
+    "id": "d-bsng",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Business Solutions Next Generation"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "dg-eds"
+  },
+  {
+    "id": "d-lr",
+    "name": {
+      "fr": "TBC",
+      "en": "Director Legacy Readiness"
+    },
+    "classification": "ex",
+    "level": 1,
+    "incumbent": null,
+    "reportsTo": "dg-eds"
+  },
+  {
+    "id": "cos",
+    "name": {
+      "fr": "TBC",
+      "en": "Chief of Staff"
+    },
+    "classification": "ex",
+    "level": 2,
+    "incumbent": null,
+    "reportsTo": "cio"
+  },
+  {
+    "id": "cio-sa",
+    "name": {
+      "fr": "TBC",
+      "en": "Special Advisor"
+    },
+    "classification": "ex",
+    "level": 2,
+    "incumbent": null,
+    "reportsTo": "cio"
+  },
+  {
+    "id": "oii",
+    "name": {
+      "fr": "TBC",
+      "en": "Office of Indegnous Initiatives"
+    },
+    "classification": "ex",
+    "level": 2,
+    "incumbent": null,
+    "reportsTo": "cio"
+  }
+]

@@ -1,0 +1,144 @@
+[
+  {
+    "id": 1,
+    "name": {
+      "fr": "TBC",
+      "en": "Chief Information Officer Executive Committee"
+    },
+    "abbreviation": {
+      "fr": "TBC",
+      "en": "CIOEC"
+    },
+    "tier": null,
+    "level": "branch",
+    "status": "active",
+    "workspace": {
+      "URL": null,
+      "access": null
+    },
+    "termsOfReference": {
+      "URL": {
+        "fr": "TBC",
+        "en": "TBC"
+      }
+    },
+    "meetings": {
+      "recurrence": "weekly",
+      "day": "friday",
+      "duration": 60,
+      "extension": null
+    },
+    "quorum": "5 voting members",
+    "chairs": [
+      "cio"
+    ],
+    "viceChairs": [
+      null
+    ],
+    "members": [
+      "cos",
+      "cio-sa",
+      "dg-eops",
+      "dg-sabr",
+      "dg-bsim",
+      "dg-boss",
+      "dg-bsi",
+      "dg-bdma",
+      "d-cmc"
+    ],
+    "standingParticipants": [
+      "ed-pae",
+      "ed-dc",
+      "ed-a",
+      "ed-im",
+      "ed-tsor",
+      "ed-ecc",
+      "ed-tdm",
+      "ed-bsi",
+      "ssc-exec",
+      "secretariat"
+    ],
+    "mandate": {
+      "fr": "TBC",
+      "en": "TBC"
+    },
+    "responsibility": {
+      "fr": "TBC",
+      "en": "TBC"
+    },
+    "delegation": [
+      "n/a"
+    ]
+  },
+  {
+    "id": 2,
+    "name": {
+      "fr": "TBC",
+      "en": "To be confirmed"
+    },
+    "abbreviation": {
+      "fr": "TBC",
+      "en": "CIOEC"
+    },
+    "tier": null,
+    "level": "branch",
+    "status": "active",
+    "workspace": {
+      "URL": null,
+      "access": null
+    },
+    "termsOfReference": {
+      "URL": {
+        "fr": "TBC",
+        "en": "TBC"
+      }
+    },
+    "meetings": {
+      "recurrence": "weekly",
+      "day": "friday",
+      "duration": 60,
+      "extension": null
+    },
+    "quorum": "5 voting members",
+    "chairs": [
+      "cio"
+    ],
+    "viceChairs": [
+      null
+    ],
+    "members": [
+      "cos",
+      "cio-sa",
+      "dg-eops",
+      "dg-sabr",
+      "dg-bsim",
+      "dg-boss",
+      "dg-bsi",
+      "dg-bdma",
+      "d-cmc"
+    ],
+    "standingParticipants": [
+      "ed-pae",
+      "ed-dc",
+      "ed-a",
+      "ed-im",
+      "ed-tsor",
+      "ed-ecc",
+      "ed-tdm",
+      "ed-bsi",
+      "ssc-exec",
+      "secretariat"
+    ],
+    "mandate": {
+      "fr": "TBC",
+      "en": "TBC"
+    },
+    "responsibility": {
+      "fr": "TBC",
+      "en": "TBC"
+    },
+    "delegation": [
+      "n/a"
+    ]
+  }
+]
