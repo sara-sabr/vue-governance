@@ -2,5 +2,9 @@
   "message": "hello i18n !!",
   "appTitle": "Governance Study",
   "homeTitle": "Home",
-  "committeesAnalysis": "Committees Analysis"
+  "committeesAnalysis": "Committees Analysis",
+  "committeeTable": {
+    "colProperty": "Property",
+    "colValue": "Value"
+  }
 }

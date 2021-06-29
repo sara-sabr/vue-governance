@@ -2,5 +2,9 @@
   "message": "allo i18n !!",
   "appTitle": "Étude de la gouvernance",
   "homeTitle": "Accueil",
-  "committeesAnalysis": "Analyse des comités"
+  "committeesAnalysis": "Analyse des comités",
+    "committeeTable": {
+      "colProperty": "Propriété",
+      "colValue": "Valeur"
+    }
 }

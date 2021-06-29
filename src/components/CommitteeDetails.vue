@@ -1,6 +1,15 @@
 <template>
   <div>
     <h2>{{ committee.name[lang] }}</h2>
+    <table>
+      <caption></caption>
+      <thead>
+        <th></th>
+      </thead>
+      <tbody>
+        <td></td>
+      </tbody>
+    </table>
     <p>{{ committee }}</p>
   </div>
 </template>
