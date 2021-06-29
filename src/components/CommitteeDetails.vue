@@ -4,10 +4,34 @@
     <table>
       <caption></caption>
       <thead>
-        <th></th>
+        <th>{{ $t("committeeTable.property") }}</th>
+        <th>{{ $t("committeeTable.value") }}</th>
       </thead>
       <tbody>
-        <td></td>
+        <tr>
+          <td>{{ $t("committeeTable.membersCount") }}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ $t("committeeTable.standingPartipantsCount") }}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ $t("committeeTable.totalParticipants") }}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ $t("committeeTable.meetingDuration") }}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ $t("committeeTable.meetingCost") }}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ $t("committeeTable.meetingAnnualCost") }}</td>
+          <td></td>
+        </tr>
       </tbody>
     </table>
     <p>{{ committee }}</p>

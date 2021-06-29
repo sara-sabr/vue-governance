@@ -4,7 +4,13 @@
   "homeTitle": "Home",
   "committeesAnalysis": "Committees Analysis",
   "committeeTable": {
-    "colProperty": "Property",
-    "colValue": "Value"
+    "property": "Property",
+    "value": "Value",
+    "membersCount": "Committee Members Count",
+    "standingPartipantsCount": "Standing Participants Count",
+    "totalParticipants": "Total Attendance Count",
+    "meetingDuration": "Meeting Duration (minutes)",
+    "meetingCost": "Approximate Meeting Cost",
+    "meetingAnnualCost": "Approximate Annual Meeting Cost"
   }
 }

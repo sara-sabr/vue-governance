@@ -3,8 +3,14 @@
   "appTitle": "Étude de la gouvernance",
   "homeTitle": "Accueil",
   "committeesAnalysis": "Analyse des comités",
-    "committeeTable": {
-      "colProperty": "Propriété",
-      "colValue": "Valeur"
-    }
+  "committeeTable": {
+    "property": "Propriété",
+    "value": "Valeur",
+    "membersCount": "Nombre de membres votants",
+    "standingPartipantsCount": "Nombre d'observateurs",
+    "totalParticipants": "Nombre total de participants",
+    "meetingDuration": "Durée de chaque rencontre",
+    "meetingCost": "Coût approximatif par rencontre",
+    "meetingAnnualCost": "Coût annuel total approximatif"
+  }
 }
