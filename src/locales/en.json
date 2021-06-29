@@ -2,5 +2,15 @@
   "message": "hello i18n !!",
   "appTitle": "Governance Study",
   "homeTitle": "Home",
-  "committeesAnalysis": "Committees Analysis"
+  "committeesAnalysis": "Committees Analysis",
+  "committeeTable": {
+    "property": "Property",
+    "value": "Value",
+    "membersCount": "Committee Members Count",
+    "standingPartipantsCount": "Standing Participants Count",
+    "totalParticipants": "Total Attendance Count",
+    "meetingDuration": "Meeting Duration (minutes)",
+    "meetingCost": "Approximate Meeting Cost",
+    "meetingAnnualCost": "Approximate Annual Meeting Cost"
+  }
 }

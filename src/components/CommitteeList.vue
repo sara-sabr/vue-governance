@@ -6,13 +6,15 @@
       :key="committee.id"
       :committee="committee"
       :lang="lang"
+      :rates="rates"
+      :branch-positions="branchPositions"
     >
     </CommitteeDetails>
   </div>
 </template>
 
 <script lang="ts">
-import { Committee, Rate } from "@/store/types";
+import { Committee, Position, Rate } from "@/store/types";
 import { PropType } from "vue";
 import { Component, Prop, Vue } from "vue-property-decorator";
 import CommitteeDetails from "@/components/CommitteeDetails.vue";
@@ -28,6 +30,10 @@ import CommitteeDetails from "@/components/CommitteeDetails.vue";
     },
     lang: {
       type: String,
+      required: true,
+    },
+    branchPositions: {
+      type: Array as PropType<Position[]>,
       required: true,
     },
   },
