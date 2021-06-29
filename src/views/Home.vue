@@ -17,5 +17,6 @@ import { Committee, Rate } from "@/store/types";
 export default class Home extends Vue {
   rates: Rate[] = require("@/assets/data/rates.json");
   committees: Committee[] = require("@/assets/data/committees.json");
+  lang = this.$i18n.locale;
 }
 </script>
