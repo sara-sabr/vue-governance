@@ -1,14 +1,13 @@
 <template>
   <div class="hello">
     <h1>{{ $t("committeesAnalysis") }}</h1>
-    <div v-for="rate in rates" :key="rate.id">
-      {{ rate }}
-    </div>
-    <div v-for="committee in committees" :key="committee.id">
-      <h2>
-        {{ committee.name[lang] }}
-      </h2>
-    </div>
+    <CommitteeDetails
+      v-for="committee in committees"
+      :key="committee.id"
+      :committee="committee"
+      :lang="lang"
+    >
+    </CommitteeDetails>
   </div>
 </template>
 
@@ -16,20 +15,26 @@
 import { Committee, Rate } from "@/store/types";
 import { PropType } from "vue";
 import { Component, Prop, Vue } from "vue-property-decorator";
+import CommitteeDetails from "@/components/CommitteeDetails.vue";
 
 @Component({
+  components: {
+    CommitteeDetails,
+  },
   props: {
     rates: {
-      type: Object as PropType<Rate[]>,
+      type: Array as PropType<Rate[]>,
+      required: true,
+    },
+    lang: {
+      type: String,
       required: true,
     },
   },
-  computed: {},
 })
 export default class Committees extends Vue {
   // @Prop() private rates!: Rate[];
   @Prop() private committees!: Committee[];
-  lang = this.$i18n.locale;
 }
 </script>
 
