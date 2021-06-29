@@ -1,3 +1,5 @@
+[![CodeQL](https://github.com/sara-sabr/vue-governance/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/sara-sabr/vue-governance/actions/workflows/codeql-analysis.yml)
+
 # vue-governance
 
 ## Project setup
