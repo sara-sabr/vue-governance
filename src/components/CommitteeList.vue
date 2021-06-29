@@ -32,8 +32,7 @@ import CommitteeDetails from "@/components/CommitteeDetails.vue";
     },
   },
 })
-export default class Committees extends Vue {
-  // @Prop() private rates!: Rate[];
+export default class CommitteeList extends Vue {
   @Prop() private committees!: Committee[];
 }
 </script>

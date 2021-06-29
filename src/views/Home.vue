@@ -1,17 +1,17 @@
 <template>
   <div class="home">
-    <Committees :rates="rates" :committees="committees" :lang="lang" />
+    <CommitteeList :rates="rates" :committees="committees" :lang="lang" />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import Committees from "@/components/Committees.vue"; // @ is an alias to /src
+import CommitteeList from "@/components/CommitteeList.vue"; // @ is an alias to /src
 import { Committee, Rate } from "@/store/types";
 
 @Component({
   components: {
-    Committees,
+    CommitteeList,
   },
 })
 export default class Home extends Vue {
