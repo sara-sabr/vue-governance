@@ -1,6 +1,6 @@
 <template>
-  <div class="hello">
-    <h1>{{ $t("committeesAnalysis") }}</h1>
+  <div>
+    <h1 class="text-center">{{ $t("committeesAnalysis") }}</h1>
     <CommitteeDetails
       v-for="committee in committees"
       :key="committee.id"
