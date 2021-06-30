@@ -2,7 +2,10 @@
   "message": "hello i18n !!",
   "appTitle": "Governance Study",
   "homeTitle": "Home",
+  "committeesTitle": "Committees",
+  "branchPositionsTitle": "Positions",
   "committeesAnalysis": "Committees Analysis",
+  "branchPositionsAnalysis": "Branch Positions Analysis",
   "committeeTable": {
     "property": "Property",
     "value": "Value",
@@ -12,5 +15,10 @@
     "meetingDuration": "Meeting Duration (minutes)",
     "meetingCost": "Approximate Meeting Cost",
     "meetingAnnualCost": "Approximate Annual Meeting Cost"
+  },
+  "branchPositionTable": {
+    "position": "Branch Position",
+    "key": "Key",
+    "classification": "Classification and Level"
   }
 }
