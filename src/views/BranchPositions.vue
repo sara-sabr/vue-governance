@@ -1,50 +1,27 @@
 <template>
-  <div class="branch-position">
-    <h1>{{ $t("branchPositionsAnalysis") }}</h1>
-    <table>
-      <caption></caption>
-      <thead>
-        <th>{{ $t("branchPositionTable.position") }}</th>
-        <th>{{ $t("branchPositionTable.key") }}</th>
-        <th>{{ $t("branchPositionTable.classification") }}</th>
-      </thead>
-      <tbody>
-        <tr v-for="position in branchPositions" :key="position.id">
-          <td>
-            {{ position.name[lang] }}
-          </td>
-          <td>
-            {{ position.id }}
-          </td>
-          <td>{{ getClassLevel(position) }}</td>
-        </tr>
-        <tr>
-          <td>{{ $t("committeeTable.standingPartipantsCount") }}</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>{{ $t("committeeTable.totalParticipants") }}</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>{{ $t("committeeTable.meetingDuration") }}</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>{{ $t("committeeTable.meetingCost") }}</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>{{ $t("committeeTable.meetingAnnualCost") }}</td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="container">
+    <h1 class="text-center">{{ $t("branchPositionsAnalysis") }}</h1>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <caption></caption>
+        <thead>
+          <th scope="col">{{ $t("branchPositionTable.key") }}</th>
+          <th scope="col">{{ $t("branchPositionTable.position") }}</th>
+          <th scope="col">{{ $t("branchPositionTable.classification") }}</th>
+        </thead>
+        <tbody>
+          <tr v-for="position in branchPositions" :key="position.id">
+            <td>
+              {{ position.id }}
+            </td>
+            <td>
+              {{ position.name[lang] }}
+            </td>
+            <td>{{ getClassLevel(position) }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 <script lang="ts">
