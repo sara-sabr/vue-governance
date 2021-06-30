@@ -2,6 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">{{ $t("homeTitle") }}</router-link>
+      <router-link to="/branch-positions">{{ $t("homeTitle") }}</router-link>
     </div>
     <router-view />
   </div>
