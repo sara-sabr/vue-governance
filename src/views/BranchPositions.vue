@@ -1,0 +1,37 @@
+<template>
+  <div class="container">
+    <h1 class="text-center">{{ $t("branchPositionsAnalysis") }}</h1>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <caption></caption>
+        <thead>
+          <th scope="col">{{ $t("branchPositionTable.key") }}</th>
+          <th scope="col">{{ $t("branchPositionTable.position") }}</th>
+          <th scope="col">{{ $t("branchPositionTable.classification") }}</th>
+        </thead>
+        <tbody>
+          <tr v-for="position in branchPositions" :key="position.id">
+            <td>
+              {{ position.id }}
+            </td>
+            <td>
+              {{ position.name[lang] }}
+            </td>
+            <td>{{ getClassLevel(position) }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>
+<script lang="ts">
+import Vue from "vue";
+import { Position } from "@/store/types";
+export default class BranchPositions extends Vue {
+  branchPositions: Position[] = require("@/assets/data/branchPositions.json");
+  lang = this.$i18n.locale;
+  getClassLevel(position: Position): string {
+    return position.classification + "-0" + position.level;
+  }
+}
+</script>

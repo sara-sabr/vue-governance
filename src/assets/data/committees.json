@@ -74,11 +74,11 @@
     "id": 2,
     "name": {
       "fr": "TBC",
-      "en": "To be confirmed"
+      "en": "Director General Committee"
     },
     "abbreviation": {
       "fr": "TBC",
-      "en": "CIOEC"
+      "en": "DGComm"
     },
     "tier": null,
     "level": "branch",
@@ -94,7 +94,7 @@
       }
     },
     "meetings": {
-      "recurrence": "weekly",
+      "recurrence": "bi-weekly",
       "day": "friday",
       "duration": 60,
       "extension": null

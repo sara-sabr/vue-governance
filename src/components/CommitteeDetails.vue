@@ -1,39 +1,41 @@
 <template>
   <div>
     <h2>{{ committee.name[lang] }}</h2>
-    <table>
-      <caption></caption>
-      <thead>
-        <th>{{ $t("committeeTable.property") }}</th>
-        <th>{{ $t("committeeTable.value") }}</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{ $t("committeeTable.membersCount") }}</td>
-          <td>{{ membersCount() }}</td>
-        </tr>
-        <tr>
-          <td>{{ $t("committeeTable.standingPartipantsCount") }}</td>
-          <td>{{ committee.standingParticipants.length }}</td>
-        </tr>
-        <tr>
-          <td>{{ $t("committeeTable.totalParticipants") }}</td>
-          <td>{{ allAttendantsCount() }}</td>
-        </tr>
-        <tr>
-          <td>{{ $t("committeeTable.meetingDuration") }}</td>
-          <td>{{ committee.meetings.duration }}</td>
-        </tr>
-        <tr>
-          <td>{{ $t("committeeTable.meetingCost") }}</td>
-          <td>{{ calculateMeetingCost().toFixed(2) }}</td>
-        </tr>
-        <tr>
-          <td>{{ $t("committeeTable.meetingAnnualCost") }}</td>
-          <td>{{ calculateYearlyMeetingCost().toFixed(2) }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <caption></caption>
+        <thead>
+          <th scope="col">{{ $t("committeeTable.property") }}</th>
+          <th scope="col">{{ $t("committeeTable.value") }}</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ $t("committeeTable.membersCount") }}</td>
+            <td>{{ membersCount() }}</td>
+          </tr>
+          <tr>
+            <td>{{ $t("committeeTable.standingPartipantsCount") }}</td>
+            <td>{{ committee.standingParticipants.length }}</td>
+          </tr>
+          <tr>
+            <td>{{ $t("committeeTable.totalParticipants") }}</td>
+            <td>{{ allAttendantsCount() }}</td>
+          </tr>
+          <tr>
+            <td>{{ $t("committeeTable.meetingDuration") }}</td>
+            <td>{{ committee.meetings.duration }}</td>
+          </tr>
+          <tr>
+            <td>{{ $t("committeeTable.meetingCost") }}</td>
+            <td>{{ calculateMeetingCost().toFixed(2) }}</td>
+          </tr>
+          <tr>
+            <td>{{ $t("committeeTable.meetingAnnualCost") }}</td>
+            <td>{{ calculateYearlyMeetingCost().toFixed(2) }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 <script lang="ts">

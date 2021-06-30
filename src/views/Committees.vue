@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="container">
     <CommitteeList
       :rates="rates"
       :committees="committees"
