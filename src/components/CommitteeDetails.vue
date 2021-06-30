@@ -4,7 +4,7 @@
     <div class="table-responsive">
       <table class="table table-striped table-bordered">
         <caption></caption>
-        <thead class="table-dark">
+        <thead>
           <th scope="col">{{ $t("committeeTable.property") }}</th>
           <th scope="col">{{ $t("committeeTable.value") }}</th>
         </thead>
