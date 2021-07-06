@@ -47,10 +47,22 @@ export interface Position {
   classification: string;
   level: number;
   incumbent?: string;
-  reportsTo: string | null;
+  reportsTo?: string;
 }
 
 export interface Lang {
   fr?: string;
   en?: string;
 }
+
+export interface RootState {
+  committees: Committee[];
+  branchPositions: Position[];
+  rates: Rate[];
+}
+
+export const state: RootState = {
+  committees: [],
+  branchPositions: [],
+  rates: [],
+};
