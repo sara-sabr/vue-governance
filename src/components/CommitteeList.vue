@@ -42,4 +42,3 @@ export default class CommitteeList extends Vue {
   @Prop() private committees!: Committee[];
 }
 </script>
-
