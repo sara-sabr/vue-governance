@@ -26,9 +26,17 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
-import { Position } from "@/store/types";
+import { Position } from "@/store/state";
+import Component from "vue-class-component";
+@Component({
+  data() {
+    return {
+      branchPositions: require("@/assets/data/branchPositions.json"),
+    };
+  },
+})
 export default class BranchPositions extends Vue {
-  branchPositions: Position[] = require("@/assets/data/branchPositions.json");
+  // branchPositions: Position[] = require("@/assets/data/branchPositions.json");
   lang = this.$i18n.locale;
   getClassLevel(position: Position): string {
     return position.classification + "-0" + position.level;
