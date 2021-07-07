@@ -12,7 +12,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import CommitteeList from "@/components/CommitteeList.vue"; // @ is an alias to /src
-import { Committee, Position, Rate } from "@/store/types";
+import { Committee, Position, Rate } from "@/store/state";
 
 @Component({
   components: {
