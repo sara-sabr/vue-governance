@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>{{ committee.name[lang] }}</h2>
+    <h2 class="text-center">{{ committee.name[lang] }}</h2>
     <div class="table-responsive">
       <table class="table table-striped table-bordered">
         <caption></caption>
@@ -39,7 +39,7 @@
   </div>
 </template>
 <script lang="ts">
-import { Committee, Position, Rate } from "@/store/types";
+import { Committee, Position, Rate } from "@/store/state";
 import Vue, { PropType } from "vue";
 import Component from "vue-class-component";
 
