@@ -8,6 +8,7 @@
           <th scope="col">{{ $t("branchPositionTable.key") }}</th>
           <th scope="col">{{ $t("branchPositionTable.position") }}</th>
           <th scope="col">{{ $t("branchPositionTable.classification") }}</th>
+          <th scope="col">{{ $t("branchPositionTable.reportsTo") }}</th>
         </thead>
         <tbody>
           <tr v-for="position in branchPositions" :key="position.id">
@@ -18,6 +19,7 @@
               {{ position.name[lang] }}
             </td>
             <td>{{ getClassLevel(position) }}</td>
+            <td>{{ position.reportsTo }}</td>
           </tr>
         </tbody>
       </table>

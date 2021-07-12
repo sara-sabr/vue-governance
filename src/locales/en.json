@@ -20,6 +20,7 @@
   "branchPositionTable": {
     "position": "Branch Position",
     "key": "Key",
-    "classification": "Classification and Level"
+    "classification": "Classification and Level",
+    "reportsTo": "Reports to"
   }
 }
