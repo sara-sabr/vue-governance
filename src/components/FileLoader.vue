@@ -6,9 +6,9 @@
       id="customFile"
       @change="onChangeFile($event)"
     />
-    <label class="custom-file-label" for="customFile"
-      >Choose file for branch positions</label
-    >
+    <label class="custom-file-label" for="customFile">{{
+      $t("fileLoader.selectFile")
+    }}</label>
   </div>
 </template>
 <script lang="ts">
