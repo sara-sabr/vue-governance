@@ -11,6 +11,7 @@ import { DataFile } from "@/store/state";
 import Vue from "vue";
 import Component from "vue-class-component";
 import FileLoader from "@/components/FileLoader.vue";
+import { ActionTypes } from "@/store/actions";
 // import BranchPositions from "./BranchPositions.vue";
 @Component({
   components: {
@@ -38,11 +39,8 @@ export default class Home extends Vue {
   fileLoaded(file: DataFile): void {
     console.log("Home level: \n");
     console.log(file);
-    // content.forEach((item) => {
-    //   console.log(Object.keys(item) + " " + Object.values(item));
-    // });
-    // const branchPositions = $event;
-    // this.$emit("fileLoadedAgain", content);
+
+    this.$store.dispatch(ActionTypes.LoadFileData, file);
   }
 }
 </script>
