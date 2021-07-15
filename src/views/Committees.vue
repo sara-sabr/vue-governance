@@ -12,17 +12,15 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import CommitteeList from "@/components/CommitteeList.vue"; // @ is an alias to /src
-import { Committee, Position, Rate } from "@/store/state";
+import { mapState } from "vuex";
 
 @Component({
+  computed: mapState(["rates", "positions", "committees"]),
   components: {
     CommitteeList,
   },
 })
 export default class Home extends Vue {
-  rates: Rate[] = require("@/assets/data/rates.json");
-  committees: Committee[] = require("@/assets/data/committees.json");
-  positions: Position[] = require("@/assets/data/branchPositions.json");
   lang = this.$i18n.locale;
 }
 </script>

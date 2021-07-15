@@ -28,12 +28,9 @@
 import Vue from "vue";
 import { Position } from "@/store/state";
 import Component from "vue-class-component";
+import { mapState } from "vuex";
 @Component({
-  data() {
-    return {
-      positions: require("@/assets/data/branchPositions.json"),
-    };
-  },
+  computed: mapState(["positions"]),
 })
 export default class Positions extends Vue {
   lang = this.$i18n.locale;
