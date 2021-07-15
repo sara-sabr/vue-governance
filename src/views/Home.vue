@@ -23,23 +23,10 @@ import { ActionTypes } from "@/store/actions";
       const marked = require("marked");
       return marked(message);
     },
-    // },
-    // fileLoaded($event: BranchPositions[]) {
-    //   console.log("Home level: \n");
-    //   const content = $event;
-    //   // content.forEach((item) => {
-    //   //   console.log(Object.keys(item) + " " + Object.values(item));
-    //   // });
-    //   // const branchPositions = $event;
-    //   this.$emit("fileLoadedAgain", content);
-    // },
   },
 })
 export default class Home extends Vue {
   fileLoaded(file: DataFile): void {
-    console.log("Home level: \n");
-    console.log(file);
-
     this.$store.dispatch(ActionTypes.LoadFileData, file);
   }
 }
