@@ -1,5 +1,4 @@
 {
-  "message": "allo i18n !!",
   "appTitle": "Étude de la gouvernance",
   "homeTitle": "Accueil",
   "homeExplanation": "",
@@ -25,10 +24,10 @@
   "alert": {
     "fileTypeJSON": "Erreur de type de fichier: S'il vous plait sélectionner un fichier JSON",
     "fileStructure": "Erreur de structure des données du fichier:",
-    "missingVersion": "Version du fichier manquante",
-    "missingPositions": "Positions de la branche manquantes",
-    "missingCommittees": "Comités manquants",
-    "missingPathways": "Chemins manquants",
-    "missingRates": "Taux manquants"
+    "missingVersion": "- Version du fichier manquante",
+    "missingPositions": "- Positions de la branche manquantes",
+    "missingCommittees": "- Comités manquants",
+    "missingPathways": "- Chemins manquants",
+    "missingRates": "- Taux manquants"
   }
 }
