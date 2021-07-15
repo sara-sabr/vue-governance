@@ -65,6 +65,7 @@ export interface DataFile {
   version: string;
   committees: string;
   branchPositions: string;
+  pathways: string;
   rates: string;
 }
 
