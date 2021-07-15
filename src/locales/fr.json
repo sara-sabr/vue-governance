@@ -22,6 +22,9 @@
     "classification": "Classification et Niveau",
     "reportsTo": "Se rapporte à"
   },
+  "button": {
+    "reset": "Réinitialiser les données"
+  },
   "alert": {
     "fileTypeJSON": "Erreur de type de fichier: S'il vous plait sélectionner un fichier JSON",
     "fileStructure": "Erreur de structure des données du fichier:",

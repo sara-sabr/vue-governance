@@ -22,6 +22,9 @@
     "classification": "Classification and Level",
     "reportsTo": "Reports to"
   },
+  "button": {
+    "reset": "Reset data"
+  },
   "alert": {
     "fileTypeJSON": "File Type Error: Please select a JSON file",
     "fileStructure": "File Data Structure Error:",
