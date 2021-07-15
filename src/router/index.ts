@@ -19,7 +19,7 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: "/positions",
-    name: "Branch Positions",
+    name: "Positions",
     component: Positions,
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route

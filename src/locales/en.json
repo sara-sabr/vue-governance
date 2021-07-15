@@ -5,7 +5,7 @@
   "committeesTitle": "Committees",
   "positionsTitle": "Positions",
   "committeesAnalysis": "Committees Analysis",
-  "positionsAnalysis": "Branch Positions Analysis",
+  "positionsAnalysis": "Positions Analysis",
   "committeeTable": {
     "property": "Property",
     "value": "Value",
@@ -17,15 +17,15 @@
     "meetingAnnualCost": "Approximate Annual Meeting Cost"
   },
   "positionTable": {
-    "position": "Branch Position",
+    "position": "Position",
     "key": "Key",
     "classification": "Classification and Level"
   },
   "alert": {
     "fileTypeJSON": "File Type Error: Please select a JSON file",
     "fileStructure": "File Data Structure Error:",
-    "missingVersion": "- Missing file version",
-    "missingPositions": "- Missing Branch Positions",
+    "missingVersion": "- Missing File Version",
+    "missingPositions": "- Missing Positions",
     "missingCommittees": "- Missing Committees",
     "missingPathways": "- Missing Pathways",
     "missingRates": "- Missing Rates"

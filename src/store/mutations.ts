@@ -2,7 +2,7 @@ import { MutationTree } from "vuex";
 import { Committee, Pathway, Position, Rate, RootState } from "@/store/state";
 
 export enum MutationType {
-  SetPositions = "SET_BRANCH_POSITIONS",
+  SetPositions = "SET_POSITIONS",
   SetCommittees = "SET_COMMITTEES",
   SetRates = "SET_RATES",
   SetPathways = "SET_PATHWAYS",
