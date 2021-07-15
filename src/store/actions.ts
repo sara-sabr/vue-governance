@@ -17,7 +17,7 @@ export type Actions = {
   [ActionTypes.LoadFileData](
     context: ActionAugments,
     value: {
-      Positions: Position[];
+      positions: Position[];
       committees: Committee[];
       pathways: Pathway[];
       rates: Rate[];
@@ -27,7 +27,7 @@ export type Actions = {
 
 export const actions: ActionTree<RootState, RootState> & Actions = {
   async [ActionTypes.LoadFileData]({ commit }, value) {
-    commit(MutationType.SetPositions, value.Positions);
+    commit(MutationType.SetPositions, value.positions);
     commit(MutationType.SetCommittees, value.committees);
     commit(MutationType.SetPathways, value.pathways);
     commit(MutationType.SetRates, value.rates);
