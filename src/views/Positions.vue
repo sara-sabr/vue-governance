@@ -5,10 +5,10 @@
       <table class="table table-striped table-bordered">
         <caption></caption>
         <thead>
-          <th scope="col">{{ $t("branchPositionTable.key") }}</th>
-          <th scope="col">{{ $t("branchPositionTable.position") }}</th>
-          <th scope="col">{{ $t("branchPositionTable.classification") }}</th>
-          <th scope="col">{{ $t("branchPositionTable.reportsTo") }}</th>
+          <th scope="col">{{ $t("positionTable.key") }}</th>
+          <th scope="col">{{ $t("positionTable.position") }}</th>
+          <th scope="col">{{ $t("positionTable.classification") }}</th>
+          <th scope="col">{{ $t("positionTable.reportsTo") }}</th>
         </thead>
         <tbody>
           <tr v-for="position in positions" :key="position.id">
