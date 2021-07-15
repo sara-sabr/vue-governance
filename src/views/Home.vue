@@ -2,19 +2,20 @@
   <div class="container">
     <h1 class="text-center">{{ $t("homeTitle") }}</h1>
     <div v-html="markdownToHtml($t('homeExplanation'))"></div>
-    <!-- <FileLoader v-on:fileLoaded="fileLoaded($event)" /> -->
+    <FileLoader v-on:fileLoaded="fileLoaded($event)" />
   </div>
 </template>
 
 <script lang="ts">
+import { DataFile } from "@/store/state";
 import Vue from "vue";
 import Component from "vue-class-component";
-// import FileLoader from "@/components/FileLoader.vue";
-// import BranchPositions from "./BranchPositions.vue";
-// import BranchPositions from "./BranchPositions.vue";
+import FileLoader from "@/components/FileLoader.vue";
+import { ActionTypes } from "@/store/actions";
+// import Positions from "./Positions.vue";
 @Component({
   components: {
-    // FileLoader,
+    FileLoader,
   },
   methods: {
     markdownToHtml(message: string) {
@@ -22,20 +23,11 @@ import Component from "vue-class-component";
       const marked = require("marked");
       return marked(message);
     },
-    // fileLoaded($event: BranchPositions[]) {
-    //   console.log("Event '" + $event.toString + "' is undefined");
-    //   this.$store.state.branchPositions = $event;
-    // },
-    // fileLoaded($event: BranchPositions[]) {
-    //   console.log("Home level: \n");
-    //   const content = $event;
-    //   // content.forEach((item) => {
-    //   //   console.log(Object.keys(item) + " " + Object.values(item));
-    //   // });
-    //   // const branchPositions = $event;
-    //   this.$emit("fileLoadedAgain", content);
-    // },
   },
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  fileLoaded(file: DataFile): void {
+    this.$store.dispatch(ActionTypes.LoadFileData, file);
+  }
+}
 </script>

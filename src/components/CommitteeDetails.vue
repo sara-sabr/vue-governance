@@ -53,7 +53,7 @@ import Component from "vue-class-component";
       type: String,
       required: true,
     },
-    branchPositions: {
+    positions: {
       type: Array as PropType<Position[]>,
       required: true,
     },
@@ -87,7 +87,7 @@ export default class CommitteeDetails extends Vue {
   }
 
   getClassLevel(positionId: string): string {
-    const positionIndex = this.$props.branchPositions.findIndex(
+    const positionIndex = this.$props.positions.findIndex(
       (position: Position) => {
         return position.id === positionId;
       }
@@ -96,9 +96,9 @@ export default class CommitteeDetails extends Vue {
       return "-";
     }
     const classLevel =
-      this.$props.branchPositions[positionIndex].classification +
+      this.$props.positions[positionIndex].classification +
       "-0" +
-      this.$props.branchPositions[positionIndex].level;
+      this.$props.positions[positionIndex].level;
 
     return classLevel;
   }

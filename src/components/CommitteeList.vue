@@ -7,7 +7,7 @@
       :committee="committee"
       :lang="lang"
       :rates="rates"
-      :branch-positions="branchPositions"
+      :positions="positions"
     >
     </CommitteeDetails>
   </div>
@@ -32,7 +32,7 @@ import CommitteeDetails from "@/components/CommitteeDetails.vue";
       type: String,
       required: true,
     },
-    branchPositions: {
+    positions: {
       type: Array as PropType<Position[]>,
       required: true,
     },
