@@ -4,9 +4,9 @@
   "homeTitle": "Accueil",
   "homeExplanation": "",
   "committeesTitle": "Comités",
-  "branchPositionsTitle": "Postes",
+  "positionsTitle": "Postes",
   "committeesAnalysis": "Analyse des comités",
-  "branchPositionsAnalysis": "Analyse des postes de la branche",
+  "positionsAnalysis": "Analyse des postes de la branche",
   "committeeTable": {
     "property": "Propriété",
     "value": "Valeur",
@@ -17,9 +17,18 @@
     "meetingCost": "Coût approximatif par rencontre",
     "meetingAnnualCost": "Coût annuel total approximatif"
   },
-  "branchPositionTable": {
+  "positionTable": {
     "position": "Poste de la branche",
     "key": "Clé",
     "classification": "Classification et Niveau"
+  },
+  "alert": {
+    "fileTypeJSON": "Erreur de type de fichier: S'il vous plait sélectionner un fichier JSON",
+    "fileStructure": "Erreur de structure des données du fichier:",
+    "missingVersion": "Version du fichier manquante",
+    "missingPositions": "Positions de la branche manquantes",
+    "missingCommittees": "Comités manquants",
+    "missingPathways": "Chemins manquants",
+    "missingRates": "Taux manquants"
   }
 }

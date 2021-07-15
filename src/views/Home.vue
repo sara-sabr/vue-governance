@@ -12,7 +12,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import FileLoader from "@/components/FileLoader.vue";
 import { ActionTypes } from "@/store/actions";
-// import BranchPositions from "./BranchPositions.vue";
+// import Positions from "./Positions.vue";
 @Component({
   components: {
     FileLoader,

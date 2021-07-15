@@ -5,8 +5,8 @@
       <router-link to="/committees" class="nav-link">{{
         $t("committeesTitle")
       }}</router-link>
-      <router-link to="/branch-positions" class="nav-link">{{
-        $t("branchPositionsTitle")
+      <router-link to="/positions" class="nav-link">{{
+        $t("positionsTitle")
       }}</router-link>
     </div>
     <router-view />

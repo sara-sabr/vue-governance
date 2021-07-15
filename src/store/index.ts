@@ -18,7 +18,7 @@ Vue.use(Vuex);
 const vuexLocal = new VuexPersistence({
   storage: window.localStorage,
   reducer: (state: RootState) => ({
-    branchPositions: state.branchPositions,
+    positions: state.positions,
     committees: state.committees,
     pathways: state.pathways,
     rates: state.rates,

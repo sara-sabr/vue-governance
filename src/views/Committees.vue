@@ -4,7 +4,7 @@
       :rates="rates"
       :committees="committees"
       :lang="lang"
-      :branch-positions="branchPositions"
+      :positions="positions"
     />
   </div>
 </template>
@@ -22,7 +22,7 @@ import { Committee, Position, Rate } from "@/store/state";
 export default class Home extends Vue {
   rates: Rate[] = require("@/assets/data/rates.json");
   committees: Committee[] = require("@/assets/data/committees.json");
-  branchPositions: Position[] = require("@/assets/data/branchPositions.json");
+  positions: Position[] = require("@/assets/data/branchPositions.json");
   lang = this.$i18n.locale;
 }
 </script>

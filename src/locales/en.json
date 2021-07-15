@@ -2,11 +2,11 @@
   "message": "hello i18n !!",
   "appTitle": "Governance Study",
   "homeTitle": "Home",
-  "homeExplanation": "The purpose of this site is to provide an automated way of analysing quantitive information about various governance committees.\n\nThe very first dimension studied are the **Committees**.\n\nWe use structured raw data parsed from the committees terms of references to create a view of the overall information on each committee.\n\nIn order to be able to generate most of these, we also need structured raw data from the branch's organizational chart. This data provides the needed information about committees members\n\nThe second dimension we are looking into is the **Branch Positions**.\n\nCombining the same data sets as earlier provides an opportunity to quickly analyse how much time any given executive has to spend in a variety of committees.\n\nFinally, in a large organization, new committees often get created to delegate specific parts of another committee's mandate.\n\nThis brings us to our final dimension which is currently called **Pathways**\n\nLeveraging the same earlier data sets, pathways are generated via a series of critical steps required to accomplish a desired outcome. A list of steps will we generate the pathways required for any scenario and provided quantitative analysis with regards to it. An example could be the minimum amount of time to go through the entire pathway in a perfect world, as well as more realistic estimates based on real world observations.\n\nIn order to get started, you will need at least the two following raw data files:\n\n- committees.json\n- branchPositions.json",
+  "homeExplanation": "The purpose of this site is to provide an automated way of analysing quantitive information about various governance committees.\n\nThe very first dimension studied are the **Committees**.\n\nWe use structured raw data parsed from the committees terms of references to create a view of the overall information on each committee.\n\nIn order to be able to generate most of these, we also need structured raw data from the branch's organizational chart. This data provides the needed information about committees members\n\nThe second dimension we are looking into is the **Branch Positions**.\n\nCombining the same data sets as earlier provides an opportunity to quickly analyse how much time any given executive has to spend in a variety of committees.\n\nFinally, in a large organization, new committees often get created to delegate specific parts of another committee's mandate.\n\nThis brings us to our final dimension which is currently called **Pathways**\n\nLeveraging the same earlier data sets, pathways are generated via a series of critical steps required to accomplish a desired outcome. A list of steps will we generate the pathways required for any scenario and provided quantitative analysis with regards to it. An example could be the minimum amount of time to go through the entire pathway in a perfect world, as well as more realistic estimates based on real world observations.\n\nIn order to get started, you will need at least the two following raw data files:\n\n- committees.json\n- positions.json",
   "committeesTitle": "Committees",
-  "branchPositionsTitle": "Positions",
+  "positionsTitle": "Positions",
   "committeesAnalysis": "Committees Analysis",
-  "branchPositionsAnalysis": "Branch Positions Analysis",
+  "positionsAnalysis": "Branch Positions Analysis",
   "committeeTable": {
     "property": "Property",
     "value": "Value",
@@ -17,9 +17,18 @@
     "meetingCost": "Approximate Meeting Cost",
     "meetingAnnualCost": "Approximate Annual Meeting Cost"
   },
-  "branchPositionTable": {
+  "positionTable": {
     "position": "Branch Position",
     "key": "Key",
     "classification": "Classification and Level"
+  },
+  "alert": {
+    "fileTypeJSON": "File Type Error: Please select a JSON file",
+    "fileStructure": "File Data Structure Error:",
+    "missingVersion": "Missing file version",
+    "missingPositions": "Missing Branch Positions",
+    "missingCommittees": "Missing Committees",
+    "missingPathways": "Missing Pathways",
+    "missingRates": "Missing Rates"
   }
 }

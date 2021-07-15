@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Committees from "../views/Committees.vue";
 import Home from "../views/Home.vue";
-import BranchPositions from "../views/BranchPositions.vue";
+import Positions from "../views/Positions.vue";
 
 Vue.use(VueRouter);
 
@@ -18,14 +18,14 @@ const routes: Array<RouteConfig> = [
     component: Committees,
   },
   {
-    path: "/branch-positions",
+    path: "/positions",
     name: "Branch Positions",
-    component: BranchPositions,
+    component: Positions,
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     // component: () =>
-    //   import(/* webpackChunkName: "about" */ "../views/BranchPositions.vue"),
+    //   import(/* webpackChunkName: "about" */ "../views/Positions.vue"),
   },
   { path: "*", name: "notFound", component: Home },
 ];
