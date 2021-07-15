@@ -27,6 +27,11 @@ export interface ToR {
   URL: Lang;
 }
 
+export interface Pathway {
+  name: Lang;
+  steps: string[];
+}
+
 export interface Meeting {
   recurrence: string;
   day: string;
@@ -58,6 +63,7 @@ export interface Lang {
 export interface RootState {
   committees: Committee[];
   branchPositions: Position[];
+  pathways: Pathway[];
   rates: Rate[];
 }
 
@@ -72,5 +78,6 @@ export interface DataFile {
 export const state: RootState = {
   committees: [],
   branchPositions: [],
+  pathways: [],
   rates: [],
 };
