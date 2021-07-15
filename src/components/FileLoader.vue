@@ -4,7 +4,7 @@
       type="file"
       class="custom-file-input"
       id="customFile"
-      @change="loadDataFromFile($event)"
+      @change="onChangeFile($event)"
     />
     <label class="custom-file-label" for="customFile"
       >Choose file for branch positions</label
@@ -12,26 +12,24 @@
   </div>
 </template>
 <script lang="ts">
-import BranchPositions from "@/views/BranchPositions.vue";
+import { DataFile } from "@/store/state";
 import Vue from "vue";
 export default class FileLoader extends Vue {
-  loadDataFromFile($event: any): void {
-    if ($event === null || $event === undefined || $event.files === undefined) {
+  onChangeFile(event: Event): void {
+    if (event === null || event === undefined) {
       return;
     }
-    const target = $event.files;
+    const target = event.target as HTMLInputElement;
     console.log(target);
+    const files = target.files;
 
-    // const target = $event.target as HTMLInputElement;
-    // const files = target;
-
-    if (target?.length === 0) {
+    if (files === null || files.length === 0) {
       return;
     }
-    this.loadBranchPositions(target[0]);
+    this.loadDataFile(files[0]);
   }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  loadBranchPositions(file: File): void {
+  loadDataFile(file: File): void {
     // console.log(file);
     const reader = new FileReader();
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -42,7 +40,7 @@ export default class FileLoader extends Vue {
         return;
       }
 
-      const loadedFile: BranchPositions[] = JSON.parse(result);
+      const loadedFile: DataFile = JSON.parse(result);
       // console.log(loadedFile);
       this.$emit("fileLoaded", loadedFile);
     };
