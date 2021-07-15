@@ -19,7 +19,8 @@
   "positionTable": {
     "position": "Poste",
     "key": "Clé",
-    "classification": "Classification et Niveau"
+    "classification": "Classification et Niveau",
+    "reportsTo": "Se rapporte à"
   },
   "alert": {
     "fileTypeJSON": "Erreur de type de fichier: S'il vous plait sélectionner un fichier JSON",

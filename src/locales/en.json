@@ -19,7 +19,8 @@
   "positionTable": {
     "position": "Position",
     "key": "Key",
-    "classification": "Classification and Level"
+    "classification": "Classification and Level",
+    "reportsTo": "Reports to"
   },
   "alert": {
     "fileTypeJSON": "File Type Error: Please select a JSON file",
