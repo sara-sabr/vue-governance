@@ -50,7 +50,7 @@ export default class FileLoader extends Vue {
       // Validate File Content Structure
       let message = "";
       let version = loadedFile.version;
-      if (loadedFile.version === undefined) {
+      if (version === undefined) {
         message = message + "\n" + this.$t("alert.missingVersion").toString();
       }
       if (
