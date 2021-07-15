@@ -61,6 +61,13 @@ export interface RootState {
   rates: Rate[];
 }
 
+export interface DataFile {
+  version: string;
+  committees: string;
+  branchPositions: string;
+  rates: string;
+}
+
 export const state: RootState = {
   committees: [],
   branchPositions: [],
