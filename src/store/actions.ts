@@ -4,6 +4,7 @@ import { Committee, Pathway, Position, Rate, RootState } from "@/store/state";
 
 export enum ActionTypes {
   LoadFileData = "LOAD_FILE_DATA",
+  ResetData = "RESET_DATA",
 }
 
 type ActionAugments = Omit<ActionContext<RootState, RootState>, "commit"> & {
@@ -23,6 +24,7 @@ export type Actions = {
       rates: Rate[];
     }
   ): void;
+  [ActionTypes.ResetData](context: ActionAugments, value: null): void;
 };
 
 export const actions: ActionTree<RootState, RootState> & Actions = {
@@ -31,5 +33,8 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     commit(MutationType.SetCommittees, value.committees);
     commit(MutationType.SetPathways, value.pathways);
     commit(MutationType.SetRates, value.rates);
+  },
+  async [ActionTypes.ResetData]({ commit }, value) {
+    commit(MutationType.ResetData, value);
   },
 };
