@@ -20,7 +20,6 @@ export default class FileLoader extends Vue {
       return;
     }
     const target = event.target as HTMLInputElement;
-    console.log(target);
     const files = target.files;
 
     if (files === null || files.length === 0) {
@@ -28,9 +27,8 @@ export default class FileLoader extends Vue {
     }
     this.loadDataFile(files[0]);
   }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   loadDataFile(file: File): void {
-    // console.log(file);
     const reader = new FileReader();
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     reader.onload = (e: ProgressEvent) => {
@@ -41,7 +39,6 @@ export default class FileLoader extends Vue {
       }
 
       const loadedFile: DataFile = JSON.parse(result);
-      // console.log(loadedFile);
       this.$emit("fileLoaded", loadedFile);
     };
 
