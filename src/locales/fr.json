@@ -29,5 +29,8 @@
     "missingCommittees": "- Comités manquants",
     "missingPathways": "- Chemins manquants",
     "missingRates": "- Taux manquants"
+  },
+  "fileLoader": {
+    "selectFile": "Veuillez choisir le fichier de données"
   }
 }

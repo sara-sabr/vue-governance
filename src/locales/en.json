@@ -29,5 +29,8 @@
     "missingCommittees": "- Missing Committees",
     "missingPathways": "- Missing Pathways",
     "missingRates": "- Missing Rates"
+  },
+  "fileLoader": {
+    "selectFile": "Please select the data file"
   }
 }
