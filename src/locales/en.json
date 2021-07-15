@@ -32,5 +32,8 @@
   },
   "fileLoader": {
     "selectFile": "Please select the data file"
+  },
+  "link": {
+    "source": "View source"
   }
 }
