@@ -32,7 +32,7 @@
     "missingRates": "- Taux manquants"
   },
   "fileLoader": {
-    "selectFile": "Veuillez choisir le fichier de données"
+    "selectFile": "Choisir le fichier"
   },
   "link": {
     "source": "View source"

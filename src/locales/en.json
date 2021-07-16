@@ -32,7 +32,7 @@
     "missingRates": "- Missing Rates"
   },
   "fileLoader": {
-    "selectFile": "Please select the data file"
+    "selectFile": "Select file"
   },
   "link": {
     "source": "View source"
