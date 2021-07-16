@@ -1,14 +1,14 @@
 <template>
-  <div class="custom-file">
-    <input
-      type="file"
-      class="custom-file-input"
-      id="customFile"
-      @change="onChangeFile($event)"
-    />
-    <label class="custom-file-label" for="customFile">{{
+  <div class="mb-3">
+    <label class="form-label" for="formFile">{{
       $t("fileLoader.selectFile")
     }}</label>
+    <input
+      type="file"
+      class="form-control"
+      id="formFile"
+      @change="onChangeFile($event)"
+    />
   </div>
 </template>
 <script lang="ts">
@@ -88,11 +88,11 @@ export default class FileLoader extends Vue {
 }
 </script>
 <style>
-input {
+/* input {
   opacity: 0%;
 }
 label {
   outline: 1px;
   outline-color: black;
-}
+} */
 </style>
