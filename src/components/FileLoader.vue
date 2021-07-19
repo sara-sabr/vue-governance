@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-3">
+  <div class="d-inline-flex">
     <label class="form-label" for="formFile">{{
       $t("fileLoader.selectFile")
     }}</label>
@@ -9,12 +9,15 @@
       id="formFile"
       @change="onChangeFile($event)"
     />
+    <button @click="onSubmit()">{{ $t("fileLoader.submit") }}</button>
   </div>
 </template>
 <script lang="ts">
 import { DataFile } from "@/store/state";
 import Vue from "vue";
 export default class FileLoader extends Vue {
+  validFile = false;
+  dataFile = new Object() as DataFile;
   onChangeFile(event: Event): void {
     if (event === null || event === undefined) {
       return;
@@ -80,10 +83,20 @@ export default class FileLoader extends Vue {
         alert(this.$t("alert.fileStructure") + "\n" + message);
         return;
       }
-      this.$emit("fileLoaded", loadedFile);
+      this.dataFile = loadedFile;
+      this.validFile = true;
+      // this.$emit("fileLoaded", loadedFile);
     };
 
     reader.readAsText(file);
+  }
+
+  onSubmit(): void {
+    if (this.validFile === true) {
+      this.$emit("fileLoaded", this.dataFile);
+    } else {
+      alert(this.$t("alert.submitValidFile"));
+    }
   }
 }
 </script>
