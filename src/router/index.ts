@@ -3,6 +3,7 @@ import VueRouter, { RouteConfig } from "vue-router";
 import Committees from "../views/Committees.vue";
 import Home from "../views/Home.vue";
 import Positions from "../views/Positions.vue";
+import Pathways from "../views/Pathways.vue";
 
 Vue.use(VueRouter);
 
@@ -26,6 +27,11 @@ const routes: Array<RouteConfig> = [
     // which is lazy-loaded when the route is visited.
     // component: () =>
     //   import(/* webpackChunkName: "about" */ "../views/Positions.vue"),
+  },
+  {
+    path: "/pathways",
+    name: "Pathways",
+    component: Pathways,
   },
   { path: "*", name: "notFound", component: Home },
 ];

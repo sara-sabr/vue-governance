@@ -9,6 +9,9 @@
         <router-link to="/positions" class="nav-link">{{
           $t("positionsTitle")
         }}</router-link>
+        <router-link to="/pathways" class="nav-link">{{
+          $t("pathwaysTitle")
+        }}</router-link>
       </div>
       <router-view />
     </main>
