@@ -2,10 +2,7 @@ module.exports = {
   configureWebpack: {
     devtool: "source-map",
   },
-  publicPath:
-    process.env.NODE_ENV === "production"
-      ? "/vue-governance/"
-      : "/",
+  publicPath: process.env.NODE_ENV === "production" ? "/vue-governance/" : "/",
   chainWebpack: (config) => {
     config.plugin("html").tap((args) => {
       args[0].title = "Gouvernance - Governance";
