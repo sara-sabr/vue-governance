@@ -15,6 +15,7 @@
     "deploy": "npm run build; push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
+    "@vue/composition-api": "^1.0.3",
     "bootstrap": "^5.0.2",
     "core-js": "^3.6.5",
     "marked": "^2.1.3",
