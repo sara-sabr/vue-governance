@@ -19,6 +19,14 @@
     >
       {{ $t("fileLoader.submit") }}
     </button>
+    <button
+      type="button"
+      id="dataReset"
+      class="btn btn-secondary"
+      @click="reset()"
+    >
+      {{ $t("button.reset") }}
+    </button>
   </div>
 </template>
 <script lang="ts">
@@ -27,6 +35,10 @@ import Vue from "vue";
 export default class FileLoader extends Vue {
   validFile = false;
   dataFile = new Object() as DataFile;
+
+  reset(): void {
+    this.$emit("reset");
+  }
   onChangeFile(event: Event): void {
     if (event === null || event === undefined) {
       return;
