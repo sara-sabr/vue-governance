@@ -2,7 +2,10 @@
   <div class="container">
     <h1 class="text-center">{{ $t("homeTitle") }}</h1>
     <div v-html="markdownToHtml($t('homeExplanation'))"></div>
-    <FileLoader v-on:fileLoaded="fileLoaded($event)" />
+    <FileLoader
+      v-on:fileLoaded="fileLoaded($event)"
+      v-on:reset="reset($event)"
+    />
   </div>
 </template>
 
@@ -28,6 +31,9 @@ import { ActionTypes } from "@/store/actions";
 export default class Home extends Vue {
   fileLoaded(file: DataFile): void {
     this.$store.dispatch(ActionTypes.LoadFileData, file);
+  }
+  reset(): void {
+    this.$store.dispatch(ActionTypes.ResetData, null);
   }
 }
 </script>
