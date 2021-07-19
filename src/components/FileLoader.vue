@@ -1,20 +1,32 @@
 <template>
-  <div class="custom-file">
+  <div class="input-group">
+    <!-- <label class="form-label" for="formFile">{{
+      $t("fileLoader.selectFile")
+    }}</label> -->
     <input
       type="file"
-      class="custom-file-input"
-      id="customFile"
+      class="form-control"
+      id="formFile"
+      aria-describedby="dataFileInput"
+      v-bind:aria-label="$t('fileLoader.submit')"
       @change="onChangeFile($event)"
     />
-    <label class="custom-file-label" for="customFile">{{
-      $t("fileLoader.selectFile")
-    }}</label>
+    <button
+      type="button"
+      id="dataFileInput"
+      class="btn btn-primary"
+      @click="onSubmit()"
+    >
+      {{ $t("fileLoader.submit") }}
+    </button>
   </div>
 </template>
 <script lang="ts">
 import { DataFile } from "@/store/state";
 import Vue from "vue";
 export default class FileLoader extends Vue {
+  validFile = false;
+  dataFile = new Object() as DataFile;
   onChangeFile(event: Event): void {
     if (event === null || event === undefined) {
       return;
@@ -80,19 +92,29 @@ export default class FileLoader extends Vue {
         alert(this.$t("alert.fileStructure") + "\n" + message);
         return;
       }
-      this.$emit("fileLoaded", loadedFile);
+      this.dataFile = loadedFile;
+      this.validFile = true;
+      // this.$emit("fileLoaded", loadedFile);
     };
 
     reader.readAsText(file);
   }
+
+  onSubmit(): void {
+    if (this.validFile === true) {
+      this.$emit("fileLoaded", this.dataFile);
+    } else {
+      alert(this.$t("alert.submitValidFile"));
+    }
+  }
 }
 </script>
 <style>
-input {
+/* input {
   opacity: 0%;
 }
 label {
   outline: 1px;
   outline-color: black;
-}
+} */
 </style>
