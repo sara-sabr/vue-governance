@@ -32,10 +32,12 @@
     "missingPositions": "- Positions manquantes",
     "missingCommittees": "- Comités manquants",
     "missingPathways": "- Chemins manquants",
-    "missingRates": "- Taux manquants"
+    "missingRates": "- Taux manquants",
+    "submitValidFile": "S'il vous plait soumettre un fichier valide"
   },
   "fileLoader": {
-    "selectFile": "Choisir le fichier"
+    "selectFile": "Choisir le fichier",
+    "submit": "Soumettre"
   },
   "link": {
     "source": "View source"
