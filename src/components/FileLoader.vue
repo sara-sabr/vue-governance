@@ -109,12 +109,3 @@ export default class FileLoader extends Vue {
   }
 }
 </script>
-<style>
-/* input {
-  opacity: 0%;
-}
-label {
-  outline: 1px;
-  outline-color: black;
-} */
-</style>
