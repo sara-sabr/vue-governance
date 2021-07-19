@@ -1,15 +1,24 @@
 <template>
-  <div class="d-inline-flex">
-    <label class="form-label" for="formFile">{{
+  <div class="input-group">
+    <!-- <label class="form-label" for="formFile">{{
       $t("fileLoader.selectFile")
-    }}</label>
+    }}</label> -->
     <input
       type="file"
       class="form-control"
       id="formFile"
+      aria-describedby="dataFileInput"
+      v-bind:aria-label="$t('fileLoader.submit')"
       @change="onChangeFile($event)"
     />
-    <button @click="onSubmit()">{{ $t("fileLoader.submit") }}</button>
+    <button
+      type="button"
+      id="dataFileInput"
+      class="btn btn-primary"
+      @click="onSubmit()"
+    >
+      {{ $t("fileLoader.submit") }}
+    </button>
   </div>
 </template>
 <script lang="ts">
