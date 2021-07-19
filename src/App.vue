@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="nav" class="nav nav-pills justify-content-center">
+    <nav id="nav" class="nav nav-pills justify-content-center">
       <router-link to="/" class="nav-link">{{ $t("homeTitle") }}</router-link>
       <router-link to="/committees" class="nav-link">{{
         $t("committeesTitle")
@@ -14,7 +14,7 @@
       <button class="nav-link" @click="languageToggle()">
         {{ $t("languageToggle") }}
       </button>
-    </div>
+    </nav>
     <main id="app" property="mainContentOfPage">
       <router-view />
     </main>
