@@ -26,7 +26,8 @@
     "reportsTo": "Reports to"
   },
   "button": {
-    "reset": "Reset data"
+    "reset": "Reset data",
+    "test": "Test Demo Data"
   },
   "alert": {
     "fileTypeJSON": "File Type Error: Please select a JSON file",
