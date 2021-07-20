@@ -42,6 +42,9 @@
       },
       "committeesPerPosition": {
         "title": "Comités par position"
+      },
+      "orgChart": {
+        "title": "Diagramme organisationnel"
       }
     },
     "pathways": {
