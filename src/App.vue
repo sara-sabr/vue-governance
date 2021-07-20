@@ -22,13 +22,13 @@
               $t("navigation.toHome")
             }}</router-link>
             <router-link to="/committees" class="nav-link">{{
-              $t("committeesTitle")
+              $t("navigation.toCommittees")
             }}</router-link>
             <router-link to="/positions" class="nav-link">{{
-              $t("positionsTitle")
+              $t("navigation.toPositions")
             }}</router-link>
             <router-link to="/pathways" class="nav-link">{{
-              $t("pathwaysTitle")
+              $t("navigation.toPathways")
             }}</router-link>
             <button class="nav-link btn" @click="languageToggle()">
               {{ $t("navigation.languageToggle") }}
