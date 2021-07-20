@@ -9,6 +9,9 @@
       <a href="#positionCommitteeRelation" class="nav-link">{{
         $t("page.positions.committeesPerPosition.title")
       }}</a>
+      <a href="#positionOrgChart" class="nav-link">{{
+        $t("page.positions.orgChart.title")
+      }}</a>
     </div>
     <section id="positionList">
       <h2>{{ $t("page.positions.positionsList.title") }}</h2>
@@ -46,6 +49,9 @@
     </section>
     <section id="positionCommitteeRelation">
       <h2>{{ $t("page.positions.committeesPerPosition.title") }}</h2>
+    </section>
+    <section id="positionOrgChart">
+      <h2>{{ $t("page.positions.orgChart.title") }}</h2>
     </section>
   </div>
 </template>
