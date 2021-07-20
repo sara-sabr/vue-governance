@@ -8,13 +8,11 @@
         type="file"
         class="form-control"
         id="formFile"
-        aria-describedby="dataFileInput"
-        v-bind:aria-label="$t('button.submit')"
         @change="onChangeFile($event)"
       />
       <button
         type="button"
-        id="dataFileInput"
+        id="dataFileSubmit"
         class="btn btn-primary"
         @click="onSubmit()"
       >
