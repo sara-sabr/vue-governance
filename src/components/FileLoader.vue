@@ -1,32 +1,34 @@
 <template>
-  <div class="input-group">
-    <!-- <label class="form-label" for="formFile">{{
+  <div>
+    <label class="form-label" for="formFile">{{
       $t("fileLoader.selectFile")
-    }}</label> -->
-    <input
-      type="file"
-      class="form-control"
-      id="formFile"
-      aria-describedby="dataFileInput"
-      v-bind:aria-label="$t('fileLoader.submit')"
-      @change="onChangeFile($event)"
-    />
-    <button
-      type="button"
-      id="dataFileInput"
-      class="btn btn-primary"
-      @click="onSubmit()"
-    >
-      {{ $t("fileLoader.submit") }}
-    </button>
-    <button
-      type="button"
-      id="dataReset"
-      class="btn btn-secondary"
-      @click="reset()"
-    >
-      {{ $t("button.reset") }}
-    </button>
+    }}</label>
+    <div class="input-group mb-3">
+      <input
+        type="file"
+        class="form-control"
+        id="formFile"
+        aria-describedby="dataFileInput"
+        v-bind:aria-label="$t('button.submit')"
+        @change="onChangeFile($event)"
+      />
+      <button
+        type="button"
+        id="dataFileInput"
+        class="btn btn-primary"
+        @click="onSubmit()"
+      >
+        {{ $t("button.submit") }}
+      </button>
+      <button
+        type="button"
+        id="dataReset"
+        class="btn btn-secondary"
+        @click="reset()"
+      >
+        {{ $t("button.reset") }}
+      </button>
+    </div>
   </div>
 </template>
 <script lang="ts">
