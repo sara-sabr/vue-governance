@@ -1,33 +1,57 @@
 {
-  "skipToMain": "Passer au contenu principal",
-  "languageToggle": "English",
   "appTitle": "Étude de la gouvernance",
-  "homeTitle": "Accueil",
-  "homeExplanation": "L'objectif de ce site est de fournir un moyen automatisé d'analyser des informations quantitatives sur les différents comités de gouvernance.\n\nLa toute première dimension étudiée est celle des **comités**.\n\nNous utilisons des données brutes structurées extraites des termes de référence des comités pour créer une vue d'ensemble des informations sur chaque comité.\n\nPour être en mesure de générer les comités, nous avons également besoin de données brutes structurées provenant de l'organigramme. Ces données fournissent les informations nécessaires sur les membres des comités.\n\nLa deuxième dimension que nous examinons est celle des **Postes** eux-mêmes.\n\nEn combinant les mêmes ensembles de données que précédemment, il est possible d'analyser rapidement le temps qu'une personne donnée doit passer dans une variété de comités.\n\nEnfin, dans une grande organisation, de nouveaux comités sont souvent créés pour déléguer des parties spécifiques du mandat d'un autre comité.\n\nCeci nous amène à notre dernière dimension qui s'appelle actuellement **Voies**.\n\nEn s'appuyant sur les mêmes ensembles de données précédents, les voies sont générées par une série d'étapes critiques nécessaires pour atteindre un résultat souhaité. Une liste d'étapes nous permettra de générer les parcours requis pour tout scénario et de fournir une analyse quantitative à cet égard. Un exemple pourrait être le temps minimum nécessaire pour parcourir l'ensemble du processus dans un monde parfait, ainsi que des estimations plus réalistes basées sur des observations réelles.\n\nPour commencer, vous aurez besoin d'au moins les ensembles de données brutes suivants pour le moment :\n\n- comités\n- posts\n- voies\n- taux des salaires",
-  "committeesTitle": "Comités",
-  "positionsTitle": "Postes",
-  "pathwaysTitle": "Voies",
-  "committeesAnalysis": "Analyse des comités",
-  "positionsAnalysis": "Analyse des postes",
-  "committeeTable": {
-    "property": "Propriété",
-    "value": "Valeur",
-    "membersCount": "Nombre de membres votants",
-    "standingPartipantsCount": "Nombre d'observateurs",
-    "totalParticipants": "Nombre total de participants",
-    "meetingDuration": "Durée de chaque rencontre",
-    "meetingCost": "Coût approximatif par rencontre",
-    "meetingAnnualCost": "Coût annuel total approximatif"
+  "navigation": {
+    "skipToMain": "Passer au contenu principal",
+    "toTop": "Haut de la page",
+    "toHome": "Accueil",
+    "toCommittees": "Committees",
+    "toPositions": "Positions",
+    "toPathways": "Pathways",
+    "languageToggle": "Français",
+    "inThisPage": "Dans cette page"
   },
-  "positionTable": {
-    "position": "Poste",
-    "key": "Clé",
-    "classification": "Classification et Niveau",
-    "reportsTo": "Se rapporte à"
+  "page": {
+    "home": {
+      "title": "Étude de la gouvernance",
+      "description": "L'objectif de ce site est de fournir un moyen automatisé d'analyser des informations quantitatives sur les différents comités de gouvernance.\n\nLa toute première dimension étudiée est celle des **comités**.\n\nNous utilisons des données brutes structurées extraites des termes de référence des comités pour créer une vue d'ensemble des informations sur chaque comité.\n\nPour être en mesure de générer les comités, nous avons également besoin de données brutes structurées provenant de l'organigramme. Ces données fournissent les informations nécessaires sur les membres des comités.\n\nLa deuxième dimension que nous examinons est celle des **Postes** eux-mêmes.\n\nEn combinant les mêmes ensembles de données que précédemment, il est possible d'analyser rapidement le temps qu'une personne donnée doit passer dans une variété de comités.\n\nEnfin, dans une grande organisation, de nouveaux comités sont souvent créés pour déléguer des parties spécifiques du mandat d'un autre comité.\n\nCeci nous amène à notre dernière dimension qui s'appelle actuellement **Voies**.\n\nEn s'appuyant sur les mêmes ensembles de données précédents, les voies sont générées par une série d'étapes critiques nécessaires pour atteindre un résultat souhaité. Une liste d'étapes nous permettra de générer les parcours requis pour tout scénario et de fournir une analyse quantitative à cet égard. Un exemple pourrait être le temps minimum nécessaire pour parcourir l'ensemble du processus dans un monde parfait, ainsi que des estimations plus réalistes basées sur des observations réelles.\n\nPour commencer, vous aurez besoin d'au moins les ensembles de données brutes suivants pour le moment :\n\n- comités\n- posts\n- voies\n- taux des salaires"
+    },
+    "committees": {
+      "title": "Analyses des comités",
+      "description": "",
+      "table": {
+        "property": "Propriété",
+        "value": "Valeur",
+        "membersCount": "Nombre de membres votants",
+        "standingPartipantsCount": "Nombre d'observateurs",
+        "totalParticipants": "Nombre total de participants",
+        "meetingDuration": "Durée de chaque rencontre",
+        "meetingCost": "Coût approximatif par rencontre",
+        "meetingAnnualCost": "Coût annuel total approximatif"
+      }
+    },
+    "positions": {
+      "title": "Analyses des postes",
+      "positionsList": {
+        "title": "Liste des postes",
+        "table": {
+          "position": "Poste",
+          "key": "Clé",
+          "classification": "Classification et Niveau",
+          "reportsTo": "Se rapporte à"
+        }
+      },
+      "committeesPerPosition": {
+        "title": "Comités par position"
+      }
+    },
+    "pathways": {
+      "title": "Analyses des voies"
+    }
   },
   "button": {
     "reset": "Réinitialiser les données",
-    "test": "Tester données démonstration"
+    "test": "Tester données démonstration",
+    "submit": "Soumettre"
   },
   "alert": {
     "fileTypeJSON": "Erreur de type de fichier: S'il vous plait sélectionner un fichier JSON",
@@ -40,8 +64,7 @@
     "submitValidFile": "S'il vous plait soumettre un fichier valide"
   },
   "fileLoader": {
-    "selectFile": "Choisir le fichier",
-    "submit": "Soumettre"
+    "selectFile": "Choisir le fichier"
   },
   "link": {
     "source": "Voir la source du code"
