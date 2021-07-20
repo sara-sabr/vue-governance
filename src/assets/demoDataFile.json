@@ -1,0 +1,583 @@
+{
+  "version": 0.001,
+  "committees": [
+    {
+      "id": 1,
+      "name": {
+        "fr": "Comité DPI",
+        "en": "CIO Committee"
+      },
+      "abbreviation": {
+        "fr": "CP",
+        "en": "PC"
+      },
+      "tier": null,
+      "level": "branch",
+      "status": "active",
+      "workspace": {
+        "URL": null,
+        "access": null
+      },
+      "termsOfReference": {
+        "URL": {
+          "fr": "TBC",
+          "en": "TBC"
+        }
+      },
+      "meetings": {
+        "recurrence": "weekly",
+        "day": "friday",
+        "duration": 60,
+        "extension": null
+      },
+      "quorum": "5 voting members",
+      "chairs": ["cio"],
+      "viceChairs": [],
+      "members": [
+        "cio-cos",
+        "cio-sa",
+        "dg-eops",
+        "dg-bsim",
+        "dg-boss",
+        "dg-bsi",
+        "dg-bdma"
+      ],
+      "standingParticipants": [
+        "ed-pae",
+        "ed-dc",
+        "ed-a",
+        "ed-im",
+        "ed-tsor",
+        "ed-ecc",
+        "ed-tdm",
+        "ed-bsi"
+      ],
+      "mandate": {
+        "fr": "TBC",
+        "en": "TBC"
+      },
+      "responsibility": {
+        "fr": "TBC",
+        "en": "TBC"
+      },
+      "escalatesTo": null
+    },
+    {
+      "id": 2,
+      "name": {
+        "fr": "Comité directeurs généraux",
+        "en": "Director General Committee"
+      },
+      "abbreviation": {
+        "fr": "CDG",
+        "en": "DGComm"
+      },
+      "tier": null,
+      "level": "branch",
+      "status": "active",
+      "workspace": {
+        "URL": null,
+        "access": null
+      },
+      "termsOfReference": {
+        "URL": {
+          "fr": "TBC",
+          "en": "TBC"
+        }
+      },
+      "meetings": {
+        "recurrence": "bi-weekly",
+        "day": "friday",
+        "duration": 60,
+        "extension": null
+      },
+      "quorum": "5 voting members",
+      "chairs": ["cio"],
+      "viceChairs": [],
+      "members": [
+        "cio-cos",
+        "cio-sa",
+        "dg-eops",
+        "dg-sabr",
+        "dg-bsim",
+        "dg-boss",
+        "dg-bsi",
+        "dg-bdma"
+      ],
+      "standingParticipants": [
+        "ed-pae",
+        "ed-dc",
+        "ed-a",
+        "ed-im",
+        "ed-tsor",
+        "ed-ecc",
+        "ed-tdm",
+        "ed-bsi",
+        "ssc-exec",
+        "secretariat"
+      ],
+      "mandate": {
+        "fr": "TBC",
+        "en": "TBC"
+      },
+      "responsibility": {
+        "fr": "TBC",
+        "en": "TBC"
+      },
+      "escalatesTo": 1
+    },
+    {
+      "id": 3,
+      "name": {
+        "fr": "Comité révision d'architecture",
+        "en": "Architecture Review Committee"
+      },
+      "abbreviation": {
+        "fr": "CRA",
+        "en": "ARC"
+      },
+      "tier": null,
+      "level": "branch",
+      "status": "active",
+      "workspace": {
+        "URL": null,
+        "access": null
+      },
+      "termsOfReference": {
+        "URL": {
+          "fr": "TBC",
+          "en": "TBC"
+        }
+      },
+      "meetings": {
+        "recurrence": "bi-weekly",
+        "day": "friday",
+        "duration": 60,
+        "extension": null
+      },
+      "quorum": "5 voting members",
+      "chairs": ["dg-sabr"],
+      "viceChairs": ["dg-bsi"],
+      "members": [
+        "cio-sa",
+        "ed-bsi",
+        "ed-bos",
+        "ed-da",
+        "ed-ps",
+        "ed-ss",
+        "dg-eds"
+      ],
+      "standingParticipants": [
+        "d-ea",
+        "d-bdma",
+        "d-seca",
+        "d-sola",
+        "d-eipa",
+        "d-pom",
+        "d-ccdd",
+        "secretariat"
+      ],
+      "mandate": {
+        "fr": "TBC",
+        "en": "TBC"
+      },
+      "responsibility": {
+        "fr": "TBC",
+        "en": "TBC"
+      },
+      "escalatesTo": 1
+    },
+    {
+      "id": 4,
+      "name": {
+        "fr": "Comité gestion du changement",
+        "en": "Change Management Committee"
+      },
+      "abbreviation": {
+        "fr": "CGC",
+        "en": "CMC"
+      },
+      "tier": null,
+      "level": "branch",
+      "status": "active",
+      "workspace": {
+        "URL": null,
+        "access": null
+      },
+      "termsOfReference": {
+        "URL": {
+          "fr": "TBC",
+          "en": "TBC"
+        }
+      },
+      "meetings": {
+        "recurrence": "bi-weekly",
+        "day": "thursday",
+        "duration": 120,
+        "extension": null
+      },
+      "quorum": "default",
+      "chairs": ["dg-eops"],
+      "viceChairs": ["dg-bsi"],
+      "members": ["ed-tdm", "ed-bsi", "ed-ec", "ed-bop", "ed-da", "ed-ss"],
+      "standingParticipants": ["secretariat"],
+      "mandate": {
+        "fr": "TBC",
+        "en": "TBC"
+      },
+      "responsibility": {
+        "fr": "TBC",
+        "en": "TBC"
+      },
+      "escalatesTo": 2
+    }
+  ],
+  "positions": [
+    {
+      "id": "cio",
+      "name": {
+        "fr": "Dirigeante principale de l'information",
+        "en": "Chief Information Officer"
+      },
+      "classification": "ex",
+      "level": 4,
+      "incumbent": null,
+      "reportsTo": null
+    },
+    {
+      "id": "ed-bop",
+      "name": {
+        "fr": "Directeur exécutif opérations et planification de la branche",
+        "en": "Executive Director Branch Operations and Planning"
+      },
+      "classification": "ex",
+      "level": 2,
+      "incumbent": null,
+      "reportsTo": "cio"
+    },
+    {
+      "id": "dg-sabr",
+      "name": {
+        "fr": "Directeur général stratégie, architecture et relation d'affaires",
+        "en": "Director General Strategy, Architecture and Business Relations"
+      },
+      "classification": "ex",
+      "level": 3,
+      "incumbent": null,
+      "reportsTo": "dg-sabr"
+    },
+    {
+      "id": "ed-ss",
+      "name": {
+        "fr": "Directrice exécutive stratégies de services",
+        "en": "Executive Director Service Strategy"
+      },
+      "classification": "ex",
+      "level": 2,
+      "incumbent": null,
+      "reportsTo": "dg-sabr"
+    },
+    {
+      "id": "ed-a",
+      "name": {
+        "fr": "Directrice exécutive architecture",
+        "en": "Executive Director Architecture"
+      },
+      "classification": "ex",
+      "level": 2,
+      "incumbent": null,
+      "reportsTo": "dg-sabr"
+    },
+    {
+      "id": "dg-eops",
+      "name": {
+        "fr": "Directeur général opérations d'entreprise",
+        "en": "Director General Enterprise Operations"
+      },
+      "classification": "ex",
+      "level": 3,
+      "incumbent": null,
+      "reportsTo": "cio"
+    },
+    {
+      "id": "ed-dc",
+      "name": {
+        "fr": "Directrice exécutive informatique distribuée",
+        "en": "Executive Director Distributed Computing"
+      },
+      "classification": "ex",
+      "level": 2,
+      "incumbent": null,
+      "reportsTo": "dg-eops"
+    },
+
+    {
+      "id": "ed-pae",
+      "name": {
+        "fr": "Directeur exécutif partenariats, accessibililité et environements",
+        "en": "Executive Director Partnership, Accessibility & Environments"
+      },
+      "classification": "ex",
+      "level": 2,
+      "incumbent": null,
+      "reportsTo": "dg-eops"
+    },
+
+    {
+      "id": "ed-citsec",
+      "name": {
+        "fr": "Directrice exécutive Cyber Sécurité et Sécurité TI",
+        "en": "Executive Director Cyber & IT Security"
+      },
+      "classification": "ex",
+      "level": 2,
+      "incumbent": null,
+      "reportsTo": "dg-eops"
+    },
+    {
+      "id": "dg-bsim",
+      "name": {
+        "fr": "Directrice générale solutions d'affaires et gestion de l'information",
+        "en": "Director General Business Solutions and Information Management"
+      },
+      "classification": "ex",
+      "level": 3,
+      "incumbent": null,
+      "reportsTo": "cio"
+    },
+    {
+      "id": "ed-im",
+      "name": {
+        "fr": "Directeur exécutif gestion de l'information",
+        "en": "Executive Director Information Management"
+      },
+      "classification": "ex",
+      "level": 2,
+      "incumbent": null,
+      "reportsTo": "dg-bsim"
+    },
+    {
+      "id": "ed-bsi",
+      "name": {
+        "fr": "Directeur exécutif innovation et solutions d'affaires",
+        "en": "Executive Director Business Solutions and Innovation"
+      },
+      "classification": "ex",
+      "level": 2,
+      "incumbent": null,
+      "reportsTo": "dg-bsim"
+    },
+    {
+      "id": "dg-bsi",
+      "name": {
+        "fr": "Directrice générale innovation de solutions d'affaires",
+        "en": "Director General Business Solutions Innovation"
+      },
+      "classification": "ex",
+      "level": 3,
+      "incumbent": null,
+      "reportsTo": "cio"
+    },
+    {
+      "id": "ed-ecc",
+      "name": {
+        "fr": "Directeur exécutif emploi, correspondance et contributions",
+        "en": "Executive Director Employment, Correspondence, Contributions"
+      },
+      "classification": "ex",
+      "level": 2,
+      "incumbent": null,
+      "reportsTo": "dg-bsi"
+    },
+    {
+      "id": "ed-bs",
+      "name": {
+        "fr": "Directeur exécutif solutions des bénéfices",
+        "en": "Executive Director Benefits Solutions"
+      },
+      "classification": "ex",
+      "level": 2,
+      "incumbent": null,
+      "reportsTo": "dg-bsi"
+    },
+    {
+      "id": "dg-ps",
+      "name": {
+        "fr": "Directeur général solutions des pensions",
+        "en": "Director General Pensions Solutions"
+      },
+      "classification": "ex",
+      "level": 3,
+      "incumbent": null,
+      "reportsTo": "cio"
+    },
+    {
+      "id": "ed-ps",
+      "name": {
+        "fr": "Directrice exécutive solutions des pensions",
+        "en": "Executive Director Pensions Solutions"
+      },
+      "classification": "ex",
+      "level": 2,
+      "incumbent": null,
+      "reportsTo": "dg-ps"
+    },
+
+    {
+      "id": "dg-bos",
+      "name": {
+        "fr": "Directrice générale maintenance des opérations d'affaires",
+        "en": "Director General Business Operations Sustainability"
+      },
+      "classification": "ex",
+      "level": 3,
+      "incumbent": null,
+      "reportsTo": "cio"
+    },
+    {
+      "id": "ed-tdm",
+      "name": {
+        "fr": "Directrice exécutive gestion de la dette technique",
+        "en": "Executive Director Technical Debt Management"
+      },
+      "classification": "ex",
+      "level": 2,
+      "incumbent": null,
+      "reportsTo": "dg-bos"
+    },
+    {
+      "id": "ed-wds",
+      "name": {
+        "fr": "Directeur exécutif solutions d'espace de travail numérique",
+        "en": "Executive Director Workplace Digital Solutions"
+      },
+      "classification": "ex",
+      "level": 2,
+      "incumbent": null,
+      "reportsTo": "dg-bsi"
+    },
+    {
+      "id": "dg-eds",
+      "name": {
+        "fr": "Directeur général solutions d'entreprise numériques",
+        "en": "Director General Enterprise Digital Solutions"
+      },
+      "classification": "ex",
+      "level": 3,
+      "incumbent": null,
+      "reportsTo": "cio"
+    },
+    {
+      "id": "ed-cds",
+      "name": {
+        "fr": "Directeur exécutif solutions infonuagiques et numériques",
+        "en": "Executive Director Cloud and Digital Solutions"
+      },
+      "classification": "ex",
+      "level": 2,
+      "incumbent": null,
+      "reportsTo": "dg-eds"
+    },
+    {
+      "id": "ed-ec",
+      "name": {
+        "fr": "Directeur exécutif capacités d'entreprise",
+        "en": "Executive Director Enterprise Capabilities"
+      },
+      "classification": "ex",
+      "level": 2,
+      "incumbent": null,
+      "reportsTo": "dg-eds"
+    },
+    {
+      "id": "ed-tsor",
+      "name": {
+        "fr": "Directrice exécutive support à la transformation et préparation des opérations",
+        "en": "Executive Director Transformation Support and Operation Readiness"
+      },
+      "classification": "ex",
+      "level": 2,
+      "incumbent": null,
+      "reportsTo": "dg-eds"
+    },
+    {
+      "id": "cos",
+      "name": {
+        "fr": "Cheffe de cabinet",
+        "en": "Chief of Staff"
+      },
+      "classification": "ex",
+      "level": 2,
+      "incumbent": null,
+      "reportsTo": "cio"
+    },
+    {
+      "id": "cio-sa",
+      "name": {
+        "fr": "Conseiller spécial",
+        "en": "Special Advisor"
+      },
+      "classification": "ex",
+      "level": 2,
+      "incumbent": null,
+      "reportsTo": "cio"
+    },
+    {
+      "id": "oii",
+      "name": {
+        "fr": "Officier des initiatives autochtones",
+        "en": "Officer of Indigenous Initiatives"
+      },
+      "classification": "ex",
+      "level": 2,
+      "incumbent": null,
+      "reportsTo": "cio"
+    }
+  ],
+  "pathways": [
+    {
+      "name": { "en": "", "fr": "" },
+      "steps": [
+        {
+          "type": "request",
+          "description": {
+            "en": "Submit software request",
+            "fr": "Soumettre requête logiciel"
+          }
+        }
+      ]
+    }
+  ],
+  "rates": [
+    {
+      "label": "ex-01",
+      "min": 112300,
+      "max": 132100,
+      "description": "Executive"
+    },
+    {
+      "label": "ex-02",
+      "min": 125900,
+      "max": 148100,
+      "description": "Executive"
+    },
+    {
+      "label": "ex-03",
+      "min": 140900,
+      "max": 165700,
+      "description": "Executive"
+    },
+    {
+      "label": "ex-04",
+      "min": 161500,
+      "max": 190000,
+      "description": "Executive"
+    },
+    {
+      "label": "ex-05",
+      "min": 181000,
+      "max": 212900,
+      "description": "Executive"
+    }
+  ]
+}
