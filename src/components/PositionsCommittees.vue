@@ -25,9 +25,10 @@ import Component from "vue-class-component";
     },
   },
   methods: {
-    listCommitteesPerPosition(position: Position): void {
-      return;
-    },
+    //TODO: return all committees attended by the position
+    // listCommitteesPerPosition(position: Position): void {
+    //   return;
+    // },
   },
 })
 export default class PositionsCommittees extends Vue {
