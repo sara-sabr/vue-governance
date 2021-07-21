@@ -8,7 +8,7 @@
     "toPositions": "Positions",
     "toPathways": "Pathways",
     "languageToggle": "Français",
-    "inThisPage": "In this page"
+    "onThisPage": "On this page"
   },
   "page": {
     "home": {
@@ -40,10 +40,11 @@
           "reportsTo": "Reports to"
         }
       },
-      "committeesPerPosition": {
-        "title": "Committees per Position"
+      "positionsCommittees": {
+        "title": "Committees per Position",
+        "attends": "The person in this position must attend the following committees"
       },
-      "orgChart":{
+      "orgChart": {
         "title": "Organizational Chart"
       }
     },
