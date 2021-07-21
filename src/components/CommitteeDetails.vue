@@ -5,32 +5,32 @@
       <table class="table table-striped table-bordered">
         <caption></caption>
         <thead>
-          <th scope="col">{{ $t("committeeTable.property") }}</th>
-          <th scope="col">{{ $t("committeeTable.value") }}</th>
+          <th scope="col">{{ $t("page.committees.table.property") }}</th>
+          <th scope="col">{{ $t("page.committees.table.value") }}</th>
         </thead>
         <tbody>
           <tr>
-            <td>{{ $t("committeeTable.membersCount") }}</td>
+            <td>{{ $t("page.committees.table.membersCount") }}</td>
             <td>{{ membersCount() }}</td>
           </tr>
           <tr>
-            <td>{{ $t("committeeTable.standingPartipantsCount") }}</td>
+            <td>{{ $t("page.committees.table.standingPartipantsCount") }}</td>
             <td>{{ committee.standingParticipants.length }}</td>
           </tr>
           <tr>
-            <td>{{ $t("committeeTable.totalParticipants") }}</td>
+            <td>{{ $t("page.committees.table.totalParticipants") }}</td>
             <td>{{ allAttendantsCount() }}</td>
           </tr>
           <tr>
-            <td>{{ $t("committeeTable.meetingDuration") }}</td>
+            <td>{{ $t("page.committees.table.meetingDuration") }}</td>
             <td>{{ committee.meetings.duration }}</td>
           </tr>
           <tr>
-            <td>{{ $t("committeeTable.meetingCost") }}</td>
+            <td>{{ $t("page.committees.table.meetingCost") }}</td>
             <td>{{ calculateMeetingCost().toFixed(2) }}</td>
           </tr>
           <tr>
-            <td>{{ $t("committeeTable.meetingAnnualCost") }}</td>
+            <td>{{ $t("page.committees.table.meetingAnnualCost") }}</td>
             <td>{{ calculateYearlyMeetingCost().toFixed(2) }}</td>
           </tr>
         </tbody>

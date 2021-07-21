@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <h1 class="text-center">{{ $t("homeTitle") }}</h1>
-    <div v-html="markdownToHtml($t('homeExplanation'))"></div>
+    <h1 class="text-center">{{ $t("page.home.title") }}</h1>
+    <div v-html="markdownToHtml($t('page.home.description'))"></div>
     <div class="mb-3">
       <button class="btn btn-secondary" @click="loadTestData()">
         {{ $t("button.test") }}
