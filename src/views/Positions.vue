@@ -1,13 +1,13 @@
 <template>
   <div class="container">
     <h1 class="text-center">{{ $t("page.positions.title") }}</h1>
-    <p>{{ $t("navigation.inThisPage") }}</p>
+    <p>{{ $t("navigation.onThisPage") }}</p>
     <div class="nav flex-column">
       <a href="#positionList" class="nav-link">{{
         $t("page.positions.positionsList.title")
       }}</a>
       <a href="#positionCommitteeRelation" class="nav-link">{{
-        $t("page.positions.committeesPerPosition.title")
+        $t("page.positions.positionsCommittees.title")
       }}</a>
       <a href="#positionOrgChart" class="nav-link">{{
         $t("page.positions.orgChart.title")
@@ -15,40 +15,18 @@
     </div>
     <section id="positionList">
       <h2>{{ $t("page.positions.positionsList.title") }}</h2>
-      <div>
-        <table class="table table-striped table-bordered">
-          <caption></caption>
-          <thead>
-            <th scope="col">
-              {{ $t("page.positions.positionsList.table.key") }}
-            </th>
-            <th scope="col">
-              {{ $t("page.positions.positionsList.table.position") }}
-            </th>
-            <th scope="col">
-              {{ $t("page.positions.positionsList.table.classification") }}
-            </th>
-            <th scope="col">
-              {{ $t("page.positions.positionsList.table.reportsTo") }}
-            </th>
-          </thead>
-          <tbody>
-            <tr v-for="position in positions" :key="position.id">
-              <td>
-                {{ position.id }}
-              </td>
-              <td>
-                {{ position.name[lang] }}
-              </td>
-              <td>{{ getClassLevel(position) }}</td>
-              <td>{{ position.reportsTo }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <PositionsList :positions="positions" :lang="lang" />
     </section>
     <section id="positionCommitteeRelation">
-      <h2>{{ $t("page.positions.committeesPerPosition.title") }}</h2>
+      <h2>{{ $t("page.positions.positionsCommittees.title") }}</h2>
+      <p>{{ $t("page.positions.positionsCommittees.description") }}</p>
+      <PositionsCommittees
+        v-for="position in positions"
+        :key="position.id"
+        :position="position"
+        :committees="committees"
+        :lang="lang"
+      />
     </section>
     <section id="positionOrgChart">
       <h2>{{ $t("page.positions.orgChart.title") }}</h2>
@@ -57,16 +35,21 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
-import { Position } from "@/store/state";
 import Component from "vue-class-component";
 import { mapState } from "vuex";
+import PositionsList from "@/components/PositionsList.vue";
+import PositionsCommittees from "@/components/PositionsCommittees.vue";
 @Component({
-  computed: mapState(["positions"]),
+  data() {
+    return {
+      lang: this.$i18n.locale,
+    };
+  },
+  components: {
+    PositionsList,
+    PositionsCommittees,
+  },
+  computed: mapState(["positions", "committees"]),
 })
-export default class Positions extends Vue {
-  lang = this.$i18n.locale;
-  getClassLevel(position: Position): string {
-    return position.classification + "-0" + position.level;
-  }
-}
+export default class Positions extends Vue {}
 </script>
