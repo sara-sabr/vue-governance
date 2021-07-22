@@ -1,10 +1,12 @@
 <template>
   <div>
-    <div v-for="position in positions" :key="position.id">
+    <div>
       <h3>{{ position.name[lang] }}</h3>
-      <p>{{ $t("page.positions.positionsCommittees.attends") }}:</p>
-      <ul>
-        <li></li>
+      <ul v-if="listCommitteesPerPosition.length > 0">
+        <li v-for="committee in listCommitteesPerPosition" :key="committee.id">
+          <p>{{ committee.name[lang] }}</p>
+          <p>{{ $t("role." + roleInCommittee(position, committee)) }}</p>
+        </li>
       </ul>
     </div>
   </div>
@@ -14,9 +16,15 @@ import { Committee, Position } from "@/store/state";
 import Vue, { PropType } from "vue";
 import Component from "vue-class-component";
 @Component({
+  data() {
+    return {
+      hasCommittees: false,
+      listedCommittees: [],
+    };
+  },
   props: {
-    positions: {
-      type: Array as PropType<Position[]>,
+    position: {
+      type: Object as PropType<Position>,
       required: true,
     },
     committees: {
@@ -24,11 +32,73 @@ import Component from "vue-class-component";
       required: true,
     },
   },
+  computed: {
+    listCommitteesPerPosition(): Committee[] {
+      const committees: Committee[] = this.$props.committees;
+      if (!committees) {
+        return [];
+      }
+      const list: Committee[] = committees.filter((committee) => {
+        let listedPositions = [
+          ...committee.chairs,
+          ...committee.viceChairs,
+          ...committee.members,
+          ...committee.standingParticipants,
+        ];
+        return (
+          listedPositions.findIndex((listedPosition) => {
+            return this.$props.position.id === listedPosition;
+          }) !== -1
+        );
+      });
+      return list;
+    },
+  },
+  i18n: {
+    messages: {
+      en: {
+        role: {
+          chair: "Chair",
+          viceChair: "Vice-Chair",
+          member: "Voting Member",
+          standingParticipant: "Standing Participant",
+        },
+      },
+      fr: {
+        role: {
+          chair: "Présidence",
+          viceChair: "Vice-présidence",
+          member: "Membre votant",
+          standingParticipant: "Membre observateur",
+        },
+      },
+    },
+  },
   methods: {
-    //TODO: return all committees attended by the position
-    // listCommitteesPerPosition(position: Position): void {
-    //   return;
-    // },
+    roleInCommittee(position: Position, committee: Committee): string {
+      if (
+        committee.chairs.findIndex((element) => {
+          return element === this.$props.position.id;
+        }) !== -1
+      ) {
+        return "chair";
+      }
+      if (
+        committee.viceChairs.findIndex((element) => {
+          return element === this.$props.position.id;
+        }) !== -1
+      ) {
+        return "viceChair";
+      }
+      if (
+        committee.members.findIndex((element) => {
+          return element === this.$props.position.id;
+        }) !== -1
+      ) {
+        return "member";
+      }
+      return "standingParticipant";
+    },
   },
 })
 export default class PositionsCommittees extends Vue {
