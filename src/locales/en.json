@@ -42,6 +42,7 @@
       },
       "positionsCommittees": {
         "title": "Committees per Position",
+        "description": "This section presents each position in the organization with the list of meetings they are expected to attend, either as chair, vice-chair, voting member or standing participant.",
         "attends": "The person in this position must attend the following committees"
       },
       "orgChart": {

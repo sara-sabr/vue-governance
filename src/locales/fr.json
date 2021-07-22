@@ -42,6 +42,7 @@
       },
       "positionsCommittees": {
         "title": "Comités par position",
+        "description": "Cette section présente la liste des comités auxquels chaque poste de l'organisation est censé participer, que ce soit en tant que président, vice-président, membre votant ou participant permanent.",
         "attends": "La personne titulaire de ce poste doit participer aux comités suivants"
       },
       "orgChart": {
