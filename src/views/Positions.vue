@@ -19,8 +19,11 @@
     </section>
     <section id="positionCommitteeRelation">
       <h2>{{ $t("page.positions.positionsCommittees.title") }}</h2>
+      <p>{{ $t("page.positions.positionsCommittees.description") }}</p>
       <PositionsCommittees
-        :positions="positions"
+        v-for="position in positions"
+        :key="position.id"
+        :position="position"
         :committees="committees"
         :lang="lang"
       />
