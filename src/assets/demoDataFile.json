@@ -536,14 +536,46 @@
   ],
   "pathways": [
     {
-      "name": { "en": "", "fr": "" },
+      "name": {
+        "en": "New Software Request",
+        "fr": "Requête pour un nouveau logiciel"
+      },
+      "description": {
+        "en": "This pathway exposes the various steps required to go from identifying the need for a specific software or service all the way to having access to it. It includes multiple stakeholders, checks and compliance validations.",
+        "fr": "Ce parcours expose les différentes étapes nécessaires pour aller de l'identification du besoin d'un logiciel ou d'un service spécifique jusqu'à l'accès à celui-ci. Il comprend de multiples intervenants, contrôles et validations de conformité."
+      },
       "steps": [
         {
-          "type": "request",
+          "type": "research",
+          "name": {
+            "en": "Review currently available software",
+            "fr": "Réviser la liste des logiciels disponibles"
+          },
           "description": {
-            "en": "Submit software request",
+            "en": "In order to request a new software to be made available, users must first validate if the software or the service is not already available.",
+            "fr": ""
+          },
+          "duration": {
+            "quantity": 30,
+            "unit": "minutes"
+          },
+          "stakeholders": ["user"]
+        },
+        {
+          "type": "request",
+          "name": {
+            "en": "Request the software through Help Desk",
+            "fr": "Faire une requête pour le logiciel via le Centre d'aide"
+          },
+          "description": {
+            "en": "If the software or service was not available, the user has to submit a request to the help desk..",
             "fr": "Soumettre requête logiciel"
-          }
+          },
+          "duration": {
+            "quantity": 4,
+            "unit": "businessDays"
+          },
+          "stakeholders": ["user", "helpCenter"]
         }
       ]
     }
