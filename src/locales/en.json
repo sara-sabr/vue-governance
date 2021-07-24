@@ -50,7 +50,11 @@
       }
     },
     "pathways": {
-      "title": "Pathways Analysis"
+      "title": "Pathways Analysis",
+      "description": "This page presents various pathways with the necessary steps to accomplish the desired outcomes.",
+      "pathway": "Pathway",
+      "step": "Step",
+      "steps": "Steps"
     }
   },
   "button": {
