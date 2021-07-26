@@ -51,7 +51,7 @@
     },
     "pathways": {
       "title": "Pathways Analysis",
-      "description": "This page presents various pathways with the necessary steps to accomplish the desired outcomes.",
+      "description": "## Approach\n\nThis section presents various pathways with the necessary steps to accomplish the desired outcomes.\n\nVarious types of steps exist: research, request, consultation, briefing, presentation, etc.\n\nWhen looking at a **consultation** step, we assume that each individuals or teams consulted requires at least 30 minutes sessions for briefing up on the material and providing preliminary feedback, plus a minimum of 30 minutes to prepare the consultation material itself ahead of time.\n\nFurthermore, experience shows that prior to presenting to a governing body for decision purposes, it is highly preferrable to individually meet with each voting member to receive critical feedback on the topic. As such, we estimate that any given step to present at a committee **for endorsement requires a consultation step**, where all committee voting members are individually consulted ahead of time.",
       "pathway": "Pathway",
       "step": "Step",
       "steps": "Steps"
