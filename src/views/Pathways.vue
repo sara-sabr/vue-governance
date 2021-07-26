@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1 class="text-center">{{ $t("page.pathways.title") }}</h1>
-    <p>{{ $t("page.pathways.description") }}</p>
+    <div v-html="markdownToHtml($t('page.pathways.description'))"></div>
     <pathway-details
       v-for="pathway in pathways"
       :key="pathway.id"
@@ -26,13 +26,13 @@ import PathwayDetails from "@/components/PathwayDetails.vue";
     PathwayDetails,
   },
   computed: mapState(["pathways"]),
-
-  // i18n: {
-  //   messages: {
-  //     en: { message: { title: "Title" } },
-  //     fr: { message: { title: "Titre" } },
-  //   },
-  // },
+  methods: {
+    markdownToHtml(message: string) {
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
+      const marked = require("marked");
+      return marked(message);
+    },
+  },
 })
 export default class Pathways extends Vue {
   lang = this.$i18n.locale;
