@@ -1,15 +1,39 @@
 <template>
-  <div class="pathway-details">
-    <h2>{{ $t("page.pathways.pathway") }}: {{ pathway.name[lang] }}</h2>
-
-    <div v-for="(step, stepKey) in pathway.steps" :key="step.id">
-      <h3>
-        {{ $t("page.pathways.step") }} {{ stepKey + 1 }}:
-        {{ step.name[lang] }}
-      </h3>
-      <p>{{ step.description[lang] }}</p>
-      <p>{{ $t("minimumDelay") }}</p>
-      <p>{{ $t("expectedDelay") }}</p>
+  <div
+    class="pathway-details accordion mb-3"
+    :id="'accordion-pathway-' + elementKey"
+  >
+    <div class="accordion-item">
+      <h2 class="accordion-header" :id="'pathway-' + elementKey">
+        <button
+          class="accordion-button"
+          type="button"
+          data-bs-toggle="collapse"
+          :data-bs-target="'#collapse' + elementKey"
+          aria-expanded="false"
+          :aria-controls="'#collapse' + elementKey"
+        >
+          {{ $t("page.pathways.pathway") }}: {{ pathway.name[lang] }}
+        </button>
+      </h2>
+      <div
+        :id="'collapse' + elementKey"
+        class="accordion-collapse collapse"
+        :aria-labelledby="'pathway-' + elementKey"
+        :data-bs-parent="'#accordion-pathway-' + elementKey"
+      >
+        <div class="accordion-body">
+          <div v-for="(step, stepKey) in pathway.steps" :key="step.id">
+            <h3>
+              {{ $t("page.pathways.step") }} {{ stepKey + 1 }}:
+              {{ step.name[lang] }}
+            </h3>
+            <p>{{ step.description[lang] }}</p>
+            <p>{{ $t("minimumDelay") }}</p>
+            <p>{{ $t("expectedDelay") }}</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -25,6 +49,10 @@ import Component from "vue-class-component";
     },
     lang: {
       type: String,
+      required: true,
+    },
+    elementKey: {
+      type: Number,
       required: true,
     },
   },
