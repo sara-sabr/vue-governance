@@ -8,12 +8,14 @@
         "en": "CIO Committee"
       },
       "abbreviation": {
-        "fr": "CP",
-        "en": "PC"
+        "fr": "CDPI",
+        "en": "CIOC"
       },
       "tier": null,
       "level": "branch",
       "status": "active",
+      "governanceStatus": "official",
+      "primaryRole": "decision",
       "workspace": {
         "URL": null,
         "access": null
@@ -65,7 +67,7 @@
     {
       "id": 2,
       "name": {
-        "fr": "Comité directeurs généraux",
+        "fr": "Comité des directeurs généraux",
         "en": "Director General Committee"
       },
       "abbreviation": {
@@ -75,6 +77,8 @@
       "tier": null,
       "level": "branch",
       "status": "active",
+      "governanceStatus": "informal",
+      "primaryRole": "consultation",
       "workspace": {
         "URL": null,
         "access": null
@@ -129,7 +133,7 @@
     {
       "id": 3,
       "name": {
-        "fr": "Comité révision d'architecture",
+        "fr": "Comité de révision d'architecture",
         "en": "Architecture Review Committee"
       },
       "abbreviation": {
@@ -139,6 +143,8 @@
       "tier": null,
       "level": "branch",
       "status": "active",
+      "governanceStatus": "official",
+      "primaryRole": "decision",
       "workspace": {
         "URL": null,
         "access": null
@@ -200,6 +206,8 @@
       "tier": null,
       "level": "branch",
       "status": "active",
+      "governanceStatus": "official",
+      "primaryRole": "decision",
       "workspace": {
         "URL": null,
         "access": null
@@ -536,14 +544,62 @@
   ],
   "pathways": [
     {
-      "name": { "en": "", "fr": "" },
+      "name": {
+        "en": "New Software Request",
+        "fr": "Requête pour un nouveau logiciel"
+      },
+      "description": {
+        "en": "This pathway exposes the various steps required to go from identifying the need for a specific software or service all the way to having access to it. It includes multiple stakeholders, checks and compliance validations.",
+        "fr": "Ce parcours expose les différentes étapes nécessaires pour aller de l'identification du besoin d'un logiciel ou d'un service spécifique jusqu'à l'accès à celui-ci. Il comprend de multiples intervenants, contrôles et validations de conformité."
+      },
       "steps": [
         {
-          "type": "request",
+          "type": "research",
+          "name": {
+            "en": "Review currently available software",
+            "fr": "Réviser la liste des logiciels disponibles"
+          },
           "description": {
-            "en": "Submit software request",
-            "fr": "Soumettre requête logiciel"
-          }
+            "en": "In order to request a new software to be made available, users must first validate if the software or the service is not already available.",
+            "fr": ""
+          },
+          "duration": {
+            "quantity": 30,
+            "unit": "minutes"
+          },
+          "stakeholders": ["user"]
+        },
+        {
+          "type": "request",
+          "name": {
+            "en": "Request the software through Help Desk",
+            "fr": "Faire une requête pour le logiciel via le Centre d'aide"
+          },
+          "description": {
+            "en": "If the software or service was not available, the user has to submit a request to the help desk to acquire it.",
+            "fr": "Si le logiciel ou le service n'était pas disponible, l'utilisateur doit soumettre une demande au centre de soutien pour l'acquérir."
+          },
+          "duration": {
+            "quantity": 4,
+            "unit": "businessDays"
+          },
+          "stakeholders": ["user", "helpCenter"]
+        },
+        {
+          "type": "consultation",
+          "name": {
+            "en": "Consult Architecture Review Committee voting members",
+            "fr": "Consulter les membres votants du Comité de révision d'architecture"
+          },
+          "description": {
+            "en": "In order to successfully get committee endorsement, consultation of voting members is recommended. For the purpose of this analysis, consultation is considered to be 30 minutes meetings with each individual committee voting member, or a designed delegate, to ensure feedback is provided on the proposal and concerns addressed prior to official committee review.",
+            "fr": "Afin d'obtenir une approbation du comité, la consultation des membres votants est recommandée. Pour l'analyse présente, l'activité de consultation consiste en une rencontre de 30 minutes avec chaque membre votant du comité, ou avec la personne désignée pour le représenter, afin de s'assurer que la rétroaction est fournie sur la proposition et que les réserves sont traitées avant l'examen officiel du comité."
+          },
+          "duration": {
+            "quantity": 30,
+            "unit": "minutes"
+          },
+          "stakeholders": ["3"]
         }
       ]
     }
