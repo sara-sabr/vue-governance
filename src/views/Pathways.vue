@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1 class="text-center">{{ $t("page.pathways.title") }}</h1>
-    <div class="accordion" id="accordion-pathways-approach">
+    <div class="accordion mb-3" id="accordion-pathways-approach">
       <div class="accordion-item">
         <h2 class="accordion-header" id="approach">
           <button
