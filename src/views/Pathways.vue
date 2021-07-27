@@ -1,7 +1,33 @@
 <template>
   <div class="container">
     <h1 class="text-center">{{ $t("page.pathways.title") }}</h1>
-    <div v-html="markdownToHtml($t('page.pathways.description'))"></div>
+    <div class="accordion" id="accordion-pathways-approach">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="approach">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            {{ $t("page.pathways.approach") }}
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse show"
+          aria-labelledby="approach"
+          data-bs-parent="#accordion-pathways-approach"
+        >
+          <div
+            v-html="markdownToHtml($t('page.pathways.description'))"
+            class="accordion-body"
+          ></div>
+        </div>
+      </div>
+    </div>
     <pathway-details
       v-for="pathway in pathways"
       :key="pathway.id"
