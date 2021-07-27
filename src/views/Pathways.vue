@@ -29,8 +29,9 @@
       </div>
     </div>
     <pathway-details
-      v-for="pathway in pathways"
+      v-for="(pathway, elementKey) in pathways"
       :key="pathway.id"
+      :element-key="elementKey + 1"
       :pathway="pathway"
       :lang="lang"
     ></pathway-details>
