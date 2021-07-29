@@ -17,7 +17,7 @@
     },
     "committees": {
       "title": "Analyses des comités",
-      "description": "",
+      "description": "À compléter",
       "table": {
         "property": "Propriété",
         "value": "Valeur",
@@ -31,6 +31,7 @@
     },
     "positions": {
       "title": "Analyses des postes",
+      "description":"À compléter",
       "positionsList": {
         "title": "Liste des postes",
         "table": {
