@@ -1,40 +1,65 @@
 <template>
-  <div>
-    <h2 class="text-center">{{ committee.name[lang] }}</h2>
-    <div class="table-responsive">
-      <table class="table table-striped table-bordered">
-        <caption></caption>
-        <thead>
-          <th scope="col">{{ $t("page.committees.table.property") }}</th>
-          <th scope="col">{{ $t("page.committees.table.value") }}</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{ $t("page.committees.table.membersCount") }}</td>
-            <td>{{ membersCount() }}</td>
-          </tr>
-          <tr>
-            <td>{{ $t("page.committees.table.standingPartipantsCount") }}</td>
-            <td>{{ committee.standingParticipants.length }}</td>
-          </tr>
-          <tr>
-            <td>{{ $t("page.committees.table.totalParticipants") }}</td>
-            <td>{{ allAttendantsCount() }}</td>
-          </tr>
-          <tr>
-            <td>{{ $t("page.committees.table.meetingDuration") }}</td>
-            <td>{{ committee.meetings.duration }}</td>
-          </tr>
-          <tr>
-            <td>{{ $t("page.committees.table.meetingCost") }}</td>
-            <td>{{ calculateMeetingCost().toFixed(2) }}</td>
-          </tr>
-          <tr>
-            <td>{{ $t("page.committees.table.meetingAnnualCost") }}</td>
-            <td>{{ calculateYearlyMeetingCost().toFixed(2) }}</td>
-          </tr>
-        </tbody>
-      </table>
+  <div
+    class="committee-details accordion mb-3"
+    :id="'accordion-committee-' + elementKey"
+  >
+    <div class="accordion-item">
+      <h2 class="accordion-header" :id="'committee-' + elementKey">
+        <button
+          class="accordion-button"
+          type="button"
+          data-bs-toggle="collapse"
+          :data-bs-target="'#collapse' + elementKey"
+          aria-expanded="false"
+          :aria-controls="'#collapse' + elementKey"
+        >
+          {{ committee.name[lang] }}
+        </button>
+      </h2>
+      <div
+        :id="'collapse' + elementKey"
+        class="accordion-collapse collapse"
+        :aria-labelledby="'committee-' + elementKey"
+        :data-bs-parent="'#accordion-committee-' + elementKey"
+      >
+        <div class="accordion-body table-responsive">
+          <table class="table table-striped table-bordered">
+            <caption></caption>
+            <thead>
+              <th scope="col">{{ $t("page.committees.table.property") }}</th>
+              <th scope="col">{{ $t("page.committees.table.value") }}</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ $t("page.committees.table.membersCount") }}</td>
+                <td>{{ membersCount() }}</td>
+              </tr>
+              <tr>
+                <td>
+                  {{ $t("page.committees.table.standingPartipantsCount") }}
+                </td>
+                <td>{{ committee.standingParticipants.length }}</td>
+              </tr>
+              <tr>
+                <td>{{ $t("page.committees.table.totalParticipants") }}</td>
+                <td>{{ allAttendantsCount() }}</td>
+              </tr>
+              <tr>
+                <td>{{ $t("page.committees.table.meetingDuration") }}</td>
+                <td>{{ committee.meetings.duration }}</td>
+              </tr>
+              <tr>
+                <td>{{ $t("page.committees.table.meetingCost") }}</td>
+                <td>{{ calculateMeetingCost().toFixed(2) }}</td>
+              </tr>
+              <tr>
+                <td>{{ $t("page.committees.table.meetingAnnualCost") }}</td>
+                <td>{{ calculateYearlyMeetingCost().toFixed(2) }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -59,6 +84,10 @@ import Component from "vue-class-component";
     },
     rates: {
       type: Array as PropType<Rate[]>,
+    },
+    elementKey: {
+      type: Number,
+      required: true,
     },
   },
 })

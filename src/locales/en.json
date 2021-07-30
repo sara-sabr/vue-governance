@@ -11,13 +11,15 @@
     "onThisPage": "On this page"
   },
   "page": {
+    "approach": "Approach",
     "home": {
       "title": "Governance Study",
-      "description": "The purpose of this site is to provide an automated way of analysing quantitive information about various governance committees.\n\nThe very first dimension studied are the **Committees**.\n\nWe use structured raw data parsed from the committees terms of references to create a view of the overall information on each committee.\n\nIn order to be able to generate most of these, we also need structured raw data from the organizational chart. This data provides the needed information about committees members.\n\nThe second dimension we are looking into is the **Positions** themselves.\n\nCombining the same data sets as earlier provides an opportunity to quickly analyse how much time any given person has to spend in a variety of committees.\n\nFinally, in a large organization, new committees often get created to delegate specific parts of another committee's mandate.\n\nThis brings us to our final dimension which is currently called **Pathways**\n\nLeveraging the same earlier data sets, pathways are generated via a series of critical steps required to accomplish a desired outcome. A list of steps will we generate the pathways required for any scenario and provided quantitative analysis with regards to it. An example could be the minimum amount of time to go through the entire pathway in a perfect world, as well as more realistic estimates based on real world observations.\n\nIn order to get started, you will need at least the following raw data sets for now:\n\n- committees\n- positions\n- pathways \n- rates"
+      "description": "The purpose of this site is to provide an automated way of analysing quantitive information about various governance committees.\n\nThe very first dimension studied are the **Committees**.\n\nWe use structured raw data parsed from the committees terms of references to create a view of the overall information on each committee.\n\nIn order to be able to generate most of these, we also need structured raw data from the organizational chart. This data provides the needed information about committees members.\n\nThe second dimension we are looking into is the **Positions** themselves.\n\nCombining the same data sets as earlier provides an opportunity to quickly analyse how much time any given person has to spend in a variety of committees.\n\nFinally, in a large organization, new committees often get created to delegate specific parts of another committee's mandate.\n\nThis brings us to our final dimension which is currently called **Pathways**\n\nLeveraging the same earlier data sets, pathways are generated via a series of critical steps required to accomplish a desired outcome. A list of steps will we generate the pathways required for any scenario and provided quantitative analysis with regards to it. An example could be the minimum amount of time to go through the entire pathway in a perfect world, as well as more realistic estimates based on real world observations.\n\nIn order to get started, you will need at least the following raw data sets for now:\n\n- committees\n- positions\n- pathways \n- rates",
+      "testData": "Download test data file"
     },
     "committees": {
       "title": "Committees Analysis",
-      "description": "",
+      "description": "TBC",
       "table": {
         "property": "Property",
         "value": "Value",
@@ -31,6 +33,7 @@
     },
     "positions": {
       "title": "Positions Analysis",
+      "description": "TBC",
       "positionsList": {
         "title": "List of Positions",
         "table": {
@@ -71,7 +74,9 @@
     "missingCommittees": "- Missing Committees",
     "missingPathways": "- Missing Pathways",
     "missingRates": "- Missing Rates",
-    "submitValidFile": "Please submit a valid file"
+    "submitValidFile": "Please submit a valid file",
+    "proofOfConcept": "This is a proof of concept, a work in progress. Features and bug fixes are being applied on a daily basis.",
+    "copyrightNotice": "Copyright © Her Majesty the Queen in Right of Canada, as represented by the Minister of Employment and Social Development Canada, 2019-2020."
   },
   "fileLoader": {
     "selectFile": "Select file"

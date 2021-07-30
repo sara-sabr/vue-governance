@@ -38,6 +38,11 @@
       </div>
     </nav>
     <main id="app" property="mainContentOfPage" class="mt-3">
+      <div class="container">
+        <div class="alert alert-primary" role="alert">
+          {{ $t("alert.proofOfConcept") }}
+        </div>
+      </div>
       <router-view />
     </main>
     <footer>
@@ -45,6 +50,7 @@
         <a href="https://github.com/sara-sabr/vue-governance">{{
           $t("link.source")
         }}</a>
+        <p class="mt-3">{{ $t("alert.copyrightNotice") }}</p>
         <a class="visually-hidden-focusable" href="#app">{{
           $t("navigation.toTop")
         }}</a>

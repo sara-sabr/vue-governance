@@ -13,11 +13,12 @@
   "page": {
     "home": {
       "title": "Étude de la gouvernance",
-      "description": "L'objectif de ce site est de fournir un moyen automatisé d'analyser des informations quantitatives sur les différents comités de gouvernance.\n\nLa toute première dimension étudiée est celle des **comités**.\n\nNous utilisons des données brutes structurées extraites des termes de référence des comités pour créer une vue d'ensemble des informations sur chaque comité.\n\nPour être en mesure de générer les comités, nous avons également besoin de données brutes structurées provenant de l'organigramme. Ces données fournissent les informations nécessaires sur les membres des comités.\n\nLa deuxième dimension que nous examinons est celle des **Postes** eux-mêmes.\n\nEn combinant les mêmes ensembles de données que précédemment, il est possible d'analyser rapidement le temps qu'une personne donnée doit passer dans une variété de comités.\n\nEnfin, dans une grande organisation, de nouveaux comités sont souvent créés pour déléguer des parties spécifiques du mandat d'un autre comité.\n\nCeci nous amène à notre dernière dimension qui s'appelle actuellement **Parcours**.\n\nEn s'appuyant sur les mêmes ensembles de données précédents, les parcours sont générées par une série d'étapes critiques nécessaires pour atteindre un résultat souhaité. Une liste d'étapes nous permettra de générer les parcours requis pour tout scénario et de fournir une analyse quantitative à cet égard. Un exemple pourrait être le temps minimum nécessaire pour parcourir l'ensemble du processus dans un monde parfait, ainsi que des estimations plus réalistes basées sur des observations réelles.\n\nPour commencer, vous aurez besoin d'au moins les ensembles de données brutes suivants pour le moment :\n\n- comités\n- postes\n- parcours\n- taux des salaires"
+      "description": "L'objectif de ce site est de fournir un moyen automatisé d'analyser des informations quantitatives sur les différents comités de gouvernance.\n\nLa toute première dimension étudiée est celle des **comités**.\n\nNous utilisons des données brutes structurées extraites des termes de référence des comités pour créer une vue d'ensemble des informations sur chaque comité.\n\nPour être en mesure de générer les comités, nous avons également besoin de données brutes structurées provenant de l'organigramme. Ces données fournissent les informations nécessaires sur les membres des comités.\n\nLa deuxième dimension que nous examinons est celle des **Postes** eux-mêmes.\n\nEn combinant les mêmes ensembles de données que précédemment, il est possible d'analyser rapidement le temps qu'une personne donnée doit passer dans une variété de comités.\n\nEnfin, dans une grande organisation, de nouveaux comités sont souvent créés pour déléguer des parties spécifiques du mandat d'un autre comité.\n\nCeci nous amène à notre dernière dimension qui s'appelle actuellement **Parcours**.\n\nEn s'appuyant sur les mêmes ensembles de données précédents, les parcours sont générées par une série d'étapes critiques nécessaires pour atteindre un résultat souhaité. Une liste d'étapes nous permettra de générer les parcours requis pour tout scénario et de fournir une analyse quantitative à cet égard. Un exemple pourrait être le temps minimum nécessaire pour parcourir l'ensemble du processus dans un monde parfait, ainsi que des estimations plus réalistes basées sur des observations réelles.\n\nPour commencer, vous aurez besoin d'au moins les ensembles de données brutes suivants pour le moment :\n\n- comités\n- postes\n- parcours\n- taux des salaires",
+      "testData": "Télécharger le fichier des données de démonstration"
     },
     "committees": {
       "title": "Analyses des comités",
-      "description": "",
+      "description": "À compléter",
       "table": {
         "property": "Propriété",
         "value": "Valeur",
@@ -31,6 +32,7 @@
     },
     "positions": {
       "title": "Analyses des postes",
+      "description":"À compléter",
       "positionsList": {
         "title": "Liste des postes",
         "table": {
@@ -71,7 +73,9 @@
     "missingCommittees": "- Comités manquants",
     "missingPathways": "- Chemins manquants",
     "missingRates": "- Taux manquants",
-    "submitValidFile": "S'il vous plait soumettre un fichier valide"
+    "submitValidFile": "S'il vous plait soumettre un fichier valide",
+    "proofOfConcept": "Ce site est une preuve de concept, un travail en cours. Des fonctionnalités et des corrections de bogues sont appliquées quotidiennement.",
+    "copyrightNotice": "Droit d’auteur © Sa Majesté la Reine du chef du Canada, représentée par le ministre de Emploi et Développement social Canada, 2019-2020"
   },
   "fileLoader": {
     "selectFile": "Choisir le fichier"
