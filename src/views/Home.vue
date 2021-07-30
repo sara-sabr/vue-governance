@@ -2,17 +2,15 @@
   <div class="container">
     <h1 class="text-center">{{ $t("page.home.title") }}</h1>
     <div v-html="markdownToHtml($t('page.home.description'))"></div>
-    <div class="row mb-3">
-      <button class="btn btn-secondary col" @click="loadTestData()">
+    <div class="mb-3">
+      <button class="btn btn-secondary" @click="loadTestData()">
         {{ $t("button.test") }}
       </button>
-      <a
-        href="/assets/demoDataFile.json"
-        download="demoDataFile"
-        target="_blank"
-        class="col"
-        >{{ $t("page.home.testData") }}</a
-      >
+    </div>
+    <div class="mb-3">
+      <a href="/assets/demoDataFile.json" download="demoDataFile">{{
+        $t("page.home.testData")
+      }}</a>
     </div>
     <FileLoader
       v-on:fileLoaded="fileLoaded($event)"
