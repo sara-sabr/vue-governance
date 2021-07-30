@@ -28,24 +28,28 @@
         </div>
       </div>
     </div>
-    <CommitteeList
-      :rates="rates"
-      :committees="committees"
+    <CommitteeDetails
+      v-for="(committee, elementKey) in committees"
+      :key="committee.id"
+      :elementKey="elementKey"
+      :committee="committee"
       :lang="lang"
+      :rates="rates"
       :positions="positions"
-    />
+    >
+    </CommitteeDetails>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import CommitteeList from "@/components/CommitteeList.vue"; // @ is an alias to /src
+import CommitteeDetails from "@/components/CommitteeDetails.vue"; // @ is an alias to /src
 import { mapState } from "vuex";
 
 @Component({
   computed: mapState(["rates", "positions", "committees"]),
   components: {
-    CommitteeList,
+    CommitteeDetails,
   },
   methods: {
     markdownToHtml(message: string) {
