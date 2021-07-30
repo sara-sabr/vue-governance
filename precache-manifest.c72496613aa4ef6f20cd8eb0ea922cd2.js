@@ -8,12 +8,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vue-governance/css/chunk-vendors.ce1e57cf.css"
   },
   {
-    "revision": "97f6e24822ae251e73d5f42f9212ffa3",
+    "revision": "0383c43adaac7c14dd758871bdbb1bc0",
     "url": "/vue-governance/index.html"
   },
   {
-    "revision": "77312d363782f9df3e4a",
-    "url": "/vue-governance/js/app.130cab16.js"
+    "revision": "b9511f5fe3e9676619e8",
+    "url": "/vue-governance/js/app.e17907ec.js"
   },
   {
     "revision": "d2896830f1e73c5a466f",
