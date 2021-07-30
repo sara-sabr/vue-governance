@@ -72,7 +72,9 @@
     "missingCommittees": "- Comités manquants",
     "missingPathways": "- Chemins manquants",
     "missingRates": "- Taux manquants",
-    "submitValidFile": "S'il vous plait soumettre un fichier valide"
+    "submitValidFile": "S'il vous plait soumettre un fichier valide",
+    "proofOfConcept": "Ce site est une preuve de concept, un travail en cours. Des fonctionnalités et des corrections de bogues sont appliquées quotidiennement.",
+    "copyrightNotice": "Droit d’auteur © Sa Majesté la Reine du chef du Canada, représentée par le ministre de Emploi et Développement social Canada, 2019-2020"
   },
   "fileLoader": {
     "selectFile": "Choisir le fichier"

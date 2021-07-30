@@ -73,7 +73,9 @@
     "missingCommittees": "- Missing Committees",
     "missingPathways": "- Missing Pathways",
     "missingRates": "- Missing Rates",
-    "submitValidFile": "Please submit a valid file"
+    "submitValidFile": "Please submit a valid file",
+    "proofOfConcept": "This is a proof of concept, a work in progress. Features and bug fixes are being applied on a daily basis.",
+    "copyrightNotice": "Copyright © Her Majesty the Queen in Right of Canada, as represented by the Minister of Employment and Social Development Canada, 2019-2020."
   },
   "fileLoader": {
     "selectFile": "Select file"
