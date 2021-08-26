@@ -1,5 +1,34 @@
 <template>
-  <svg v-bind:width="settings.width" v-bind:height="settings.height"></svg>
+  <div class="committee-details accordion mb-3" id="accordion-map">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="map">
+        <button
+          class="accordion-button"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapse-map"
+          aria-expanded="false"
+          aria-controls="#collapse-map"
+        >
+          MAP
+        </button>
+      </h2>
+      <div
+        id="collapse-map"
+        class="accordion-collapse collapse"
+        aria-labelledby="map"
+        data-bs-parent="#accordion-map"
+      >
+        <div class="accordion-body">
+          {{ mappedData }}
+          <svg
+            v-bind:width="settings.width"
+            v-bind:height="settings.height"
+          ></svg>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 <script lang="ts">
 import { Committee, GraphLink, GraphNode, Position } from "@/store/state";
@@ -41,43 +70,31 @@ import { mapState } from "vuex";
       });
       // Create links
       let links: GraphLink[] = [];
-      if (committees.length > 0 || positions.length > 0) {
-        links = committees.map((committee) => {
-          const committeePositions = [
+      const positionsIds = positions.map((position) => position.id);
+      if (committees.length > 0 || positionsIds.length > 0) {
+        committees.forEach((committee) => {
+          const committeeAttendees = [
             ...committee.chairs,
             ...committee.viceChairs,
             ...committee.members,
             ...committee.standingParticipants,
           ];
-          let link: GraphLink = positions.find((position) => {
-            let positionIndex = committeePositions.findIndex(
-              (committeePosition) => position.id === committeePosition
+
+          committeeAttendees.forEach((attendee) => {
+            let positionIndex = committeeAttendees.findIndex(
+              (committeePosition) => attendee === committeePosition
             );
             if (positionIndex !== -1) {
-              return { source: position.id, target: committee.id };
+              let newLink: GraphLink = {
+                source: attendee,
+                target: committee.id,
+              };
+
+              links.push(newLink);
             }
           });
-          if (link !== undefined) {
-            return link;
-          }
         });
       }
-
-      //Map committee attendees to existing positions
-      committees.forEach((committee) => {
-        //List all committee attendees
-        const committeePositions = [
-          ...committee.chairs,
-          ...committee.viceChairs,
-          ...committee.members,
-          ...committee.standingParticipants,
-        ];
-        positions.forEach((position) => {
-          if (position.id === committeePositions) {
-            links.push({ source: position.id, target: committeePosition });
-          }
-        });
-      });
 
       return { nodes, links };
     },
