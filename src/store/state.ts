@@ -1,3 +1,12 @@
+export interface GraphNode {
+  id: string;
+  name: { en: string; fr: string };
+}
+
+export interface GraphLink {
+  source: string;
+  target: string;
+}
 export interface Committee {
   id: string;
   name: Lang;
