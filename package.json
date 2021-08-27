@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.9.2",
+    "@types/d3": "^7.0.0",
+    "@types/d3-sankey": "^0.11.2",
     "@vue/composition-api": "^1.0.3",
     "bootstrap": "^5.0.2",
     "core-js": "^3.6.5",
@@ -33,8 +35,6 @@
   },
   "devDependencies": {
     "@intlify/vue-i18n-loader": "^1.0.0",
-    "@types/d3": "^7.0.0",
-    "@types/d3-sankey": "^0.11.2",
     "@types/jest": "^24.0.19",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",

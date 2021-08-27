@@ -15,7 +15,9 @@
     "baseUrl": ".",
     "types": [
       "webpack-env",
-      "jest"
+      "jest",
+      "d3",
+      "d3-sankey",
     ],
     "paths": {
       "@/*": [
