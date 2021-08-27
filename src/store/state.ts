@@ -1,12 +1,17 @@
-export interface GraphNode {
+import * as d3Sankey from "d3-sankey";
+
+export interface SankeyGraphNode {
   nodeId: string;
   name: string;
 }
-export interface GraphLink {
+export interface SankeyGraphLink {
   source: string;
   target: string;
   value: number;
 }
+
+export type GraphNode = d3Sankey.SankeyNode<SankeyGraphNode, SankeyGraphLink>;
+export type GraphLink = d3Sankey.SankeyLink<SankeyGraphNode, SankeyGraphLink>;
 
 export interface Graph {
   nodes: GraphNode[];
