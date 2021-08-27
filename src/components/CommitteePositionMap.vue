@@ -15,27 +15,25 @@
       </h2>
       <div
         id="collapse-map"
-        class="accordion-collapse collapse"
+        class="accordion-collapse collapse show"
         aria-labelledby="map"
         data-bs-parent="#accordion-map"
       >
         <div class="accordion-body">
-          <div id="chart">
-            <svg id="sankey"></svg>
-            <p
-              v-for="node in graph(committees, positions).links"
-              :key="node.id"
-            >
-              {{ node }}
-            </p>
-          </div>
+          <div id="chart"></div>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script lang="ts">
-import { Committee, SLink, SNode, Position, SGraph } from "@/store/state";
+import {
+  Committee,
+  Position,
+  SankeyGraphNode,
+  SankeyGraphLink,
+  Graph,
+} from "@/store/state";
 import { Prop, Vue } from "vue-property-decorator";
 import Component from "vue-class-component";
 import { mapState } from "vuex";
@@ -63,21 +61,34 @@ export default class CommitteePositionMap extends Vue {
 
   color = d3.scaleOrdinal(["#d4b4a3"], ["#da4f81"]).unknown("#ccc");
 
-  graph = function (
-    committees: Committee[],
-    positions: Position[],
-    lang: string
-  ): SGraph {
-    // const committees: Committee[] = committees;
-    // const positions: Position[] = positions;
+  getAttendees(committee: Committee): string[] {
+    return [
+      ...committee.chairs,
+      ...committee.viceChairs,
+      ...committee.members,
+      ...committee.standingParticipants,
+    ];
+  }
+  /**
+   * Generates the data set for the graph
+   */
+  graph(): Graph {
+    const committees = this.committees;
+    const positions = this.positions;
+    if (committees.length < 1 || positions.length < 1) {
+      throw console.error("Invalid data set provided to generate graph");
+    }
+    const lang = this.lang;
+
     //Create nodes names
-    const nodes: SNode[] = [];
+    const nodes: SankeyGraphNode[] = [];
+    nodes.push({ nodeId: "0", name: "Not currently attending a committee" });
     committees.forEach((committee) => {
       let nameEn = committee.name.en ? committee.name.en : "N/A";
       let nameFr = committee.name.fr ? committee.name.fr : "N/A";
 
       let node = {
-        nodeId: committee.id,
+        nodeId: committee.id.toString(),
         name: lang === "en" ? nameEn : nameFr,
       };
       nodes.push(node);
@@ -91,7 +102,8 @@ export default class CommitteePositionMap extends Vue {
       nodes.push(node);
     });
     // Create links
-    let links: SLink[] = [];
+    let links: SankeyGraphLink[] = [];
+    let allCommsAttendees: string[] = [];
     const positionsIds = positions.map((position) => position.id);
     if (committees.length > 0 || positionsIds.length > 0) {
       committees.forEach((committee) => {
@@ -101,15 +113,16 @@ export default class CommitteePositionMap extends Vue {
           ...committee.members,
           ...committee.standingParticipants,
         ];
+        allCommsAttendees = [...committeeAttendees];
 
         committeeAttendees.forEach((attendee) => {
-          let positionIndex = committeeAttendees.findIndex(
-            (committeePosition) => attendee === committeePosition
+          let positionIndex = positionsIds.findIndex(
+            (positionID) => attendee === positionID
           );
           if (positionIndex !== -1) {
-            let newLink: SLink = {
+            let newLink: SankeyGraphLink = {
               source: attendee,
-              target: committee.id,
+              target: committee.id.toString(),
               value: 1,
             };
 
@@ -118,76 +131,146 @@ export default class CommitteePositionMap extends Vue {
         });
       });
     }
+    //Parse all positions to filter out positions not attending committees
+    positionsIds.forEach((positionId) => {
+      var positionIdIndex = allCommsAttendees.findIndex(
+        (attendee) => attendee === positionId
+      );
+      if (positionIdIndex === -1) {
+        let newLink: SankeyGraphLink = {
+          source: positionId,
+          target: "0",
+          value: 1,
+        };
 
+        links.push(newLink);
+      }
+    });
     return { nodes, links };
-  };
+  }
+  /**
+   * References leveraged to combine D3js, D3-Sankey, Vuejs and Typescript
+   * D3js + Typescript: https://gist.github.com/MagicJohnJang/3cde82004e632e66b0fc5c156a7c16e9
+   * Vue + Typescript:
+   * - https://masteringjs.io/tutorials/vue/vue-d3
+   * - https://vuejsexamples.com/tag/d3/
+   * D3-Sankey:
+   * - https://github.com/d3/d3-sankey#readme
+   * - https://www.d3-graph-gallery.com/sankey
+   */
+  /**
+   * TODO:
+   * - Change graph nodes dimensions based on number of nodes of each type
+   * - Test various fonts
+   * - Adjust Nodes spacing
+   * - Change colors (need more since more than 10 nodes)
+   * - Fix type issues
+   *  */
 
-  sankey = d3Sankey
-    .sankey()
-    .nodeWidth(4)
-    .nodePadding(20)
-    .extent([
-      [0, 5],
-      [this.settings.width, this.settings.width - 5],
-    ]);
-
-  DrawChart(graph: SGraph): d3.BaseType | null {
+  chart(): void {
+    var width = 960;
+    //Setting height based on number of positions
+    var height = this.positions.length * 15;
     var svg = d3
-      .select("#sankey")
-      .attr("width", this.settings.width)
-      .attr("height", this.settings.height);
-    this.sankey.nodes(graph.nodes).links(graph.links);
-    svg
-      .append("g")
-      .selectAll("rect")
-      .data(graph.nodes)
-      .join("rect")
-      .attr("x", (d: any) => d.x0)
-      .attr("y", (d: any) => d.y0)
-      .attr("height", (d: any) => d.y1 - d.y0)
-      .attr("width", (d: any) => d.x1 - d.x0)
-      .append("title")
-      .text((d: any) => `${d.name}\n${d.value.toLocaleString()}`);
+      .select("#chart")
+      .append("svg")
+      .attr("viewBox", "0 0 " + width + " " + height);
 
-    svg
+    var formatNumber = d3.format(",.0f");
+    var format: any = function (d: any) {
+      return formatNumber(d) + " Committees";
+    };
+    var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+    var sankey = d3Sankey.sankey().nodeId((d) => d.nodeId);
+    sankey
+      .nodeWidth(15)
+      .nodePadding(10)
+      .extent([
+        [1, 1],
+        [width - 1, height - 6],
+      ]);
+
+    var link = svg
       .append("g")
+      .attr("class", "links")
       .attr("fill", "none")
-      .selectAll("g")
-      .data(graph.links)
-      .join("path")
-      .attr("d", d3Sankey.sankeyLinkHorizontal())
-      .attr("stroke", (d: any) => this.color(d.names[0]))
-      .attr("stroke-width", (d: any) => d.width)
-      .style("mix-blend-mode", "multiply")
-      .append("title")
-      .text((d: any) => `${d.names.join(" → ")}\n${d.value.toLocaleString()}`);
+      .attr("stroke", "#000")
+      .attr("stroke-opacity", 0.2)
+      .selectAll("path");
 
-    svg
+    var node = svg
       .append("g")
-      .style("font", "10px sans-serif")
-      .selectAll("text")
-      .data(graph.nodes)
-      .join("text")
-      .attr("x", (d: any) =>
-        d.x0 < this.settings.width / 2 ? d.x1 + 6 : d.x0 - 6
-      )
-      .attr("y", (d: any) => (d.y1 + d.y0) / 2)
-      .attr("dy", "0.35em")
-      .attr("text-anchor", (d: any) =>
-        d.x0 < this.settings.width / 2 ? "start" : "end"
-      )
-      .text((d: any) => d.name)
-      .append("tspan")
-      .attr("fill-opacity", 0.7)
-      .text((d: any) => ` ${d.value.toLocaleString()}`);
+      .attr("class", "nodes")
+      .attr("font-family", "sans-serif")
+      .attr("font-size", 10)
+      .selectAll("g");
+    const graph: Graph = this.graph();
 
-    return svg.node();
+    sankey(graph);
+
+    link = link
+      .data(graph.links)
+      .enter()
+      .append("path")
+      .attr("d", d3Sankey.sankeyLinkHorizontal())
+      .attr("stroke-width", function (d: any) {
+        return Math.max(1, d.width);
+      });
+
+    link.append("title").text(function (d: any) {
+      return d.source.name + " → " + d.target.name + "\n" + format(d.value);
+    });
+
+    node = node.data(graph.nodes).enter().append("g");
+
+    node
+      .append("rect")
+      .attr("x", function (d: any) {
+        return d.x0;
+      })
+      .attr("y", function (d: any) {
+        return d.y0;
+      })
+      .attr("height", function (d: any) {
+        return d.y1 - d.y0;
+      })
+      .attr("width", function (d: any) {
+        return d.x1 - d.x0;
+      })
+      .attr("fill", function (d: any) {
+        return color(d.name.replace(/ .*/, ""));
+      })
+      .attr("stroke", "#000");
+
+    node
+      .append("text")
+      .attr("x", function (d: any) {
+        return d.x0 - 6;
+      })
+      .attr("y", function (d: any) {
+        return (d.y1 + d.y0) / 2;
+      })
+      .attr("dy", "0.35em")
+      .attr("text-anchor", "end")
+      .text(function (d: any) {
+        return d.name;
+      })
+      .filter(function (d: any) {
+        return d.x0 < width / 2;
+      })
+      .attr("x", function (d: any) {
+        return d.x1 + 6;
+      })
+      .attr("text-anchor", "start");
+
+    node.append("title").text(function (d: any) {
+      return d.name + "\n" + format(d.value);
+    });
   }
 
   mounted(): void {
-    // this.init();
-    const graph = this.graph(this.committees, this.positions, this.lang);
-    this.DrawChart(graph);
+    this.chart();
   }
 }
 </script>
