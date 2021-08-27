@@ -1,5 +1,3 @@
-import * as d3Sankey from "d3-sankey";
-
 export interface GraphNode {
   nodeId: string;
   name: string;
@@ -10,13 +8,6 @@ export interface GraphLink {
   value: number;
 }
 
-export type SNode = d3Sankey.SankeyNode<GraphNode, GraphLink>;
-export type SLink = d3Sankey.SankeyLink<GraphNode, GraphLink>;
-
-export interface SGraph {
-  nodes: SNode[];
-  links: SLink[];
-}
 export interface Graph {
   nodes: GraphNode[];
   links: GraphLink[];
