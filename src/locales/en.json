@@ -30,6 +30,10 @@
         "meetingCost": "Approximate Meeting Cost",
         "meetingAnnualCost": "Approximate Annual Meeting Cost"
       },
+      "details": {
+        "mandate": "Mandate",
+        "responsibilities": "Responsibilities"
+      },
       "committeePositionMap": {
         "title": "Mapping of Branch Positions with Committees",
         "notAssigned": "Not assigned to a committee based on current data"
