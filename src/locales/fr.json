@@ -29,11 +29,14 @@
         "meetingCost": "Coût approximatif par rencontre",
         "meetingAnnualCost": "Coût annuel total approximatif"
       },
-      "committeePositionMap": { "notAssigned": "Pas de lien selon les données actuelles" }
+      "committeePositionMap": {
+        "title": "Cartographie entre les positions de la branche et des comités",
+        "notAssigned": "Pas de lien avec un comité selon les données actuelles"
+      }
     },
     "positions": {
       "title": "Analyses des postes",
-      "description":"À compléter",
+      "description": "À compléter",
       "positionsList": {
         "title": "Liste des postes",
         "table": {

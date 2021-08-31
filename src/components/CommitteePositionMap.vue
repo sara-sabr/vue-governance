@@ -10,7 +10,7 @@
           aria-expanded="false"
           aria-controls="#collapse-map"
         >
-          MAP
+          {{ $t("page.committees.committeePositionMap.title") }}
         </button>
       </h2>
       <div
@@ -39,6 +39,8 @@ import Component from "vue-class-component";
 import { mapState } from "vuex";
 import * as d3 from "d3";
 import * as d3Sankey from "d3-sankey";
+import en from "@/locales/en.json";
+import fr from "@/locales/fr.json";
 
 @Component({
   computed: {
@@ -49,6 +51,7 @@ export default class CommitteePositionMap extends Vue {
   @Prop() public positions!: Position[];
   @Prop() public committees!: Committee[];
   @Prop() public lang!: string;
+  // lang = this.$i18n;
 
   colorTrue = "#fff";
   colorFalse = "#000";
@@ -82,7 +85,13 @@ export default class CommitteePositionMap extends Vue {
 
     //Create nodes names
     const nodes: SankeyGraphNode[] = [];
-    nodes.push({ nodeId: "0", name: "Not currently attending a committee" });
+    nodes.push({
+      nodeId: "0",
+      name:
+        lang === "en"
+          ? en.page.committees.committeePositionMap.notAssigned
+          : fr.page.committees.committeePositionMap.notAssigned,
+    });
     committees.forEach((committee) => {
       let nameEn = committee.name.en ? committee.name.en : "N/A";
       let nameFr = committee.name.fr ? committee.name.fr : "N/A";

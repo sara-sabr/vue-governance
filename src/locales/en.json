@@ -30,7 +30,10 @@
         "meetingCost": "Approximate Meeting Cost",
         "meetingAnnualCost": "Approximate Annual Meeting Cost"
       },
-      "committeePositionMap":{"notAssigned":"Not assigned based on current data"}
+      "committeePositionMap": {
+        "title": "Mapping of Branch Positions with Committees",
+        "notAssigned": "Not assigned to a committee based on current data"
+      }
     },
     "positions": {
       "title": "Positions Analysis",
