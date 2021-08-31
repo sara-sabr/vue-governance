@@ -24,22 +24,12 @@
       >
         <div class="accordion-body">
           <div>
-            <p>{{ committee.mandate[lang] }}</p>
-            <div
-              v-for="responsibility in committee.responsibility[lang]"
-              :key="responsibility.id"
-            >
-              <div v-if="isArray(responsibility)">
-                <ul>
-                  <li v-for="resp in responsibility" :key="resp.id">
-                    {{ resp }}
-                  </li>
-                </ul>
-              </div>
-              <div v-if="!isArray(responsibility)">
-                <p>{{ responsibility }}</p>
-              </div>
-            </div>
+            <h3>{{ $t("page.committees.details.mandate") }}</h3>
+            <div v-html="markdownToHtml(committee.mandate[lang])"></div>
+            <h3>{{ $t("page.committees.details.responsibilities") }}</h3>
+            <div v-html="markdownToHtml(committee.responsibility[lang])"></div>
+          </div>
+          <div>
             <table class="table table-striped table-bordered">
               <caption></caption>
               <thead>
@@ -203,6 +193,12 @@ export default class CommitteeDetails extends Vue {
       return false;
     }
     return true;
+  }
+
+  markdownToHtml(message: string): any {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const marked = require("marked");
+    return marked(message);
   }
 }
 </script>
