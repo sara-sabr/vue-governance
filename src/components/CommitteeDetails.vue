@@ -22,42 +22,50 @@
         :aria-labelledby="'committee-' + elementKey"
         :data-bs-parent="'#accordion-committee-' + elementKey"
       >
-        <div class="accordion-body table-responsive">
-          <table class="table table-striped table-bordered">
-            <caption></caption>
-            <thead>
-              <th scope="col">{{ $t("page.committees.table.property") }}</th>
-              <th scope="col">{{ $t("page.committees.table.value") }}</th>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{{ $t("page.committees.table.membersCount") }}</td>
-                <td>{{ membersCount() }}</td>
-              </tr>
-              <tr>
-                <td>
-                  {{ $t("page.committees.table.standingPartipantsCount") }}
-                </td>
-                <td>{{ committee.standingParticipants.length }}</td>
-              </tr>
-              <tr>
-                <td>{{ $t("page.committees.table.totalParticipants") }}</td>
-                <td>{{ allAttendantsCount() }}</td>
-              </tr>
-              <tr>
-                <td>{{ $t("page.committees.table.meetingDuration") }}</td>
-                <td>{{ committee.meetings.duration }}</td>
-              </tr>
-              <tr>
-                <td>{{ $t("page.committees.table.meetingCost") }}</td>
-                <td>{{ calculateMeetingCost().toFixed(2) }}</td>
-              </tr>
-              <tr>
-                <td>{{ $t("page.committees.table.meetingAnnualCost") }}</td>
-                <td>{{ calculateYearlyMeetingCost().toFixed(2) }}</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="accordion-body">
+          <div>
+            <h3>{{ $t("page.committees.details.mandate") }}</h3>
+            <div v-html="markdownToHtml(committee.mandate[lang])"></div>
+            <h3>{{ $t("page.committees.details.responsibilities") }}</h3>
+            <div v-html="markdownToHtml(committee.responsibility[lang])"></div>
+          </div>
+          <div>
+            <table class="table table-striped table-bordered">
+              <caption></caption>
+              <thead>
+                <th scope="col">{{ $t("page.committees.table.property") }}</th>
+                <th scope="col">{{ $t("page.committees.table.value") }}</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ $t("page.committees.table.membersCount") }}</td>
+                  <td>{{ membersCount() }}</td>
+                </tr>
+                <tr>
+                  <td>
+                    {{ $t("page.committees.table.standingPartipantsCount") }}
+                  </td>
+                  <td>{{ committee.standingParticipants.length }}</td>
+                </tr>
+                <tr>
+                  <td>{{ $t("page.committees.table.totalParticipants") }}</td>
+                  <td>{{ allAttendantsCount() }}</td>
+                </tr>
+                <tr>
+                  <td>{{ $t("page.committees.table.meetingDuration") }}</td>
+                  <td>{{ committee.meetings.duration }}</td>
+                </tr>
+                <tr>
+                  <td>{{ $t("page.committees.table.meetingCost") }}</td>
+                  <td>{{ calculateMeetingCost().toFixed(2) }}</td>
+                </tr>
+                <tr>
+                  <td>{{ $t("page.committees.table.meetingAnnualCost") }}</td>
+                  <td>{{ calculateYearlyMeetingCost().toFixed(2) }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -178,6 +186,19 @@ export default class CommitteeDetails extends Vue {
         totalOccurences = 12;
     }
     return this.calculateMeetingCost() * totalOccurences;
+  }
+
+  isArray(element: string | Array<string>): boolean {
+    if (typeof element === "string") {
+      return false;
+    }
+    return true;
+  }
+
+  markdownToHtml(message: string): any {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const marked = require("marked");
+    return marked(message);
   }
 }
 </script>
