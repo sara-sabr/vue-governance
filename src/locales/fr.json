@@ -28,7 +28,8 @@
         "meetingDuration": "Durée de chaque rencontre",
         "meetingCost": "Coût approximatif par rencontre",
         "meetingAnnualCost": "Coût annuel total approximatif"
-      }
+      },
+      "committeePositionMap": { "notAssigned": "Pas de lien selon les données actuelles" }
     },
     "positions": {
       "title": "Analyses des postes",

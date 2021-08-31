@@ -29,7 +29,8 @@
         "meetingDuration": "Meeting Duration (minutes)",
         "meetingCost": "Approximate Meeting Cost",
         "meetingAnnualCost": "Approximate Annual Meeting Cost"
-      }
+      },
+      "committeePositionMap":{"notAssigned":"Not assigned based on current data"}
     },
     "positions": {
       "title": "Positions Analysis",
