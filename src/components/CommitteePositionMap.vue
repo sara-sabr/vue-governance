@@ -29,10 +29,12 @@
 <script lang="ts">
 import {
   Committee,
+  GraphLink,
+  GraphNode,
+  Graph,
   Position,
   SankeyGraphNode,
   SankeyGraphLink,
-  Graph,
 } from "@/store/state";
 import { Prop, Vue } from "vue-property-decorator";
 import Component from "vue-class-component";
@@ -186,12 +188,19 @@ export default class CommitteePositionMap extends Vue {
       .attr("viewBox", "0 0 " + width + " " + height);
 
     var formatNumber = d3.format(",.0f");
-    var format: any = function (d: any) {
+
+    var format = function (d: number | { valueOf(): number }) {
       return formatNumber(d) + " Committees";
     };
+
     var color = d3.scaleOrdinal(d3.schemeCategory10);
 
-    var sankey = d3Sankey.sankey().nodeId((d) => d.nodeId);
+    const graph: Graph = this.graph();
+
+    var sankey = d3Sankey
+      .sankey<GraphNode, GraphLink>()
+      .nodeId((d) => d.nodeId);
+
     sankey
       .nodeWidth(15)
       .nodePadding(10)
@@ -206,15 +215,14 @@ export default class CommitteePositionMap extends Vue {
       .attr("fill", "none")
       .attr("stroke", "#000")
       .attr("stroke-opacity", 0.2)
-      .selectAll("path");
+      .selectAll<SVGPathElement, GraphLink>("path");
 
     var node = svg
       .append("g")
       .attr("class", "nodes")
       .attr("font-family", "sans-serif")
       .attr("font-size", 10)
-      .selectAll("g");
-    const graph: Graph = this.graph();
+      .selectAll<SVGGElement, GraphNode>("g");
 
     sankey(graph);
 
