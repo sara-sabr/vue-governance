@@ -2,12 +2,29 @@
   <div>
     <div>
       <h3>{{ position.name[lang] }}</h3>
-      <ul v-if="listCommitteesPerPosition.length > 0">
-        <li v-for="committee in listCommitteesPerPosition" :key="committee.id">
-          <p>{{ committee.name[lang] }}</p>
-          <p>{{ $t("role." + roleInCommittee(position, committee)) }}</p>
-        </li>
-      </ul>
+      <table class="table table-striped table-bordered">
+        <caption></caption>
+        <thead>
+          <th scope="col">
+            {{ $t("page.positions.positionsCommittees.table.committee") }}
+          </th>
+          <th scope="col">
+            {{ $t("page.positions.positionsCommittees.table.role") }}
+          </th>
+        </thead>
+        <tbody v-if="listCommitteesPerPosition.length > 0">
+          <tr
+            v-for="committee in listCommitteesPerPosition"
+            :key="committee.id"
+          >
+            <td>{{ committee.name[lang] }}</td>
+            <td>{{ $t("role." + roleInCommittee(position, committee)) }}</td>
+          </tr>
+        </tbody>
+        <tbody v-else>
+          <tr></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
