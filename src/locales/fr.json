@@ -34,7 +34,7 @@
         "responsibilities": "Responsibilities"
       },
       "committeePositionMap": {
-        "title": "Cartographie entre les positions de la branche et des comités",
+        "title": "Cartographie entre les positions et les comités",
         "notAssigned": "Pas de lien avec un comité selon les données actuelles"
       }
     },
@@ -53,7 +53,17 @@
       "positionsCommittees": {
         "title": "Comités par position",
         "description": "Cette section présente la liste des comités auxquels chaque poste de l'organisation est censé participer, que ce soit en tant que président, vice-président, membre votant ou participant permanent.",
-        "attends": "La personne titulaire de ce poste doit participer aux comités suivants"
+        "attends": "La personne titulaire de ce poste doit participer aux comités suivants",
+        "table": {
+          "committee": "Comité",
+          "role": "Rôle",
+          "chair":"Présidence",
+          "coChair":"Co-présidence",
+          "viceChair": "Vice-présidence",
+          "votingMember":"Membre votant",
+          "standingPartipants": "Observation"
+        }
+        
       },
       "orgChart": {
         "title": "Diagramme organisationnel"
