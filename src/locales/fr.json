@@ -11,6 +11,7 @@
     "onThisPage": "Sur cette page"
   },
   "page": {
+    "approach": "Approche",
     "home": {
       "title": "Étude de la gouvernance",
       "description": "L'objectif de ce site est de fournir un moyen automatisé d'analyser des informations quantitatives sur les différents comités de gouvernance.\n\nLa toute première dimension étudiée est celle des **comités**.\n\nNous utilisons des données brutes structurées extraites des termes de référence des comités pour créer une vue d'ensemble des informations sur chaque comité.\n\nPour être en mesure de générer les comités, nous avons également besoin de données brutes structurées provenant de l'organigramme. Ces données fournissent les informations nécessaires sur les membres des comités.\n\nLa deuxième dimension que nous examinons est celle des **Postes** eux-mêmes.\n\nEn combinant les mêmes ensembles de données que précédemment, il est possible d'analyser rapidement le temps qu'une personne donnée doit passer dans une variété de comités.\n\nEnfin, dans une grande organisation, de nouveaux comités sont souvent créés pour déléguer des parties spécifiques du mandat d'un autre comité.\n\nCeci nous amène à notre dernière dimension qui s'appelle actuellement **Parcours**.\n\nEn s'appuyant sur les mêmes ensembles de données précédents, les parcours sont générées par une série d'étapes critiques nécessaires pour atteindre un résultat souhaité. Une liste d'étapes nous permettra de générer les parcours requis pour tout scénario et de fournir une analyse quantitative à cet égard. Un exemple pourrait être le temps minimum nécessaire pour parcourir l'ensemble du processus dans un monde parfait, ainsi que des estimations plus réalistes basées sur des observations réelles.\n\nPour commencer, vous aurez besoin d'au moins les ensembles de données brutes suivants pour le moment :\n\n- comités\n- postes\n- parcours\n- taux des salaires",
@@ -18,7 +19,7 @@
     },
     "committees": {
       "title": "Analyses des comités",
-      "description": "À compléter",
+      "description": "Cette page contient une série de sections qui visent à fournir une vue d'ensemble des comités existants.\n\n### Cartographie entre les postes et les comités\n\nLa première section est une cartographie des postes connus avec la liste des comités trouvés dans les données. Il s'agit d'une représentation visuelle de tous les postes et de leurs liens avec les comités. L'objectif de cette visualisation est d'aider à apprécier l'étendue des réunions de gouvernance auxquelles participent des personnes données.\n\n### Données détaillées sur les comités\n\nLes autres sections sont générées de manière dynamique à partir des données et fournissent une vue plus approfondie des informations sur chaque comité. Elles contiennent des informations individuelles sur les comités, telles que:\n\n- Mandat\n- Responsabilités\n- Informations statistiques\n- Comptes rendus et détails des réunions\n- Observations qualitatives, lorsqu'elles sont disponibles.",
       "table": {
         "property": "Propriété",
         "value": "Valeur",
@@ -34,7 +35,7 @@
         "responsibilities": "Responsibilities"
       },
       "committeePositionMap": {
-        "title": "Cartographie entre les positions de la branche et des comités",
+        "title": "Cartographie entre les positions et les comités",
         "notAssigned": "Pas de lien avec un comité selon les données actuelles"
       }
     },
@@ -53,7 +54,16 @@
       "positionsCommittees": {
         "title": "Comités par position",
         "description": "Cette section présente la liste des comités auxquels chaque poste de l'organisation est censé participer, que ce soit en tant que président, vice-président, membre votant ou participant permanent.",
-        "attends": "La personne titulaire de ce poste doit participer aux comités suivants"
+        "attends": "La personne titulaire de ce poste doit participer aux comités suivants",
+        "table": {
+          "committee": "Comité",
+          "role": "Rôle",
+          "chair": "Présidence",
+          "coChair": "Co-présidence",
+          "viceChair": "Vice-présidence",
+          "votingMember": "Membre votant",
+          "standingPartipants": "Observation"
+        }
       },
       "orgChart": {
         "title": "Diagramme organisationnel"

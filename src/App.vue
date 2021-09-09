@@ -60,12 +60,8 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
+import { ActionTypes } from "./store/actions";
 export default Vue.extend({
-  data() {
-    return {
-      lang: this.$i18n.locale,
-    };
-  },
   methods: {
     languageToggle(): void {
       if (this.$i18n.locale === "en") {
@@ -73,7 +69,18 @@ export default Vue.extend({
       } else {
         this.$i18n.locale = "en";
       }
+      this.$store.dispatch(ActionTypes.SetLang, this.$i18n.locale);
     },
+  },
+  mounted() {
+    let pageLang = "en";
+    if (
+      document.documentElement.lang === "fr" ||
+      document.documentElement.lang === "fr-ca"
+    ) {
+      pageLang = "fr";
+    }
+    this.$store.dispatch(ActionTypes.SetLang, pageLang);
   },
 });
 </script>

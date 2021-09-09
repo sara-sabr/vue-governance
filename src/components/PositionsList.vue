@@ -35,14 +35,14 @@
 import { Position } from "@/store/state";
 import Vue, { PropType } from "vue";
 import Component from "vue-class-component";
+import { mapState } from "vuex";
 @Component({
+  computed: {
+    ...mapState(["lang"]),
+  },
   props: {
     positions: {
       type: Array as PropType<Position[]>,
-      required: true,
-    },
-    lang: {
-      type: String,
       required: true,
     },
   },

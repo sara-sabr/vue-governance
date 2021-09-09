@@ -2,12 +2,29 @@
   <div>
     <div>
       <h3>{{ position.name[lang] }}</h3>
-      <ul v-if="listCommitteesPerPosition.length > 0">
-        <li v-for="committee in listCommitteesPerPosition" :key="committee.id">
-          <p>{{ committee.name[lang] }}</p>
-          <p>{{ $t("role." + roleInCommittee(position, committee)) }}</p>
-        </li>
-      </ul>
+      <table class="table table-striped table-bordered">
+        <caption></caption>
+        <thead>
+          <th scope="col">
+            {{ $t("page.positions.positionsCommittees.table.committee") }}
+          </th>
+          <th scope="col">
+            {{ $t("page.positions.positionsCommittees.table.role") }}
+          </th>
+        </thead>
+        <tbody v-if="listCommitteesPerPosition.length > 0">
+          <tr
+            v-for="committee in listCommitteesPerPosition"
+            :key="committee.id"
+          >
+            <td>{{ committeeName(committee) }}</td>
+            <td>{{ $t("role." + roleInCommittee(position, committee)) }}</td>
+          </tr>
+        </tbody>
+        <tbody v-else>
+          <tr></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
@@ -15,6 +32,7 @@
 import { Committee, Position } from "@/store/state";
 import Vue, { PropType } from "vue";
 import Component from "vue-class-component";
+import { mapState } from "vuex";
 @Component({
   data() {
     return {
@@ -53,6 +71,7 @@ import Component from "vue-class-component";
       });
       return list;
     },
+    ...mapState(["lang"]),
   },
   i18n: {
     messages: {
@@ -99,9 +118,13 @@ import Component from "vue-class-component";
       }
       return "standingParticipant";
     },
+    committeeName(committee: Committee): string {
+      if (this.$i18n.locale === "fr") {
+        return committee.name.fr;
+      }
+      return committee.name.en;
+    },
   },
 })
-export default class PositionsCommittees extends Vue {
-  lang = this.$i18n.locale;
-}
+export default class PositionsCommittees extends Vue {}
 </script>

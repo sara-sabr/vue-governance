@@ -19,7 +19,7 @@
     },
     "committees": {
       "title": "Committees Analysis",
-      "description": "TBC",
+      "description": "This pages contains a series of sections that aim to provide a rapid overview of existing committees.\n\n### Mapping of Positions with Committees\n\nThe first section is a mapping of the known positions to the list of committees found in the data. It is a visual representation of all positions and their links to the committees. The goal of the visualization is to help grasp the breadth of governance meetings being attended by any given individuals.\n\n### Detailed Committee Data\n\nThe rest of the sections are dynamically generated from the data and provide a deeper dive in each committee's information.\n\nThey contain individual committee information such as:\n\n- Mandate\n- Responsibilities\n- Statistical information\n- Meeting Proceedings and details\n- Qualitative observations, when available",
       "table": {
         "property": "Property",
         "value": "Value",
@@ -35,7 +35,7 @@
         "responsibilities": "Responsibilities"
       },
       "committeePositionMap": {
-        "title": "Mapping of Branch Positions with Committees",
+        "title": "Mapping of Positions with Committees",
         "notAssigned": "Not assigned to a committee based on current data"
       }
     },
@@ -54,7 +54,16 @@
       "positionsCommittees": {
         "title": "Committees per Position",
         "description": "This section presents each position in the organization with the list of meetings they are expected to attend, either as chair, vice-chair, voting member or standing participant.",
-        "attends": "The person in this position must attend the following committees"
+        "attends": "The person in this position must attend the following committees",
+        "table": {
+          "committee": "Committee",
+          "role": "Role",
+          "chair": "Chair",
+          "coChair": "Co-Chair",
+          "viceChair": "Vice Chair",
+          "votingMember": "Voting Member",
+          "standingPartipant": "Standing Participant"
+        }
       },
       "orgChart": {
         "title": "Organizational Chart"

@@ -6,6 +6,7 @@ export enum MutationType {
   SetCommittees = "SET_COMMITTEES",
   SetRates = "SET_RATES",
   SetPathways = "SET_PATHWAYS",
+  SetLang = "SET_LANG",
   ResetData = "RESET_DATA",
 }
 
@@ -14,6 +15,7 @@ export type Mutations = {
   [MutationType.SetCommittees](state: RootState, payload: Committee[]): void;
   [MutationType.SetPathways](state: RootState, payload: Pathway[]): void;
   [MutationType.SetRates](state: RootState, payload: Rate[]): void;
+  [MutationType.SetLang](state: RootState, payload: string): void;
   [MutationType.ResetData](state: RootState, payload: null): void;
 };
 
@@ -30,10 +32,15 @@ export const mutations: MutationTree<RootState> & Mutations = {
   [MutationType.SetRates](state: RootState, payload: Rate[]) {
     state.rates = payload;
   },
+  [MutationType.SetLang](state: RootState, payload: string) {
+    state.lang = payload;
+    document.documentElement.lang = payload;
+  },
   [MutationType.ResetData](state: RootState) {
     state.committees = [];
     state.positions = [];
     state.pathways = [];
     state.rates = [];
+    state.lang = "en";
   },
 };

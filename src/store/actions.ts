@@ -5,6 +5,7 @@ import { Committee, Pathway, Position, Rate, RootState } from "@/store/state";
 export enum ActionTypes {
   LoadFileData = "LOAD_FILE_DATA",
   ResetData = "RESET_DATA",
+  SetLang = "SET_LANG",
 }
 
 type ActionAugments = Omit<ActionContext<RootState, RootState>, "commit"> & {
@@ -22,9 +23,11 @@ export type Actions = {
       committees: Committee[];
       pathways: Pathway[];
       rates: Rate[];
+      lang: string;
     }
   ): void;
   [ActionTypes.ResetData](context: ActionAugments, value: null): void;
+  [ActionTypes.SetLang](context: ActionAugments, value: string): void;
 };
 
 export const actions: ActionTree<RootState, RootState> & Actions = {
@@ -36,5 +39,8 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
   },
   async [ActionTypes.ResetData]({ commit }, value) {
     commit(MutationType.ResetData, value);
+  },
+  async [ActionTypes.SetLang]({ commit }, value) {
+    commit(MutationType.SetLang, value);
   },
 };

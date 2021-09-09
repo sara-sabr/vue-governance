@@ -4,7 +4,6 @@
       v-for="committee in committees"
       :key="committee.id"
       :committee="committee"
-      :lang="lang"
       :rates="rates"
       :positions="positions"
     >
@@ -17,18 +16,16 @@ import { Committee, Position, Rate } from "@/store/state";
 import { PropType } from "vue";
 import { Component, Prop, Vue } from "vue-property-decorator";
 import CommitteeDetails from "@/components/CommitteeDetails.vue";
+import { mapState } from "vuex";
 
 @Component({
   components: {
     CommitteeDetails,
+    ...mapState(["lang"]),
   },
   props: {
     rates: {
       type: Array as PropType<Rate[]>,
-      required: true,
-    },
-    lang: {
-      type: String,
       required: true,
     },
     positions: {
