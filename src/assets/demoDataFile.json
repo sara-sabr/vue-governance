@@ -21,11 +21,9 @@
         "URL": null,
         "access": null
       },
-      "termsOfReference": {
-        "URL": {
-          "fr": "TBC",
-          "en": "TBC"
-        }
+      "termsOfReferenceURL": {
+        "fr": "TBC",
+        "en": "TBC"
       },
       "meetings": {
         "recurrence": "weekly",
