@@ -75,8 +75,8 @@ export interface Position {
 }
 
 export interface Lang {
-  fr?: string;
-  en?: string;
+  fr: string;
+  en: string;
 }
 
 export interface RootState {
@@ -84,6 +84,7 @@ export interface RootState {
   positions: Position[];
   pathways: Pathway[];
   rates: Rate[];
+  lang: string;
 }
 
 export interface DataFile {
@@ -99,4 +100,5 @@ export const state: RootState = {
   positions: [],
   pathways: [],
   rates: [],
+  lang: "en",
 };
