@@ -33,7 +33,6 @@
       :key="pathway.id"
       :element-key="elementKey + 1"
       :pathway="pathway"
-      :lang="lang"
     ></pathway-details>
   </div>
 </template>
@@ -61,7 +60,5 @@ import PathwayDetails from "@/components/PathwayDetails.vue";
     },
   },
 })
-export default class Pathways extends Vue {
-  lang = this.$i18n.locale;
-}
+export default class Pathways extends Vue {}
 </script>

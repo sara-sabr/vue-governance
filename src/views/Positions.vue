@@ -49,7 +49,7 @@
           data-bs-parent="#accordion-positionList"
         >
           <div class="accordion-body">
-            <PositionsList :positions="positions" :lang="lang" />
+            <PositionsList :positions="positions" />
           </div>
         </div>
       </div>
@@ -81,7 +81,6 @@
               :key="position.id"
               :position="position"
               :committees="committees"
-              :lang="lang"
             />
           </div>
         </div>
