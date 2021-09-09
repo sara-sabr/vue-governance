@@ -26,9 +26,9 @@
           <div v-for="(step, stepKey) in pathway.steps" :key="step.id">
             <h3>
               {{ $t("page.pathways.step") }} {{ stepKey + 1 }}:
-              {{ step.name[lang] }}
+              {{ step.description[lang] }}
             </h3>
-            <p>{{ step.description[lang] }}</p>
+            <!-- <p>{{ step.description[lang] }}</p> -->
             <p>{{ $t("minimumDelay") }}</p>
             <p>{{ $t("expectedDelay") }}</p>
           </div>
@@ -43,7 +43,7 @@ import Vue, { PropType } from "vue";
 import Component from "vue-class-component";
 import { mapState } from "vuex";
 @Component({
-  methods: {
+  computed: {
     ...mapState(["lang"]),
   },
   props: {
