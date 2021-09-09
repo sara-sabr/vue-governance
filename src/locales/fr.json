@@ -19,7 +19,7 @@
     },
     "committees": {
       "title": "Analyses des comités",
-      "description": "À compléter",
+      "description": "Cette page contient une série de sections qui visent à fournir une vue d'ensemble des comités existants.\n\n### Cartographie entre les postes et les comités\n\nLa première section est une cartographie des postes connus avec la liste des comités trouvés dans les données. Il s'agit d'une représentation visuelle de tous les postes et de leurs liens avec les comités. L'objectif de cette visualisation est d'aider à apprécier l'étendue des réunions de gouvernance auxquelles participent des personnes données.\n\n### Données détaillées sur les comités\n\nLes autres sections sont générées de manière dynamique à partir des données et fournissent une vue plus approfondie des informations sur chaque comité. Elles contiennent des informations individuelles sur les comités, telles que:\n\n- Mandat\n- Responsabilités\n- Informations statistiques\n- Comptes rendus et détails des réunions\n- Observations qualitatives, lorsqu'elles sont disponibles.",
       "table": {
         "property": "Propriété",
         "value": "Valeur",
