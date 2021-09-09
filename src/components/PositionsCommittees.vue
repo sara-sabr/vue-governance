@@ -17,7 +17,7 @@
             v-for="committee in listCommitteesPerPosition"
             :key="committee.id"
           >
-            <td>{{ committee.name[lang] }}</td>
+            <td>{{ committeeName(committee) }}</td>
             <td>{{ $t("role." + roleInCommittee(position, committee)) }}</td>
           </tr>
         </tbody>
@@ -32,6 +32,7 @@
 import { Committee, Position } from "@/store/state";
 import Vue, { PropType } from "vue";
 import Component from "vue-class-component";
+import { mapState } from "vuex";
 @Component({
   data() {
     return {
@@ -70,6 +71,7 @@ import Component from "vue-class-component";
       });
       return list;
     },
+    ...mapState(["lang"]),
   },
   i18n: {
     messages: {
@@ -116,9 +118,13 @@ import Component from "vue-class-component";
       }
       return "standingParticipant";
     },
+    committeeName(committee: Committee): string {
+      if (this.$i18n.locale === "fr") {
+        return committee.name.fr;
+      }
+      return committee.name.en;
+    },
   },
 })
-export default class PositionsCommittees extends Vue {
-  lang = this.$i18n.locale;
-}
+export default class PositionsCommittees extends Vue {}
 </script>

@@ -46,14 +46,13 @@ import fr from "@/locales/fr.json";
 
 @Component({
   computed: {
-    ...mapState,
+    ...mapState(["lang"]),
   },
 })
 export default class CommitteePositionMap extends Vue {
   @Prop() public positions!: Position[];
   @Prop() public committees!: Committee[];
-  @Prop() public lang!: string;
-  // lang = this.$i18n;
+  thisLang = this.$store.state.lang;
 
   colorTrue = "#fff";
   colorFalse = "#000";
@@ -83,14 +82,14 @@ export default class CommitteePositionMap extends Vue {
     if (committees.length < 1 || positions.length < 1) {
       throw console.error("Invalid data set provided to generate graph");
     }
-    const lang = this.lang;
+
 
     //Create nodes names
     const nodes: SankeyGraphNode[] = [];
     nodes.push({
       nodeId: "0",
       name:
-        lang === "en"
+        this.thisLang === "en"
           ? en.page.committees.committeePositionMap.notAssigned
           : fr.page.committees.committeePositionMap.notAssigned,
     });
@@ -100,7 +99,7 @@ export default class CommitteePositionMap extends Vue {
 
       let node = {
         nodeId: committee.id.toString(),
-        name: lang === "en" ? nameEn : nameFr,
+        name: this.thisLang === "en" ? nameEn : nameFr,
       };
       nodes.push(node);
     });
@@ -109,7 +108,10 @@ export default class CommitteePositionMap extends Vue {
       let nameEn = position.name.en ? position.name.en : "N/A";
       let nameFr = position.name.fr ? position.name.fr : "N/A";
 
-      let node = { nodeId: position.id, name: lang === "en" ? nameEn : nameFr };
+      let node = {
+        nodeId: position.id,
+        name: this.thisLang === "en" ? nameEn : nameFr,
+      };
       nodes.push(node);
     });
     // Create links

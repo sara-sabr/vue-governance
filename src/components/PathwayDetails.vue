@@ -41,14 +41,14 @@
 import { Pathway } from "@/store/state";
 import Vue, { PropType } from "vue";
 import Component from "vue-class-component";
+import { mapState } from "vuex";
 @Component({
+  methods: {
+    ...mapState(["lang"]),
+  },
   props: {
     pathway: {
       type: Object as PropType<Pathway>,
-      required: true,
-    },
-    lang: {
-      type: String,
       required: true,
     },
     elementKey: {

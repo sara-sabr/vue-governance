@@ -75,15 +75,13 @@
 import { Committee, Position, Rate } from "@/store/state";
 import Vue, { PropType } from "vue";
 import Component from "vue-class-component";
+import { mapState } from "vuex";
 
 @Component({
+  computed: mapState(["lang"]),
   props: {
     committee: {
       type: Object as PropType<Committee>,
-      required: true,
-    },
-    lang: {
-      type: String,
       required: true,
     },
     positions: {
