@@ -55,17 +55,18 @@
                   <td>{{ $t("page.committees.table.meetingDuration") }}</td>
                   <td>{{ committee.meetings.duration }}</td>
                 </tr>
-                <tr>
+                <!-- <tr>
                   <td>{{ $t("page.committees.table.meetingCost") }}</td>
                   <td>{{ calculateMeetingCost().toFixed(2) }}</td>
                 </tr>
                 <tr>
                   <td>{{ $t("page.committees.table.meetingAnnualCost") }}</td>
                   <td>{{ calculateYearlyMeetingCost().toFixed(2) }}</td>
-                </tr>
+                </tr> -->
               </tbody>
             </table>
           </div>
+          <div></div>
         </div>
       </div>
     </div>
