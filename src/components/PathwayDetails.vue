@@ -23,15 +23,20 @@
         :data-bs-parent="'#accordion-pathway-' + elementKey"
       >
         <div class="accordion-body">
+          <p>{{ pathway.description[lang] }}</p>
           <div v-for="(step, stepKey) in pathway.steps" :key="step.id">
             <h3>
               {{ $t("page.pathways.step") }} {{ stepKey + 1 }}:
-              {{ step.description[lang] }}
+              {{ step.name[lang] }}
             </h3>
-            <!-- <p>{{ step.description[lang] }}</p> -->
-            <p>{{ $t("minimumDelay") }}</p>
-            <p>{{ $t("expectedDelay") }}</p>
+            <p>{{ step.description[lang] }}</p>
+            <p>{{ $t("minimumDelay") }}{{ duration(step.duration) }}</p>
+            <p>{{ $t("expectedDelay") }}{{ duration(step.duration) }}</p>
           </div>
+
+          <p>
+            <strong>{{ $t("minimumDelayETE") }}</strong> {{ minimumDelay }}
+          </p>
         </div>
       </div>
     </div>
@@ -59,15 +64,26 @@ import { mapState } from "vuex";
   data() {
     return { minimumDelay: 0, expectedDelay: 0 };
   },
+  methods: {
+    duration(value: { quantity: number; unit: string }): string {
+      if (value.unit === "hours") {
+        return value.quantity + "h";
+      }
+      return value.quantity / 60 + "h";
+    },
+  },
   i18n: {
     messages: {
       en: {
-        minimumDelay: "Minimum delay for step's end to end completion: ",
-        expectedDelay: "Expected delay for step's end to end completion: ",
+        minimumDelay: "Minimum delay for step's completion: ",
+        expectedDelay: "Expected delay for step's completion: ",
+        minimumDelayETE: "Minimum delay for pathway end to end completion: ",
       },
       fr: {
         minimumDelay: "Délai minimum pour compléter l'étape: ",
         expectedDelay: "Délai attendu pour compléter l'étape: ",
+        minimumDelayETE:
+          "Délai minimum pour compléter le parcours au complet: ",
       },
     },
   },
