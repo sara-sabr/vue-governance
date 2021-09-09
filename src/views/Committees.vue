@@ -29,7 +29,7 @@
       </div>
     </div>
     <section v-if="!this.$store.getters.isCommitteesEmpty">
-      <CommitteePositionMap :committees="committees" :positions="positions" />
+      <CommitteePositionMap />
     </section>
     <section v-if="!this.$store.getters.isCommitteesEmpty">
       <CommitteeDetails
@@ -52,7 +52,7 @@ import CommitteePositionMap from "@/components/CommitteePositionMap.vue";
 import { mapState } from "vuex";
 
 @Component({
-  computed: mapState(["rates", "positions", "committees", "lang"]),
+  computed: { ...mapState(["rates", "positions", "committees", "lang"]) },
   components: {
     CommitteeDetails,
     CommitteePositionMap,
