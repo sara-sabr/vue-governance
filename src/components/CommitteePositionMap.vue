@@ -15,7 +15,7 @@
       </h2>
       <div
         id="collapse-map"
-        class="accordion-collapse collapse show"
+        class="accordion-collapse collapse"
         aria-labelledby="map"
         data-bs-parent="#accordion-map"
       >
