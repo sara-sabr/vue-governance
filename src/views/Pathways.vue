@@ -28,12 +28,19 @@
         </div>
       </div>
     </div>
-    <pathway-details
-      v-for="(pathway, elementKey) in pathways"
-      :key="pathway.id"
-      :element-key="elementKey + 1"
-      :pathway="pathway"
-    ></pathway-details>
+    <section
+      v-if="
+        !this.$store.getters.isCommitteesEmpty &&
+        !this.$store.getters.isPositionsEmpty
+      "
+    >
+      <pathway-details
+        v-for="(pathway, elementKey) in pathways"
+        :key="pathway.id"
+        :element-key="elementKey + 1"
+        :pathway="pathway"
+      ></pathway-details>
+    </section>
   </div>
 </template>
 <script lang="ts">

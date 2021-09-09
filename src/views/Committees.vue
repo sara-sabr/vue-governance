@@ -28,16 +28,20 @@
         </div>
       </div>
     </div>
-    <CommitteePositionMap :committees="committees" :positions="positions" />
-    <CommitteeDetails
-      v-for="(committee, elementKey) in committees"
-      :key="committee.id"
-      :elementKey="elementKey"
-      :committee="committee"
-      :rates="rates"
-      :positions="positions"
-    >
-    </CommitteeDetails>
+    <section v-if="!this.$store.getters.isCommitteesEmpty">
+      <CommitteePositionMap :committees="committees" :positions="positions" />
+    </section>
+    <section v-if="!this.$store.getters.isCommitteesEmpty">
+      <CommitteeDetails
+        v-for="(committee, elementKey) in committees"
+        :key="committee.id"
+        :elementKey="elementKey"
+        :committee="committee"
+        :rates="rates"
+        :positions="positions"
+      >
+      </CommitteeDetails>
+    </section>
   </div>
 </template>
 

@@ -28,7 +28,11 @@
         </div>
       </div>
     </div>
-    <section id="accordion-positionList" class="accordion mb-3">
+    <section
+      id="accordion-positionList"
+      class="accordion mb-3"
+      v-if="!this.$store.getters.isPositionsEmpty"
+    >
       <div class="accordion-item">
         <h2 class="accordion-header" id="positionList">
           <button
@@ -54,7 +58,11 @@
         </div>
       </div>
     </section>
-    <section id="accordion-positionCommitteeRelation" class="accordion mb-3">
+    <section
+      id="accordion-positionCommitteeRelation"
+      class="accordion mb-3"
+      v-if="!this.$store.getters.isPositionsEmpty"
+    >
       <div class="accordion-item">
         <h2 class="accordion-header" id="positionCommitteeRelation">
           <button
