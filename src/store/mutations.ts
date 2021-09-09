@@ -34,6 +34,7 @@ export const mutations: MutationTree<RootState> & Mutations = {
   },
   [MutationType.SetLang](state: RootState, payload: string) {
     state.lang = payload;
+    document.documentElement.lang = payload;
   },
   [MutationType.ResetData](state: RootState) {
     state.committees = [];
