@@ -7,6 +7,15 @@
           {{ $t("page.positions.positionsList.table.key") }}
         </th>
         <th scope="col">
+          {{ $t("page.positions.positionsList.table.organization") }}
+        </th>
+        <th scope="col">
+          {{ $t("page.positions.positionsList.table.branch") }}
+        </th>
+        <th scope="col">
+          {{ $t("page.positions.positionsList.table.directorate") }}
+        </th>
+        <th scope="col">
           {{ $t("page.positions.positionsList.table.position") }}
         </th>
         <th scope="col">
@@ -21,6 +30,9 @@
           <td>
             {{ position.id }}
           </td>
+          <td>{{ position.organization }}</td>
+          <td>{{ position.branch }}</td>
+          <td>{{ position.directorate }}</td>
           <td>
             {{ position.name[lang] }}
           </td>

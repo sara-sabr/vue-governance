@@ -41,10 +41,13 @@
     },
     "positions": {
       "title": "Positions Analysis",
-      "description": "TBC",
+      "description": "This page contains information about known positions.\n\n### List of positions\n\nThe first section presents a list of all know positions. When available, the list will also indicate the position's organization, branch, directorate, classification, level, and the position it reports to.\n\n### Committees per Position\n\nThis section provides a list of known committees each position is attending. As it is dynamically generated from the data provided, some positions may not have committees listed, even if they actually are members of committees in real life.",
       "positionsList": {
         "title": "List of Positions",
         "table": {
+          "organization":"Organization",
+          "branch": "Branch",
+          "directorate": "Directorate",
           "position": "Position",
           "key": "Key",
           "classification": "Classification and Level",
