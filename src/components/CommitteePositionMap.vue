@@ -231,58 +231,88 @@ export default class CommitteePositionMap extends Vue {
       .enter()
       .append("path")
       .attr("d", d3Sankey.sankeyLinkHorizontal())
-      .attr("stroke-width", function (d: any) {
-        return Math.max(1, d.width);
+      .attr("stroke-width", function (d: GraphLink) {
+        if (d.width) {
+          return Math.max(1, d.width);
+        }
+        return 1;
       });
 
-    link.append("title").text(function (d: any) {
-      return d.source.name + " → " + d.target.name + "\n" + format(d.value);
+    link.append("title").text(function (d: GraphLink) {
+      return d.source + " → " + d.target + "\n" + format(d.value);
     });
 
     node = node.data(graph.nodes).enter().append("g");
 
     node
       .append("rect")
-      .attr("x", function (d: any) {
-        return d.x0;
+      .attr("x", function (d: GraphNode) {
+        if (d.x0 !== undefined) {
+          return d.x0;
+        }
+        return 0;
       })
-      .attr("y", function (d: any) {
-        return d.y0;
+      .attr("y", function (d: GraphNode) {
+        if (d.y0 !== undefined) {
+          return d.y0;
+        }
+        return 0;
       })
-      .attr("height", function (d: any) {
-        return d.y1 - d.y0;
+      .attr("height", function (d: GraphNode) {
+        if (d.y0 !== undefined && d.y1 !== undefined) {
+          return d.y1 - d.y0;
+        }
+        return 0;
       })
-      .attr("width", function (d: any) {
-        return d.x1 - d.x0;
+      .attr("width", function (d: GraphNode) {
+        if (d.x1 !== undefined && d.x0 !== undefined) {
+          return d.x1 - d.x0;
+        }
+        return 0;
       })
-      .attr("fill", function (d: any) {
+      .attr("fill", function (d: GraphNode) {
         return color(d.name.replace(/ .*/, ""));
       })
       .attr("stroke", "#000");
 
     node
       .append("text")
-      .attr("x", function (d: any) {
-        return d.x0 - 6;
+      .attr("x", function (d: GraphNode) {
+        if (d.x0 !== undefined) {
+          return d.x0 - 6;
+        }
+        return 0;
       })
-      .attr("y", function (d: any) {
-        return (d.y1 + d.y0) / 2;
+      .attr("y", function (d: GraphNode) {
+        if (d.y1 !== undefined && d.y0 !== undefined) {
+          return (d.y1 + d.y0) / 2;
+        }
+        return 0;
       })
       .attr("dy", "0.35em")
       .attr("text-anchor", "end")
-      .text(function (d: any) {
+      .text(function (d: GraphNode) {
         return d.name;
       })
-      .filter(function (d: any) {
-        return d.x0 < width / 2;
+      .filter(function (d: GraphNode) {
+        if (d.x0 !== undefined) {
+          return d.x0 < width / 2;
+        }
+        return false;
       })
-      .attr("x", function (d: any) {
-        return d.x1 + 6;
+      .attr("x", function (d: GraphNode) {
+        if (d.x1 !== undefined) {
+          return d.x1 + 6;
+        }
+        return 0;
       })
       .attr("text-anchor", "start");
 
-    node.append("title").text(function (d: any) {
-      return d.name + "\n" + format(d.value);
+    node.append("title").text(function (d: GraphNode) {
+      if (d.value !== undefined) {
+        return d.name + "\n" + format(d.value);
+      }
+      return d.name;
     });
   }
 
