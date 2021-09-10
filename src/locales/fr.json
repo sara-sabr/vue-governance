@@ -41,7 +41,7 @@
     },
     "positions": {
       "title": "Analyses des postes",
-      "description": "À compléter",
+      "description": "La page suivante contient de l'information à propos des positions connues\n\n### Liste des postes\n\nLa première section présente une liste de tous les postes connus. Lorsque disponibles, la liste indiquera également l'organisation du poste, la branche, la direction, la classification, le niveau et le poste dont il relève.\n\n### Comités par poste\n\nCette section fournit une liste des comités connus auxquels participe chaque poste. Comme elle est générée dynamiquement à partir des données fournies, certains postes peuvent ne pas avoir de comités répertoriés, même s'ils en sont membres dans la vie réelle.",
       "positionsList": {
         "title": "Liste des postes",
         "table": {
