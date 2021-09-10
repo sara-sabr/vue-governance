@@ -2,6 +2,11 @@
   <div class="container">
     <h1 class="text-center">{{ $t("page.home.title") }}</h1>
     <div v-html="markdownToHtml($t('page.home.description'))"></div>
+    <FileLoader
+      v-on:fileLoaded="fileLoaded($event)"
+      v-on:reset="reset($event)"
+    />
+    <Overview v-if="dataLoaded === true" />
     <div class="mb-3">
       <button class="btn btn-secondary" @click="loadTestData()">
         {{ $t("button.test") }}
@@ -12,10 +17,6 @@
         $t("page.home.testData")
       }}</a>
     </div>
-    <FileLoader
-      v-on:fileLoaded="fileLoaded($event)"
-      v-on:reset="reset($event)"
-    />
   </div>
 </template>
 
@@ -24,7 +25,9 @@ import { DataFile } from "@/store/state";
 import Vue from "vue";
 import Component from "vue-class-component";
 import FileLoader from "@/components/FileLoader.vue";
+import Overview from "@/components/Overview.vue";
 import { ActionTypes } from "@/store/actions";
+import { mapState } from "vuex";
 // import Positions from "./Positions.vue";
 @Component({
   data() {
@@ -32,8 +35,12 @@ import { ActionTypes } from "@/store/actions";
       demoFile: require("@/assets/demoDataFile.json"),
     };
   },
+  computed: {
+    ...mapState(["dataLoaded"]),
+  },
   components: {
     FileLoader,
+    Overview,
   },
   methods: {
     markdownToHtml(message: string) {

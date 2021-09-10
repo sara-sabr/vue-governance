@@ -77,6 +77,7 @@ export interface RootState {
   pathways: Pathway[];
   rates: Rate[];
   lang: string;
+  dataLoaded: boolean;
 }
 
 export interface DataFile {
@@ -93,4 +94,5 @@ export const state: RootState = {
   pathways: [],
   rates: [],
   lang: "en",
+  dataLoaded: false,
 };
