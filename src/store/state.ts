@@ -65,7 +65,10 @@ export interface Rate {
 export interface Position {
   id: string;
   name: { fr: string; en: string };
-  classification: string;
+  organization?: string;
+  branch?: string;
+  directorate?: string;
+  classification?: string;
   level: number;
   incumbent?: string;
   reportsTo?: string;

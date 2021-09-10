@@ -45,6 +45,9 @@
       "positionsList": {
         "title": "Liste des postes",
         "table": {
+          "organization": "Organisation",
+          "branch": "Branche",
+          "directorate": "Direction",
           "position": "Poste",
           "key": "Clé",
           "classification": "Classification et Niveau",

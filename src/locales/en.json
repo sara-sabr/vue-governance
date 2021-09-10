@@ -45,6 +45,9 @@
       "positionsList": {
         "title": "List of Positions",
         "table": {
+          "organization":"Organization",
+          "branch": "Branch",
+          "directorate": "Directorate",
           "position": "Position",
           "key": "Key",
           "classification": "Classification and Level",
