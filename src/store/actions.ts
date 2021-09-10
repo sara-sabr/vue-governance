@@ -36,6 +36,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     commit(MutationType.SetCommittees, value.committees);
     commit(MutationType.SetPathways, value.pathways);
     commit(MutationType.SetRates, value.rates);
+    commit(MutationType.SetDataLoaded, null);
   },
   async [ActionTypes.ResetData]({ commit }, value) {
     commit(MutationType.ResetData, value);
