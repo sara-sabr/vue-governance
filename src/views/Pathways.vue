@@ -28,13 +28,19 @@
         </div>
       </div>
     </div>
-    <pathway-details
-      v-for="(pathway, elementKey) in pathways"
-      :key="pathway.id"
-      :element-key="elementKey + 1"
-      :pathway="pathway"
-      :lang="lang"
-    ></pathway-details>
+    <section
+      v-if="
+        !this.$store.getters.isCommitteesEmpty &&
+        !this.$store.getters.isPositionsEmpty
+      "
+    >
+      <pathway-details
+        v-for="(pathway, elementKey) in pathways"
+        :key="pathway.id"
+        :element-key="elementKey + 1"
+        :pathway="pathway"
+      ></pathway-details>
+    </section>
   </div>
 </template>
 <script lang="ts">
@@ -61,7 +67,5 @@ import PathwayDetails from "@/components/PathwayDetails.vue";
     },
   },
 })
-export default class Pathways extends Vue {
-  lang = this.$i18n.locale;
-}
+export default class Pathways extends Vue {}
 </script>

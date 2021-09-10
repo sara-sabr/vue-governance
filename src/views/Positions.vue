@@ -28,7 +28,11 @@
         </div>
       </div>
     </div>
-    <section id="accordion-positionList" class="accordion mb-3">
+    <section
+      id="accordion-positionList"
+      class="accordion mb-3"
+      v-if="!this.$store.getters.isPositionsEmpty"
+    >
       <div class="accordion-item">
         <h2 class="accordion-header" id="positionList">
           <button
@@ -49,12 +53,16 @@
           data-bs-parent="#accordion-positionList"
         >
           <div class="accordion-body">
-            <PositionsList :positions="positions" :lang="lang" />
+            <PositionsList :positions="positions" />
           </div>
         </div>
       </div>
     </section>
-    <section id="accordion-positionCommitteeRelation" class="accordion mb-3">
+    <section
+      id="accordion-positionCommitteeRelation"
+      class="accordion mb-3"
+      v-if="!this.$store.getters.isPositionsEmpty"
+    >
       <div class="accordion-item">
         <h2 class="accordion-header" id="positionCommitteeRelation">
           <button
@@ -81,7 +89,6 @@
               :key="position.id"
               :position="position"
               :committees="committees"
-              :lang="lang"
             />
           </div>
         </div>

@@ -28,21 +28,20 @@
         </div>
       </div>
     </div>
-    <CommitteePositionMap
-      :lang="lang"
-      :committees="committees"
-      :positions="positions"
-    />
-    <CommitteeDetails
-      v-for="(committee, elementKey) in committees"
-      :key="committee.id"
-      :elementKey="elementKey"
-      :committee="committee"
-      :lang="lang"
-      :rates="rates"
-      :positions="positions"
-    >
-    </CommitteeDetails>
+    <section v-if="!this.$store.getters.isCommitteesEmpty">
+      <CommitteePositionMap />
+    </section>
+    <section v-if="!this.$store.getters.isCommitteesEmpty">
+      <CommitteeDetails
+        v-for="(committee, elementKey) in committees"
+        :key="committee.id"
+        :elementKey="elementKey"
+        :committee="committee"
+        :rates="rates"
+        :positions="positions"
+      >
+      </CommitteeDetails>
+    </section>
   </div>
 </template>
 
@@ -53,7 +52,7 @@ import CommitteePositionMap from "@/components/CommitteePositionMap.vue";
 import { mapState } from "vuex";
 
 @Component({
-  computed: mapState(["rates", "positions", "committees"]),
+  computed: { ...mapState(["rates", "positions", "committees", "lang"]) },
   components: {
     CommitteeDetails,
     CommitteePositionMap,
@@ -66,7 +65,5 @@ import { mapState } from "vuex";
     },
   },
 })
-export default class Home extends Vue {
-  lang = this.$i18n.locale;
-}
+export default class Home extends Vue {}
 </script>

@@ -15,7 +15,7 @@
       </h2>
       <div
         id="collapse-map"
-        class="accordion-collapse collapse show"
+        class="accordion-collapse collapse"
         aria-labelledby="map"
         data-bs-parent="#accordion-map"
       >
@@ -32,11 +32,11 @@ import {
   GraphLink,
   GraphNode,
   Graph,
-  Position,
   SankeyGraphNode,
   SankeyGraphLink,
+  Position,
 } from "@/store/state";
-import { Prop, Vue } from "vue-property-decorator";
+import { Vue } from "vue-property-decorator";
 import Component from "vue-class-component";
 import { mapState } from "vuex";
 import * as d3 from "d3";
@@ -46,14 +46,11 @@ import fr from "@/locales/fr.json";
 
 @Component({
   computed: {
-    ...mapState,
+    ...mapState(["lang", "committees", "positions"]),
   },
 })
 export default class CommitteePositionMap extends Vue {
-  @Prop() public positions!: Position[];
-  @Prop() public committees!: Committee[];
-  @Prop() public lang!: string;
-  // lang = this.$i18n;
+  thisLang = this.$store.state.lang;
 
   colorTrue = "#fff";
   colorFalse = "#000";
@@ -65,6 +62,7 @@ export default class CommitteePositionMap extends Vue {
   };
 
   color = d3.scaleOrdinal(["#d4b4a3"], ["#da4f81"]).unknown("#ccc");
+  committees: Committee[] = this.$store.state.committees;
 
   getAttendees(committee: Committee): string[] {
     return [
@@ -78,19 +76,18 @@ export default class CommitteePositionMap extends Vue {
    * Generates the data set for the graph
    */
   graph(): Graph {
-    const committees = this.committees;
-    const positions = this.positions;
+    const committees: Committee[] = this.$store.state.committees;
+    const positions: Position[] = this.$store.state.positions;
     if (committees.length < 1 || positions.length < 1) {
       throw console.error("Invalid data set provided to generate graph");
     }
-    const lang = this.lang;
 
     //Create nodes names
     const nodes: SankeyGraphNode[] = [];
     nodes.push({
       nodeId: "0",
       name:
-        lang === "en"
+        this.thisLang === "en"
           ? en.page.committees.committeePositionMap.notAssigned
           : fr.page.committees.committeePositionMap.notAssigned,
     });
@@ -100,7 +97,7 @@ export default class CommitteePositionMap extends Vue {
 
       let node = {
         nodeId: committee.id.toString(),
-        name: lang === "en" ? nameEn : nameFr,
+        name: this.thisLang === "en" ? nameEn : nameFr,
       };
       nodes.push(node);
     });
@@ -109,7 +106,10 @@ export default class CommitteePositionMap extends Vue {
       let nameEn = position.name.en ? position.name.en : "N/A";
       let nameFr = position.name.fr ? position.name.fr : "N/A";
 
-      let node = { nodeId: position.id, name: lang === "en" ? nameEn : nameFr };
+      let node = {
+        nodeId: position.id,
+        name: this.thisLang === "en" ? nameEn : nameFr,
+      };
       nodes.push(node);
     });
     // Create links
@@ -179,9 +179,10 @@ export default class CommitteePositionMap extends Vue {
    *  */
 
   chart(): void {
+    const graph: Graph = this.graph();
     var width = 960;
     //Setting height based on number of positions
-    var height = this.positions.length * 15;
+    var height = graph.nodes.length * 15;
     var svg = d3
       .select("#chart")
       .append("svg")
@@ -194,8 +195,6 @@ export default class CommitteePositionMap extends Vue {
     };
 
     var color = d3.scaleOrdinal(d3.schemeCategory10);
-
-    const graph: Graph = this.graph();
 
     var sankey = d3Sankey
       .sankey<GraphNode, GraphLink>()
