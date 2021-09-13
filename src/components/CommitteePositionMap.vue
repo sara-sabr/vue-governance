@@ -27,25 +27,19 @@
   </div>
 </template>
 <script lang="ts">
-import {
-  Committee,
-  GraphLink,
-  GraphNode,
-  Graph,
-  SankeyGraphNode,
-  SankeyGraphLink,
-  Position,
-} from "@/store/state";
+import { Committee, GraphLink, GraphNode, Graph } from "@/store/state";
 import { Vue } from "vue-property-decorator";
 import Component from "vue-class-component";
-import { mapState } from "vuex";
+import { mapGetters, mapState } from "vuex";
 import * as d3 from "d3";
 import * as d3Sankey from "d3-sankey";
-import en from "@/locales/en.json";
-import fr from "@/locales/fr.json";
 
 @Component({
+  data() {
+    return { graphData: this.$store.getters.getCommitteesPositionsGraphData };
+  },
   computed: {
+    ...mapGetters(["getCommitteesPositionsGraphData"]),
     ...mapState(["lang", "committees", "positions"]),
   },
 })
@@ -62,7 +56,6 @@ export default class CommitteePositionMap extends Vue {
   };
 
   color = d3.scaleOrdinal(["#d4b4a3"], ["#da4f81"]).unknown("#ccc");
-  committees: Committee[] = this.$store.state.committees;
 
   getAttendees(committee: Committee): string[] {
     return [
@@ -71,93 +64,6 @@ export default class CommitteePositionMap extends Vue {
       ...committee.members,
       ...committee.standingParticipants,
     ];
-  }
-  /**
-   * Generates the data set for the graph
-   */
-  graph(): Graph {
-    const committees: Committee[] = this.$store.state.committees;
-    const positions: Position[] = this.$store.state.positions;
-    if (committees.length < 1 || positions.length < 1) {
-      throw console.error("Invalid data set provided to generate graph");
-    }
-
-    //Create nodes names
-    const nodes: SankeyGraphNode[] = [];
-    nodes.push({
-      nodeId: "0",
-      name:
-        this.thisLang === "en"
-          ? en.page.committees.committeePositionMap.notAssigned
-          : fr.page.committees.committeePositionMap.notAssigned,
-    });
-    committees.forEach((committee) => {
-      let nameEn = committee.name.en ? committee.name.en : "N/A";
-      let nameFr = committee.name.fr ? committee.name.fr : "N/A";
-
-      let node = {
-        nodeId: committee.id.toString(),
-        name: this.thisLang === "en" ? nameEn : nameFr,
-      };
-      nodes.push(node);
-    });
-
-    positions.forEach((position) => {
-      let nameEn = position.name.en ? position.name.en : "N/A";
-      let nameFr = position.name.fr ? position.name.fr : "N/A";
-
-      let node = {
-        nodeId: position.id,
-        name: this.thisLang === "en" ? nameEn : nameFr,
-      };
-      nodes.push(node);
-    });
-    // Create links
-    let links: SankeyGraphLink[] = [];
-    let allCommsAttendees: string[] = [];
-    const positionsIds = positions.map((position) => position.id);
-    if (committees.length > 0 || positionsIds.length > 0) {
-      committees.forEach((committee) => {
-        const committeeAttendees = [
-          ...committee.chairs,
-          ...committee.viceChairs,
-          ...committee.members,
-          ...committee.standingParticipants,
-        ];
-        allCommsAttendees = [...committeeAttendees];
-
-        committeeAttendees.forEach((attendee) => {
-          let positionIndex = positionsIds.findIndex(
-            (positionID) => attendee === positionID
-          );
-          if (positionIndex !== -1) {
-            let newLink: SankeyGraphLink = {
-              source: attendee,
-              target: committee.id.toString(),
-              value: 1,
-            };
-
-            links.push(newLink);
-          }
-        });
-      });
-    }
-    //Parse all positions to filter out positions not attending committees
-    positionsIds.forEach((positionId) => {
-      var positionIdIndex = allCommsAttendees.findIndex(
-        (attendee) => attendee === positionId
-      );
-      if (positionIdIndex === -1) {
-        let newLink: SankeyGraphLink = {
-          source: positionId,
-          target: "0",
-          value: 1,
-        };
-
-        links.push(newLink);
-      }
-    });
-    return { nodes, links };
   }
   /**
    * References leveraged to combine D3js, D3-Sankey, Vuejs and Typescript
@@ -175,11 +81,10 @@ export default class CommitteePositionMap extends Vue {
    * - Test various fonts
    * - Adjust Nodes spacing
    * - Change colors (need more since more than 10 nodes)
-   * - Fix type issues
    *  */
 
-  chart(): void {
-    const graph: Graph = this.graph();
+  chart(graph: Graph): void {
+    // const graph: Graph = this.$store.getters.getCommitteesPositionsGraphData;
     var width = 960;
     //Setting height based on number of positions
     var height = graph.nodes.length * 15;
@@ -316,7 +221,7 @@ export default class CommitteePositionMap extends Vue {
   }
 
   mounted(): void {
-    this.chart();
+    this.chart(this.$data.graphData);
   }
 }
 </script>
