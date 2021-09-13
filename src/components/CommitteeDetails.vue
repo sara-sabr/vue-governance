@@ -80,6 +80,13 @@ import { mapState } from "vuex";
 
 @Component({
   computed: mapState(["lang"]),
+  methods: {
+    markdownToHtml(message: string) {
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
+      const marked = require("marked");
+      return marked(message);
+    },
+  },
   props: {
     committee: {
       type: Object as PropType<Committee>,
@@ -192,12 +199,6 @@ export default class CommitteeDetails extends Vue {
       return false;
     }
     return true;
-  }
-
-  markdownToHtml(message: string): any {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const marked = require("marked");
-    return marked(message);
   }
 }
 </script>
