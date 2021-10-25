@@ -65,7 +65,7 @@ import * as d3Sankey from "d3-sankey";
   },
   computed: {
     graphData(): Graph {
-      return this.$store.getters.getCommitteesPositionsGraphData;
+      return this.$store.getters.getMappedCommitteesPositionsGraphData;
     },
     ...mapState(["lang", "committees", "positions"]),
   },
@@ -109,7 +109,7 @@ import * as d3Sankey from "d3-sankey";
         .append("g")
         .attr("class", "nodes")
         .attr("font-family", "sans-serif")
-        .attr("font-size", 10)
+        .attr("font-size", 14)
         .selectAll<SVGGElement, GraphNode>("g");
       sankey(graph);
       link = link
